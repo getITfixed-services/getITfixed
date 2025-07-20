@@ -4,16 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brighter Arizona LED - Professional Lighting Solutions</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <!-- 1. Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- 2. Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
-      overflow-x: hidden;
+    /* 3. Sunset background + global reset */
+    :root {
+      --sunset: linear-gradient(135deg, #ff7e5f 0%, #feb47b 50%, #4a3b89 100%);
     }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--sunset) no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    }
+
+    /* 4. Rest of your original styles — unchanged but pasted in full */
     header {
       background: linear-gradient(135deg, #000, #1a1a1a);
       color: white;
@@ -47,10 +61,13 @@
       position: relative;
       z-index: 1;
     }
+
     nav {
-      background: rgba(30,30,30,0.9);
-      backdrop-filter: blur(10px);
-      padding: 1rem;
+      background: rgba(0,0,0,.25);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      margin: 1rem;
+      padding: .5rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -96,23 +113,46 @@
     nav a:hover::before {
       left: 100%;
     }
+
     main {
       max-width: 1100px;
       margin: 0 auto;
       padding: 2rem 1rem;
     }
+
     section {
       margin-bottom: 4rem;
       padding: 3rem 2rem;
-      background: #1e1e1e;
+      background: rgba(30,30,30,.75);
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
+
     h2 {
       font-size: 2.2rem;
       margin-bottom: 1.5rem;
       text-align: center;
     }
+
+    /* 5. Button glow (CTA style) */
+    .btn-primary,
+    form button {
+      background: #ff7e5f;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem 2rem;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: box-shadow .3s;
+    }
+    .btn-primary:hover,
+    form button:hover {
+      box-shadow: 0 0 20px #ff7e5f;
+    }
+
+    /* 6. Original grid & card styles */
     .about-content {
       text-align: center;
       font-size: 1.2rem;
@@ -249,8 +289,6 @@
       min-height: 120px;
     }
     form button {
-      background: #444;
-      color: white;
       border: none;
       padding: 1rem 2rem;
       font-size: 1.1rem;
@@ -260,11 +298,9 @@
       transition: background 0.3s ease;
       width: 100%;
     }
-    form button:hover {
-      background: #666;
-    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Brighter Arizona LED</h1>
@@ -357,7 +393,6 @@
         </form>
       </div>
     </section>
-
   </main>
 
   <footer>
