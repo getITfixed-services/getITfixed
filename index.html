@@ -1,218 +1,234 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Brighter Arizona LED | Free Quote</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      background: #f6f7fb;
-      color: #21244c;
-    }
-    .header {
-      width: 100%;
-      background: #222a48;
-      color: #fff;
-      padding: 2rem 1rem 1.3rem 1rem;
-      text-align: center;
-    }
-    .header h1 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      margin: 0;
-      letter-spacing: 1px;
-    }
-    .main-container {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1100px;
-      margin: 2.6rem auto 1.5rem auto;
-      gap: 2.5rem;
-      justify-content: center;
-    }
-    .work-section, .form-section {
-      background: #fff;
-      box-shadow: 0 4px 24px 0 rgba(42,53,80,0.10);
-      border-radius: 16px;
-      padding: 2rem 1.2rem 1.7rem 1.2rem;
-      min-width: 320px;
-    }
-    .work-section {
-      flex: 1 1 325px;
-      max-width: 410px;
-    }
-    .work-section h2 {
-      font-size: 1.19rem;
-      margin-bottom: 1.2rem;
-      color: #21244c;
-      font-weight: 700;
-      border-bottom: 2px solid #e3e6f1;
-      padding-bottom: 0.5em;
-      letter-spacing: 0.6px;
-    }
-    .gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 9px;
-      box-shadow: 0 2px 8px rgba(34,42,72,0.05);
-      margin-bottom: 0.1rem;
-    }
-    .gallery .caption {
-      text-align: center;
-      font-size: 0.96rem;
-      color: #495079;
-      margin-bottom: 0.7em;
-    }
-    .form-section {
-      flex: 1 1 355px;
-      max-width: 430px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .form-section h2 {
-      font-size: 1.15rem;
-      letter-spacing: 0.8px;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #21244c;
-    }
-    form label {
-      font-size: 1rem;
-      margin: 0.9rem 0 0.35rem 0;
-      display: block;
-      color: #3c4363;
-      font-weight: 500;
-    }
-    form input, form textarea {
-      width: 100%;
-      font-size: 1rem;
-      padding: 0.8rem;
-      border-radius: 7px;
-      border: 1px solid #d1d5eb;
-      background: #f7f8fb;
-      margin-bottom: 0.2rem;
-      margin-top: 0.1rem;
-      resize: none;
-      box-sizing: border-box;
-      outline: none;
-    }
-    form textarea {
-      height: 85px;
-    }
-    .quote-btn {
-      margin-top: 1.4rem;
-      background: linear-gradient(90deg,#ffcf3c 0,#ffc404 100%);
-      color: #21244c;
-      border: none;
-      font-size: 1.11rem;
-      font-weight: 700;
-      padding: 0.93rem 0;
-      border-radius: 9px;
-      cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(34,42,72,0.07);
-    }
-    .quote-btn:hover {
-      background: linear-gradient(90deg, #ffc404 0, #ffcf3c 100%);
-    }
-    .confirmation {
-      text-align: center;
-      background: #ebffe7;
-      color: #1fa42e;
-      font-size: 1.1em;
-      border: 1px solid #97e699;
-      border-radius: 8px;
-      padding: 1.3em;
-      margin-top: 1.7em;
-      display: none;
-    }
-    .footer {
-      text-align: center;
-      font-size: 0.97rem;
-      color: #757d9e;
-      padding: 1.3em 0 2em 0;
-    }
-    @media (max-width: 900px) {
-      .main-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding: 0 0.5em;
-      }
-      .work-section, .form-section {
-        max-width: 95vw;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <h1>Brighter Arizona LED</h1>
-    <div style="margin-top:0.65em; font-size:1.1rem; font-weight:400; letter-spacing:0.4px;">
-      Transform Your Home With Permanent LED Lighting
-    </div>
-  </div>
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Progress } from "@/components/ui/progress";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+import { validateApiConfiguration } from "@/lib/trading-utils";
+import { Plug, CheckCircle, AlertCircle } from "lucide-react";
 
-  <div class="main-container">
-    <div class="work-section">
-      <h2>Our Work</h2>
-      <div class="gallery">
-        <div>
-          <img src="image/image1.png" alt="Finished home LED lighting" />
-          <div class="caption">Home upgrade - warm white perimeter LED</div>
-        </div>
-        <div>
-          <img src="image/image2.png" alt="Patio lighting project" />
-          <div class="caption">Patio & backyard color accent install</div>
-        </div>
-        <div>
-          <img src="image/image3.png" alt="Seasonal lighting" />
-          <div class="caption">Seasonal color setup for the holidays</div>
-        </div>
-        <!-- Add or swap image blocks for your own photos -->
-      </div>
-    </div>
-    <div class="form-section">
-      <h2>Get Your Free Quote</h2>
-      <form id="quote-form" autocomplete="off">
-        <label for="name">Name*</label>
-        <input required type="text" id="name" name="name" placeholder="Your Name" />
+export default function APIConfiguration() {
+  const [config, setConfig] = useState({
+    brokerPlatform: '',
+    apiEndpoint: '',
+    apiKey: '',
+    apiSecret: ''
+  });
+  const [connectionStatus, setConnectionStatus] = useState(0);
+  const [isConnected, setIsConnected] = useState(false);
+  
+  const { toast } = useToast();
+  const queryClient = useQueryClient();
 
-        <label for="email">Email*</label>
-        <input required type="email" id="email" name="email" placeholder="you@email.com" />
+  // Fetch existing configuration
+  const { data: existingConfig } = useQuery({
+    queryKey: ['/api/broker-config'],
+  });
 
-        <label for="phone">Phone*</label>
-        <input required type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX" />
+  // Update form when existing config loads
+  useState(() => {
+    if (existingConfig) {
+      setConfig({
+        brokerPlatform: existingConfig.brokerPlatform || '',
+        apiEndpoint: existingConfig.apiEndpoint || '',
+        apiKey: existingConfig.apiKey || '',
+        apiSecret: existingConfig.apiSecret || ''
+      });
+      setIsConnected(existingConfig.isActive || false);
+      setConnectionStatus(existingConfig.isActive ? 100 : 0);
+    }
+  });
 
-        <label for="details">Project Details</label>
-        <textarea id="details" name="details" placeholder="Briefly describe your project..."></textarea>
+  const saveConfigMutation = useMutation({
+    mutationFn: async (configData: typeof config) => {
+      const response = await apiRequest('POST', '/api/broker-config', configData);
+      return response.json();
+    },
+    onSuccess: (data) => {
+      setIsConnected(data.connected);
+      setConnectionStatus(data.connected ? 100 : 0);
+      
+      toast({
+        title: "Configuration Saved",
+        description: data.connected ? "Successfully connected to broker" : "Configuration saved but connection failed",
+        variant: data.connected ? "default" : "destructive",
+      });
+      
+      queryClient.invalidateQueries({ queryKey: ['/api/broker-config'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/dashboard'] });
+    },
+    onError: (error) => {
+      setConnectionStatus(0);
+      setIsConnected(false);
+      toast({
+        title: "Configuration Failed",
+        description: "Failed to save broker configuration",
+        variant: "destructive",
+      });
+    },
+  });
 
-        <button class="quote-btn" type="submit">Request Quote</button>
+  const testConnectionMutation = useMutation({
+    mutationFn: async () => {
+      const response = await apiRequest('POST', '/api/broker-config/test');
+      return response.json();
+    },
+    onSuccess: (data) => {
+      setIsConnected(data.connected);
+      setConnectionStatus(data.connected ? 100 : 0);
+      
+      toast({
+        title: "Connection Test",
+        description: data.connected ? "Successfully connected to broker" : "Connection failed",
+        variant: data.connected ? "default" : "destructive",
+      });
+    },
+  });
 
-        <div class="confirmation" id="confirmation">Thank you! We’ll be in touch soon.</div>
-      </form>
-    </div>
-  </div>
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const validation = validateApiConfiguration(config);
+    if (!validation.valid) {
+      toast({
+        title: "Validation Error",
+        description: validation.errors.join(', '),
+        variant: "destructive",
+      });
+      return;
+    }
 
-  <div class="footer">
-    &copy; 2025 Brighter Arizona LED
-  </div>
-  <script>
-    const form = document.getElementById('quote-form');
-    const confirmation = document.getElementById('confirmation');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      form.reset();
-      confirmation.style.display = 'block';
-      setTimeout(() => { confirmation.style.display = 'none'; }, 6000);
-    });
-  </script>
-</body>
-</html>
+    saveConfigMutation.mutate(config);
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setConfig(prev => ({ ...prev, [field]: value }));
+  };
+
+  const brokerPlatforms = [
+    { value: 'alpaca', label: 'Alpaca Markets' },
+    { value: 'mt4', label: 'MetaTrader 4' },
+    { value: 'mt5', label: 'MetaTrader 5' },
+    { value: 'ib', label: 'Interactive Brokers' },
+    { value: 'replay', label: 'Replay Trading' },
+    { value: 'custom', label: 'Custom API' },
+  ];
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle className="flex items-center">
+          <Plug className="h-5 w-5 text-primary mr-2" />
+          Broker API Configuration
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="brokerPlatform">Broker Platform</Label>
+            <Select 
+              value={config.brokerPlatform} 
+              onValueChange={(value) => handleInputChange('brokerPlatform', value)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select broker platform" />
+              </SelectTrigger>
+              <SelectContent>
+                {brokerPlatforms.map((platform) => (
+                  <SelectItem key={platform.value} value={platform.value}>
+                    {platform.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="apiEndpoint">API Endpoint</Label>
+            <Input
+              id="apiEndpoint"
+              type="url"
+              placeholder="https://api.broker.com/v1"
+              value={config.apiEndpoint}
+              onChange={(e) => handleInputChange('apiEndpoint', e.target.value)}
+              disabled={saveConfigMutation.isPending}
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="apiKey">API Key</Label>
+            <Input
+              id="apiKey"
+              type="password"
+              placeholder="Enter your API key"
+              value={config.apiKey}
+              onChange={(e) => handleInputChange('apiKey', e.target.value)}
+              disabled={saveConfigMutation.isPending}
+            />
+          </div>
+
+          {config.brokerPlatform === 'alpaca' && (
+            <div className="space-y-2">
+              <Label htmlFor="apiSecret">API Secret Key</Label>
+              <Input
+                id="apiSecret"
+                type="password"
+                placeholder="Enter your API secret key"
+                value={config.apiSecret}
+                onChange={(e) => handleInputChange('apiSecret', e.target.value)}
+                disabled={saveConfigMutation.isPending}
+              />
+            </div>
+          )}
+          
+          <div className="flex items-center space-x-3">
+            <div className="flex-1">
+              <Progress value={connectionStatus} className="h-2" />
+            </div>
+            <div className="flex items-center space-x-2">
+              {isConnected ? (
+                <>
+                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                    Connected
+                  </span>
+                </>
+              ) : (
+                <>
+                  <AlertCircle className="h-4 w-4 text-red-500" />
+                  <span className="text-sm font-medium text-red-600 dark:text-red-400">
+                    Disconnected
+                  </span>
+                </>
+              )}
+            </div>
+          </div>
+          
+          <div className="flex space-x-2">
+            <Button 
+              type="submit" 
+              className="flex-1"
+              disabled={saveConfigMutation.isPending}
+            >
+              {saveConfigMutation.isPending ? 'Saving...' : 'Save Configuration'}
+            </Button>
+            <Button 
+              type="button" 
+              variant="outline"
+              onClick={() => testConnectionMutation.mutate()}
+              disabled={testConnectionMutation.isPending || !config.apiKey}
+            >
+              {testConnectionMutation.isPending ? 'Testing...' : 'Test'}
+            </Button>
+          </div>
+        </form>
+      </CardContent>
+    </Card>
+  );
+}
+
+
