@@ -4,26 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brighter Arizona LED - Professional Lighting Solutions</title>
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;600;400&display=swap" rel="stylesheet"/>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <style>
     :root {
-      --blue-dark: #131726;
-      --blue-mid: #232941;
+      --blue-dark: #10131d;
+      --blue-mid: #202432;
       --yellow: #ffd839;
       --text-light: #fff;
       --section-bg: #181c29;
       --section-alt: #222532;
-      --gray: #aeb2c7;
+      --gray: #9fa6bd;
       --card-bg: #181c29;
       --input-bg: #232537;
     }
     html, body { background: #11131d; color: var(--text-light); font-family: 'Montserrat', Arial, sans-serif; margin:0; padding:0; }
     body { min-height: 100vh; display: flex; flex-direction: column; }
 
-    /* NAVIGATION */
     nav {
       background: #10131e;
       position: sticky;
@@ -54,98 +53,49 @@
       margin-right: 1vw;
     }
     .nav-links a {
-      color:#fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.06rem;
-      padding: .41em 1.25em;
-      border-radius:8px;
-      transition: background 0.2s;
+      color:#fff; text-decoration: none; font-weight: 600; font-size: 1.06rem;
+      padding: .41em 1.25em; border-radius:8px; transition: background 0.2s;
     }
-    .nav-links .active, .nav-links a:hover {
-      background:rgba(255,216,57,0.1);
-      color: var(--yellow);
-    }
+    .nav-links .active, .nav-links a:hover {background:rgba(255,216,57,0.1); color: var(--yellow);}
     .nav-btn {
-      background: var(--yellow);
-      color: var(--blue-dark);
-      border:none;
-      border-radius: 8px;
-      font-weight:700;
-      font-size:1.05rem;
-      padding: 0.73em 1.6em;
-      cursor:pointer;
-      transition: background .12s;
+      background: var(--yellow); color: var(--blue-dark);
+      border:none; border-radius: 8px; font-weight:700; font-size:1.05rem;
+      padding: 0.73em 1.6em; cursor:pointer; transition: background .12s;
       box-shadow: 0 0.5px 4px #232b40cc;
     }
-    .nav-btn:hover {
-      background: #ffe76b;
-    }
+    .nav-btn:hover { background: #ffe76b; }
 
-    /* HERO SECTION */
     .hero {
-      min-height: 48vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      background: #11131d;
+      min-height: 48vh; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; background: #11131d;
       padding: 3.2rem 1.2rem 2.8rem 1.2rem;
     }
     .hero-title {
-      font-size: 3.05rem;
-      font-weight: 700;
-      line-height: 1.09;
-      color: #fff;
-      margin-bottom: 0.07em;
-      letter-spacing: 1px;
+      font-size: 3.05rem; font-weight: 700; line-height: 1.09; color: #fff;
+      margin-bottom: 0.07em; letter-spacing: 1px;
     }
     .hero-title .highlight { color: var(--yellow);}
     .hero-sub {
-      font-size: 1.18rem;
-      color: #d8dbdf;
-      margin-bottom: 2.1em;
-      font-weight: 400;
+      font-size: 1.18rem; color: #d8dbdf; margin-bottom: 2.1em; font-weight: 400;
     }
     .hero-actions { display:flex; gap:1rem; justify-content: center;}
     .hero-actions button {
-      border-radius: 8px;
-      border: none;
-      background: var(--yellow);
-      color: #1a1d2c;
-      font-weight: 600;
-      font-size: 1.08rem;
-      padding: 0.98em 2em;
-      transition: background 0.14s;
+      border-radius: 8px; border: none; background: var(--yellow); color: #1a1d2c;
+      font-weight: 600; font-size: 1.08rem; padding: 0.98em 2em; transition: background 0.14s;
       cursor:pointer; letter-spacing: 0.5px;
     }
     .hero-actions button:hover { background: #ffe76b;}
     .hero-actions input { display: none; }
 
-    /* "Our Services" */
-    .services-section {
-      background: #232941;
-      padding: 3.3em 1.5em 2.7em;
-    }
-    .services-title {
-      color: var(--yellow);
-      font-size: 2.12rem;
-      font-weight: 700;
-      text-align:center;
-      margin-bottom: 0.18em;
-      letter-spacing: 0.3px;
-    }
+    /* Services */
+    .services-section {background: #232941; padding: 3.3em 1.5em 2.7em;}
+    .services-title {color: var(--yellow); font-size: 2.12rem; font-weight: 700; text-align:center; margin-bottom: 0.18em;}
     .services-sub { text-align: center; color: #c9cad3; font-size:1.17rem; margin-bottom:2em;}
     .services-cards {
-      display: flex;
-      gap: 2em;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 1140px;
-      margin: 0 auto;
+      display: flex; gap: 2em; justify-content: center; flex-wrap: wrap; max-width:1140px; margin:0 auto;
     }
     .service-card {
-      background: #191b27;
-      border-radius: 19px;
-      padding: 2.1em 1.7em 1.45em;
+      background: #191b27; border-radius: 19px; padding: 2.1em 1.7em 1.45em;
       width: 340px; min-width:225px; margin-bottom:1.2em;
       display:flex; flex-direction:column; align-items:center;
       box-shadow: 0 2px 15px #232b4030;
@@ -158,9 +108,7 @@
     .why-section {background: #181c29; padding: 3.2em 1.1em 2.7em;text-align:center;}
     .why-title { color: var(--yellow); font-size:2rem; font-weight:700; margin-bottom:0.18em;}
     .why-sub { color: #c9cad3; font-size: 1.1rem; margin-bottom: 2em;}
-    .why-cards {
-      display: flex; flex-wrap:wrap; justify-content:center; gap:2em; max-width:1100px;margin:0 auto;
-    }
+    .why-cards {display: flex; flex-wrap:wrap; justify-content:center; gap:2em; max-width:1100px;margin:0 auto;}
     .why-card {
       background: #1e202c;
       border-radius: 14px;
@@ -175,18 +123,18 @@
     .why-card h4 { font-size:1.13rem; margin:0 0 0.18em 0; font-weight:700;}
     .why-card p { color:#c7cdda; font-size:1.02rem; margin:0;}
 
-    /* Testimonials (from your screenshot style) */
+    /* Testimonials */
     .testimonials-section {
       background: #181c29;
       padding: 3.3em 1rem 2.1em 1rem;
     }
     .testimonials-title { color:#fff; text-align:center; font-size:2rem; font-weight:700; margin-bottom:0.7em;}
     .testimonials-cards {
-      display: flex; flex-wrap:wrap; gap:2em; justify-content:center; max-width:1120px; margin:0 auto;
+      display:flex; flex-wrap:wrap; gap:2em; justify-content:center; max-width:1120px; margin:0 auto;
     }
     .testimonial {
-      background: #222532;
-      border-radius: 13px;
+      background:#222532;
+      border-radius:13px;
       box-shadow: 0 2.5px 11px #232b4040;
       padding:2em 1.4em 1.3em;
       max-width:330px; min-width:210px; flex:1;
@@ -238,40 +186,55 @@
       background: #23263a;
       border-radius: 16px;
       box-shadow: 0 2px 12px #1317230f;
-      max-width: 860px; width:100%; margin:0 auto; padding: 2.7em 2.3em 1.7em 2.3em;
-      display: flex; flex-wrap: wrap; gap: 1.4em;
-      justify-content: center;
-      align-items: flex-start;
+      max-width: 440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.7em 2em 1.7em 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: stretch;
     }
     .quote-form label {
-      color: var(--yellow); font-weight:500; font-size: 1.06rem;
-      margin-bottom: 0.37em; display:block;
-    }
-    .quote-form-field {
-      flex: 1 1 250px; min-width:205px; max-width: 330px;
-      display: flex; flex-direction: column;
+      color: var(--yellow);
+      font-weight: 500;
+      font-size: 1.06rem;
+      margin-bottom: 0.2em;
+      display: block;
     }
     .quote-form textarea { min-height: 94px;}
     .quote-form input, .quote-form select, .quote-form textarea {
-      width: 100%; padding: 1em; border-radius: 9px; border: none; margin-bottom:1.05em;
-      font-size: 1.045rem; background: #191c28; color:#fff; resize:vertical; font-family: inherit;
+      width: 100%;
+      padding: 1em;
+      border-radius: 9px;
+      border: none;
+      margin-bottom:0.7em;
+      font-size: 1.045rem;
+      background: #191c28;
+      color: #fff;
+      resize: vertical;
+      font-family: inherit;
     }
     .quote-form input::placeholder, .quote-form textarea::placeholder { color:#a5adc2;}
-    .quote-form-btns {
-      width:100%; display: flex; flex-direction: column; align-items:stretch; margin-top: 0.46em;
-    }
     .quote-form button {
-      background: var(--yellow); color: var(--blue-dark); border: none; border-radius: 9px;
-      font-size:1.09rem; font-weight:700; padding:1em 0;
-      cursor:pointer; letter-spacing:1.2px;
-      transition: background 0.12s; margin-bottom:0.7em;
+      background: var(--yellow);
+      color: var(--blue-dark);
+      border: none;
+      border-radius: 9px;
+      font-size:1.09rem;
+      font-weight:700;
+      padding:1em 0;
+      cursor:pointer;
+      letter-spacing:1.2px;
+      transition: background 0.12s;
+      margin-bottom: 0.5em;
+      margin-top:.6em;
     }
     .quote-form button:hover { background: #ffe76b;}
     .form-success { background: #dbffd5; color: #104521; padding: 1em; border-radius: 9px; font-size: 1.13rem; text-align: center;}
     @media (max-width: 900px){
-      .services-cards, .why-cards, .testimonials-cards, .gallery-container, .quote-form { flex-direction:column; align-items:center; gap:1.5em;}
-      .service-card, .why-card, .gallery-card, .testimonial, .quote-form-field { max-width:97vw;}
-      .quote-form { padding: 1.3em 0.4em 1em;}
+      .services-cards, .why-cards, .testimonials-cards, .gallery-container { flex-direction:column; align-items:center; gap:1.5em;}
+      .service-card, .why-card, .gallery-card, .testimonial { max-width:97vw;}
     }
     @media (max-width: 530px){
       .hero-title {font-size:2.1rem;}
@@ -280,7 +243,6 @@
   </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
   <nav>
     <div class="nav-inner">
       <div class="nav-logo">
@@ -294,7 +256,6 @@
       </div>
     </div>
   </nav>
-  <!-- HERO / TOP SECTION -->
   <section class="hero">
     <div class="hero-title">
       Illuminate Your World with<br>
@@ -307,7 +268,6 @@
       <button onclick="document.getElementById('quote').scrollIntoView({behavior: 'smooth'})">Get a Free Consultation</button>
     </div>
   </section>
-  <!-- Our Services -->
   <section class="services-section">
     <div class="services-title">Our Services</div>
     <div class="services-sub">Lighting solutions for every need.</div>
@@ -329,7 +289,6 @@
       </div>
     </div>
   </section>
-  <!-- Why Choose Us -->
   <section class="why-section">
     <div class="why-title">Why Choose Us?</div>
     <div class="why-sub">The Brighter Arizona difference.</div>
@@ -357,7 +316,6 @@
       </div>
     </div>
   </section>
-  <!-- Testimonials -->
   <section class="testimonials-section">
     <div class="testimonials-title">What Our Clients Say</div>
     <div class="testimonials-cards">
@@ -381,71 +339,61 @@
       </div>
     </div>
   </section>
-  <!-- Our Work Gallery -->
   <section id="gallery" class="gallery-section">
     <div class="gallery-title">Our Work</div>
     <div class="gallery-container">
       <div class="gallery-card">
-        <img src="image/image1.png" alt="LED Home 1"/>
+        <img src="images/image1.png" alt="LED Home 1"/>
         <div class="cap">Modern Home - White Accent LEDs</div>
       </div>
       <div class="gallery-card">
-        <img src="image/image2.png" alt="LED Home 2"/>
+        <img src="images/image2.png" alt="LED Home 2"/>
         <div class="cap">Backyard with Smart Color Zoning</div>
       </div>
       <div class="gallery-card">
-        <img src="image/image3.png" alt="LED Business"/>
+        <img src="images/image3.png" alt="LED Business"/>
         <div class="cap">Commercial Entry LED Upgrade</div>
       </div>
     </div>
   </section>
-  <!-- Quote Form -->
   <section id="quote" class="quote-section">
     <h2>Request a Free Quote</h2>
     <div class="desc">Let's discuss how we can brighten up your space. Fill out the form below to get started.</div>
     <form class="quote-form" id="quoteForm" autocomplete="off">
-      <div class="quote-form-field">
-        <label for="name">Your Name *</label>
-        <input type="text" name="name" id="name" required placeholder="Your Name">
-      </div>
-      <div class="quote-form-field">
-        <label for="email">Your Email *</label>
-        <input type="email" name="email" id="email" required placeholder="Your Email">
-      </div>
-      <div class="quote-form-field">
-        <label for="phone">Your Phone</label>
-        <input type="tel" name="phone" id="phone" placeholder="Phone Number">
-      </div>
-      <div class="quote-form-field">
-        <label for="property">Property Type *</label>
-        <select name="property" id="property" required>
-          <option value="">Property Type *</option>
-          <option>Single Family Home</option>
-          <option>Multi-Family / Apartment</option>
-          <option>Condo / Townhome</option>
-          <option>Commercial</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="quote-form-field">
-        <label for="squarefeet">Square Footage *</label>
-        <select name="squarefeet" id="squarefeet" required>
-          <option value="">Square Footage *</option>
-          <option>&lt;1000 sq ft</option>
-          <option>1000-1500 sq ft</option>
-          <option>1500-2500 sq ft</option>
-          <option>2500-3500 sq ft</option>
-          <option>3500+ sq ft</option>
-        </select>
-      </div>
-      <div class="quote-form-field" style="flex-basis:100%; max-width:700px;">
-        <label for="message">Tell us about your project *</label>
-        <textarea name="message" id="message" required placeholder="Tell us about your project and needs..."></textarea>
-      </div>
-      <div class="quote-form-btns">
-        <button type="submit">Send Message</button>
-        <div id="form-success" class="form-success" style="display:none;">Thank you! We have received your message and will get back to you soon.</div>
-      </div>
+      <label for="name">Your Name *</label>
+      <input type="text" name="name" id="name" required placeholder="Your Name">
+
+      <label for="email">Your Email *</label>
+      <input type="email" name="email" id="email" required placeholder="Your Email">
+
+      <label for="phone">Your Phone</label>
+      <input type="tel" name="phone" id="phone" placeholder="Phone Number">
+
+      <label for="property">Property Type *</label>
+      <select name="property" id="property" required>
+        <option value="">Property Type *</option>
+        <option>Single Family Home</option>
+        <option>Multi-Family / Apartment</option>
+        <option>Condo / Townhome</option>
+        <option>Commercial</option>
+        <option>Other</option>
+      </select>
+
+      <label for="squarefeet">Square Footage *</label>
+      <select name="squarefeet" id="squarefeet" required>
+        <option value="">Square Footage *</option>
+        <option>&lt;1000 sq ft</option>
+        <option>1000-1500 sq ft</option>
+        <option>1500-2500 sq ft</option>
+        <option>2500-3500 sq ft</option>
+        <option>3500+ sq ft</option>
+      </select>
+
+      <label for="message">Tell us about your project *</label>
+      <textarea name="message" id="message" required placeholder="Tell us about your project and needs..."></textarea>
+
+      <button type="submit">Send Message</button>
+      <div id="form-success" class="form-success" style="display:none;">Thank you! We have received your message and will get back to you soon.</div>
     </form>
   </section>
   <footer>
