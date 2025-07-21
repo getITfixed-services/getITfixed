@@ -4,399 +4,379 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Brighter Arizona LED - Professional Lighting Solutions</title>
-
-  <!-- 1. Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- 2. Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
+  <!-- Google Font: Poppins for crisp branding -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <style>
-    /* 3. Sunset background + global reset */
     :root {
-      --sunset: linear-gradient(135deg, #ff7e5f 0%, #feb47b 50%, #4a3b89 100%);
+      --blue-dark: #111726;
+      --blue-mid: #232941;
+      --yellow: #ffd839;
+      --text-light: #fff;
+      --card-bg: #181E2D;
+      --gray: #c7cbe5;
+      --service-bg: #21263a;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--sunset) no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      line-height: 1.6;
-      text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    html, body {
+      background: var(--blue-dark);
+      color: var(--text-light);
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0; padding: 0;
     }
-
-    /* 4. Rest of your original styles — unchanged but pasted in full */
-    header {
-      background: linear-gradient(135deg, #000, #1a1a1a);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; bottom: 0; right: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)" opacity="0.3"/><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)" opacity="0.5"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.1)" opacity="0.4"/></svg>');
-      animation: sparkle 5s ease-in-out infinite;
-    }
-    @keyframes sparkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.8; }
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      position: relative;
-      z-index: 1;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-    }
-    header p {
-      font-size: 1.3rem;
-      opacity: 0.95;
-      font-weight: 300;
-      position: relative;
-      z-index: 1;
-    }
-
+    /* NAV BAR */
     nav {
-      background: rgba(0,0,0,.25);
-      backdrop-filter: blur(6px);
-      border-radius: 12px;
-      margin: 1rem;
-      padding: .5rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.2);
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    nav a {
-      text-decoration: none;
-      color: #ddd;
-      font-weight: 600;
-      font-size: 1.1rem;
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
-      position: relative;
-      overflow: visible;
-      backface-visibility: hidden;
-      transform: translateZ(0);
-    }
-    nav a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: left 0.4s ease-in-out;
-      pointer-events: none;
-    }
-    nav a:hover {
-      background: #444;
-      color: #fff;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-      transform: translateY(-2px);
-    }
-    nav a:hover::before {
-      left: 100%;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    section {
-      margin-bottom: 4rem;
-      padding: 3rem 2rem;
-      background: rgba(30,30,30,.75);
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    /* 5. Button glow (CTA style) */
-    .btn-primary,
-    form button {
-      background: #ff7e5f;
-      border: none;
-      border-radius: 8px;
-      padding: 1rem 2rem;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: box-shadow .3s;
-    }
-    .btn-primary:hover,
-    form button:hover {
-      box-shadow: 0 0 20px #ff7e5f;
-    }
-
-    /* 6. Original grid & card styles */
-    .about-content {
-      text-align: center;
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      color: #ccc;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-    .service-card {
-      background: #292929;
-      border-radius: 15px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      border: 1px solid #333;
-      transition: transform 0.3s;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-    }
-    .service-card h3 {
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-    .service-card p {
-      color: #aaa;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .gallery-item {
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      position: relative;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-    .gallery-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      color: white;
-      font-weight: bold;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      color: #aaa;
-      margin-top: 4rem;
-    }
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-    }
-    .contact-info {
-      background: #292929;
-      padding: 2rem;
-      border-radius: 15px;
-      color: #ddd;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-      text-align: center;
-    }
-    .contact-info h3 {
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-    }
-    .contact-item {
-      font-size: 1.1rem;
-      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      color: #bbb;
+      justify-content: space-between;
+      background: var(--blue-mid);
+      padding: 1.1rem 2.5vw;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    .contact-item i {
-      font-size: 1.4rem;
-      width: 30px;
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--yellow);
+      letter-spacing: 1px;
+      gap: 0.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5vw;
+      font-size: 1.08rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.4em 0.9em;
+      border-radius: 7px;
+      transition: background 0.2s;
+    }
+    .nav-links .active,
+    .nav-links a:hover {
+      color: var(--yellow);
+      background: #26305a;
+    }
+    .nav-btn {
+      background: var(--yellow);
+      color: var(--blue-dark);
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.64em 1.3em;
+      cursor: pointer;
+      margin-left: 1vw;
+      transition: background 0.15s;
+    }
+    .nav-btn:hover {
+      background: #ffe56d;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 48vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.2rem 1.6rem 1.2rem;
+      background: var(--blue-dark);
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 2.7rem;
+      line-height: 1.14;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3em;
+      letter-spacing: 1.5px;
+    }
+    .hero-title .highlight {
+      color: var(--yellow);
+      display: block;
+      margin-top: 0.04em;
+    }
+    .hero-sub {
+      font-size: 1.16rem;
+      color: var(--gray);
+      margin-bottom: 2.3em;
+      font-weight: 400;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .hero-actions button,
+    .hero-actions input[type="text"] {
+      border-radius: 8px;
+      border: none;
+      font-size: 1.05rem;
+      font-family: inherit;
+      height: 2.85rem;
+      outline: none;
+    }
+    .hero-actions button {
+      background: var(--yellow);
+      color: var(--blue-dark);
+      font-weight: 600;
+      padding: 0 1.7rem;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .hero-actions button:hover {
+      background: #ffe56d;
+    }
+    .hero-actions input[type="text"] {
+      background: #fff;
+      color: #181e2d;
+      padding: 0 1rem;
+      width: 210px;
+      max-width: 34vw;
+      border: none;
+      font-weight: 600;
+    }
+
+    /* SECTION: SERVICES */
+    .services-section {
+      background: #232941;
+      padding: 3.8em 1.3em 2.5em;
+      text-align: center;
+    }
+    .section-title {
+      color: var(--yellow);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.2em;
+    }
+    .section-sub {
+      color: #e8e9f1;
+      font-weight: 400;
+      font-size: 1.15rem;
+      margin-bottom: 2em;
+    }
+    .services-cards {
+      display: flex;
+      gap: 2.1vw;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      max-width: 1100px;
+      padding: 0;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 2.1em 1.5em 1.5em 1.5em;
+      box-shadow: 0 3px 18px rgba(10,15,30,0.08);
+      width: 310px;
+      min-width: 230px;
+      color: #fff;
+      margin-bottom: 1.2em;
+      flex: 1;
+      min-height: 225px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .service-card .icon {
+      font-size: 2.2rem;
+      color: var(--yellow);
+      margin-bottom: 0.7em;
+    }
+    .service-card h3 {
+      font-size: 1.21rem;
+      font-weight: 700;
+      margin-bottom: 0.34em;
+    }
+    .service-card p {
+      font-size: 1.05rem;
+      color: #b3b8d0;
+      margin-top: 0.3em;
+    }
+
+    /* WHY CHOOSE US */
+    .why-section {
+      background: var(--blue-dark);
+      padding: 3.5em 1.3em 2.1em;
+      text-align: center;
+    }
+    .why-title {
+      color: var(--yellow);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.11em;
+    }
+    .why-sub {
+      color: #e8e9f1;
+      font-size: 1.11rem;
+      margin-bottom: 2em;
+      font-weight: 400;
+    }
+    .why-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2vw;
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+    .why-card {
+      background: var(--card-bg);
+      border-radius: 13px;
+      box-shadow: 0 2.5px 12px rgba(20,25,49,0.09);
+      flex: 1;
+      min-width: 235px;
+      max-width: 300px;
+      margin-bottom: 1.2em;
+      padding: 1.55em 1.1em 1.1em;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1em;
+    }
+    .why-card .icon {
+      font-size: 1.85rem;
+      color: var(--yellow);
+      flex-shrink: 0;
+      margin-top: 0.1em;
+    }
+    .why-card .why-text {
+      flex: 1;
+    }
+    .why-card h4 {
+      font-size: 1.09rem;
+      margin: 0 0 0.22em 0;
+      font-weight: 700;
       color: #fff;
     }
-    form {
-      background: #292929;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    .why-card p {
+      color: #b3b8d0;
+      font-size: 1.03rem;
+      margin: 0;
     }
-    form input, form textarea {
-      width: 100%;
-      padding: 1rem;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      font-family: inherit;
-      background: #1e1e1e;
-      color: #eee;
-      resize: vertical;
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2.2em 1em 2.7em 1em;
+      background: var(--blue-mid);
+      color: #ccc;
+      font-size: 1.04rem;
+      letter-spacing: 1.2px;
+      font-family: 'Poppins', Arial, sans-serif;
+      margin-top: 2.5em;
     }
-    form input::placeholder, form textarea::placeholder {
-      color: #999;
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px){
+      .services-cards, .why-grid { flex-direction: column; align-items: center; gap: 1.5em;}
+      .service-card, .why-card { max-width: 95vw; }
     }
-    form textarea {
-      min-height: 120px;
+    @media (max-width: 700px){
+      .hero-title { font-size: 2rem; }
+      .nav-logo { font-size: 1.11rem;}
     }
-    form button {
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      width: 100%;
+    @media (max-width: 450px){
+      .hero-title { font-size: 1.3rem; }
+      .section-title, .why-title { font-size: 1.25rem;}
+      .hero-actions { flex-direction: column; gap: 0.6em;}
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Brighter Arizona LED</h1>
-    <p>Professional Permanent & Holiday Lighting Solutions</p>
-  </header>
-
+  <!-- NAVIGATION -->
   <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-logo">
+      <i class="fa-solid fa-sun"></i>
+      Brighter Arizona
+    </div>
+    <div class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#quote">Free Quote</a>
+      <button class="nav-btn">Get a Free Quote</button>
+    </div>
   </nav>
 
-  <main>
-    <section id="home">
-      <h2>Welcome to Brighter Arizona LED</h2>
-      <div class="about-content">
-        <p>Transform your Arizona home with our premium LED lighting solutions. We specialize in permanent outdoor lighting systems and stunning holiday displays that enhance your property's beauty while providing energy-efficient illumination year-round.</p>
-      </div>
-    </section>
+  <!-- HERO / TOP SECTION -->
+  <section class="hero">
+    <div class="hero-title">
+      Illuminate Your World with
+      <span class="highlight">Brighter Arizona</span>
+    </div>
+    <div class="hero-sub">
+      Premium, energy-efficient LED lighting solutions for residential and commercial spaces across Arizona.
+    </div>
+    <div class="hero-actions">
+      <button>Get a Free Consultation</button>
+      <input type="text" placeholder="" />
+    </div>
+  </section>
 
-    <section id="services">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3><i class="fas fa-home"></i> Permanent LED Installations</h3>
-          <p>Custom permanent LED lighting systems designed specifically for Arizona-style homes. Energy-efficient, weather-resistant, and built to last.</p>
-        </div>
-        <div class="service-card">
-          <h3><i class="fas fa-star"></i> Holiday Lighting</h3>
-          <p>Spectacular Christmas and holiday light installations that make your home the centerpiece of the neighborhood during the festive season.</p>
-        </div>
-        <div class="service-card">
-          <h3><i class="fas fa-tools"></i> Professional Installation</h3>
-          <p>Expert installation by certified technicians ensuring safety, reliability, and stunning results that exceed your expectations.</p>
-        </div>
-        <div class="service-card">
-          <h3><i class="fas fa-headset"></i> Ongoing Support</h3>
-          <p>Comprehensive maintenance and support services to keep your lighting system operating at peak performance year after year.</p>
-        </div>
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="section-title">Our Services</div>
+    <div class="section-sub">
+      Lighting solutions for every need.
+    </div>
+    <div class="services-cards">
+      <div class="service-card">
+        <span class="icon"><i class="fas fa-home"></i></span>
+        <h3>Residential Lighting</h3>
+        <p>Enhance your home’s beauty and efficiency with our custom lighting designs.</p>
       </div>
-    </section>
+      <div class="service-card">
+        <span class="icon"><i class="fas fa-building"></i></span>
+        <h3>Commercial Lighting</h3>
+        <p>Brighten your business space, improve productivity, and save on energy costs.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon"><i class="fas fa-screwdriver-wrench"></i></span>
+        <h3>Custom Installations</h3>
+        <p>From landscape to architectural lighting, we bring your unique vision to life.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="gallery">
-      <h2>Our Work</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="images/image1.png" alt="Warm white LED install" />
-          <div class="gallery-overlay">Permanent Warm White Installation</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/image2.png" alt="Blue and red LED lighting" />
-          <div class="gallery-overlay">Blue & Red Lighting Setup</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/image3.png" alt="Holiday lighting with red and white LEDs" />
-          <div class="gallery-overlay">Holiday Red & White Lights</div>
+  <!-- WHY CHOOSE US -->
+  <section class="why-section">
+    <div class="why-title">Why Choose Us?</div>
+    <div class="why-sub">The Brighter Arizona difference.</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="icon"><i class="fas fa-leaf"></i></span>
+        <div class="why-text">
+          <h4>Energy Savings</h4>
+          <p>Our LED solutions can cut your lighting energy consumption by up to 80%.</p>
         </div>
       </div>
-    </section>
-
-    <section id="about">
-      <h2>About Brighter Arizona LED</h2>
-      <div class="about-content">
-        <p>Based in the heart of Arizona, Brighter Arizona LED is your premier destination for professional lighting solutions. We understand the unique architecture and climate challenges of the Southwest, and we've tailored our services to perfectly complement Arizona's distinctive home styles.</p><br/>
-        <p>Our team of certified lighting professionals brings years of experience and a commitment to excellence that ensures every project exceeds expectations. From permanent LED installations that enhance your home's natural beauty to spectacular holiday displays that create magical memories, we're here to illuminate your world.</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <div class="contact-item"><i class="fas fa-phone"></i> (480) 389-6002</div>
-          <div class="contact-item"><i class="fas fa-envelope"></i> brighterarizonaled@gmail.com</div>
-          <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Phoenix, Arizona</div>
-          <div class="contact-item"><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</div>
+      <div class="why-card">
+        <span class="icon"><i class="fas fa-shield-halved"></i></span>
+        <div class="why-text">
+          <h4>Quality & Durability</h4>
+          <p>We use only top-tier, long-lasting products backed by robust warranties.</p>
         </div>
-        <form>
-          <input type="text" name="name" placeholder="Your Name *" required>
-          <input type="email" name="email" placeholder="Your Email *" required>
-          <input type="tel" name="phone" placeholder="Phone Number">
-          <textarea name="message" placeholder="Tell us about your project *" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
       </div>
-    </section>
-  </main>
+      <div class="why-card">
+        <span class="icon"><i class="fas fa-bolt"></i></span>
+        <div class="why-text">
+          <h4>Expert Installation</h4>
+          <p>Our certified electricians ensure a safe, clean, and perfect installation every time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Brighter Arizona LED. All rights reserved.</p>
+    &copy; 2025 Brighter Arizona LED. All rights reserved.
   </footer>
 </body>
 </html>
