@@ -202,20 +202,26 @@
       margin-bottom: 0.2em;
       display: block;
     }
-    .quote-form textarea { min-height: 94px;}
-    .quote-form input, .quote-form select, .quote-form textarea {
+    .quote-form textarea { min-height: 94px; resize: vertical; }
+    
+    /* UPDATED: Make input, select, and textarea same width and style */
+    .quote-form input,
+    .quote-form select,
+    .quote-form textarea {
       width: 100%;
-      padding: 1em;
+      box-sizing: border-box;
+      display: block;
       border-radius: 9px;
-      border: none;
-      margin-bottom:0.7em;
-      font-size:1.045rem;
       background: #191c28;
       color: #fff;
-      resize: vertical;
+      padding: 1em;
+      font-size: 1.045rem;
       font-family: inherit;
+      border: none;
+      margin-bottom: 0.7em;
     }
-    .quote-form input::placeholder, .quote-form textarea::placeholder { color:#a5adc2;}
+    .quote-form input::placeholder,
+    .quote-form textarea::placeholder { color:#a5adc2;}
     .quote-form button {
       background: var(--yellow);
       color: var(--blue-dark);
@@ -232,6 +238,7 @@
     }
     .quote-form button:hover { background: #ffe76b;}
     .form-success { background: #dbffd5; color: #104521; padding: 1em; border-radius: 9px; font-size: 1.13rem; text-align: center;}
+
     @media (max-width: 900px){
       .services-cards, .why-cards, .testimonials-cards, .gallery-container { flex-direction:column; align-items:center; gap:1.5em;}
       .service-card, .why-card, .gallery-card, .testimonial { max-width:97vw;}
@@ -240,7 +247,6 @@
       .hero-title {font-size:2.1rem;}
       .services-title, .why-title, .testimonials-title, .gallery-title, .quote-section h2 {font-size:1.25rem;}
     }
-    /* --- ADDED FOR MOBILE QUOTE FORM FIX --- */
     @media (max-width: 530px) {
       .quote-form {
         max-width: 98vw;
@@ -254,8 +260,6 @@
         padding-right: 0;
       }
     }
-    /* --- END MOBILE QUOTE FORM FIX --- */
-
   </style>
 </head>
 <body>
@@ -452,3 +456,4 @@
   </script>
 </body>
 </html>
+
