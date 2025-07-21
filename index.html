@@ -2,178 +2,216 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Get a Quote | Brighter Arizona LED</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Brighter Arizona LED | Free Quote</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f8fc;
-      color: #222;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 1rem 1rem;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f6f7fb;
       color: #21244c;
     }
-
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: #555a77;
-    }
-
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
-    }
-
-    form {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      max-width: 420px;
+    .header {
       width: 100%;
-    }
-
-    form h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-      color: #21244c;
-    }
-
-    form label {
-      font-weight: 600;
-      display: block;
-      margin: 0.75rem 0 0.3rem;
-      color: #333;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ccd2e0;
-      border-radius: 6px;
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-    }
-
-    form textarea {
-      resize: vertical;
-      height: 100px;
-    }
-
-    form button {
-      width: 100%;
-      background-color: #21244c;
+      background: #222a48;
       color: #fff;
-      padding: 0.9rem;
-      font-size: 1rem;
+      padding: 2rem 1rem 1.3rem 1rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2.2rem;
       font-weight: bold;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 2.6rem auto 1.5rem auto;
+      gap: 2.5rem;
+      justify-content: center;
+    }
+    .work-section, .form-section {
+      background: #fff;
+      box-shadow: 0 4px 24px 0 rgba(42,53,80,0.10);
+      border-radius: 16px;
+      padding: 2rem 1.2rem 1.7rem 1.2rem;
+      min-width: 320px;
+    }
+    .work-section {
+      flex: 1 1 325px;
+      max-width: 410px;
+    }
+    .work-section h2 {
+      font-size: 1.19rem;
+      margin-bottom: 1.2rem;
+      color: #21244c;
+      font-weight: 700;
+      border-bottom: 2px solid #e3e6f1;
+      padding-bottom: 0.5em;
+      letter-spacing: 0.6px;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 9px;
+      box-shadow: 0 2px 8px rgba(34,42,72,0.05);
+      margin-bottom: 0.1rem;
+    }
+    .gallery .caption {
+      text-align: center;
+      font-size: 0.96rem;
+      color: #495079;
+      margin-bottom: 0.7em;
+    }
+    .form-section {
+      flex: 1 1 355px;
+      max-width: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .form-section h2 {
+      font-size: 1.15rem;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #21244c;
+    }
+    form label {
+      font-size: 1rem;
+      margin: 0.9rem 0 0.35rem 0;
+      display: block;
+      color: #3c4363;
+      font-weight: 500;
+    }
+    form input, form textarea {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.8rem;
+      border-radius: 7px;
+      border: 1px solid #d1d5eb;
+      background: #f7f8fb;
+      margin-bottom: 0.2rem;
+      margin-top: 0.1rem;
+      resize: none;
+      box-sizing: border-box;
+      outline: none;
+    }
+    form textarea {
+      height: 85px;
+    }
+    .quote-btn {
+      margin-top: 1.4rem;
+      background: linear-gradient(90deg,#ffcf3c 0,#ffc404 100%);
+      color: #21244c;
       border: none;
-      border-radius: 6px;
-      margin-top: 1rem;
+      font-size: 1.11rem;
+      font-weight: 700;
+      padding: 0.93rem 0;
+      border-radius: 9px;
       cursor: pointer;
-      transition: background 0.2s ease;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(34,42,72,0.07);
     }
-
-    form button:hover {
-      background-color: #1a1d3f;
+    .quote-btn:hover {
+      background: linear-gradient(90deg, #ffc404 0, #ffcf3c 100%);
     }
-
     .confirmation {
       text-align: center;
-      background: #e8ffe5;
-      border: 1px solid #94d89d;
-      padding: 2rem;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #2b6d2b;
-      margin-top: 2rem;
+      background: #ebffe7;
+      color: #1fa42e;
+      font-size: 1.1em;
+      border: 1px solid #97e699;
+      border-radius: 8px;
+      padding: 1.3em;
+      margin-top: 1.7em;
       display: none;
     }
-
-    footer {
+    .footer {
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #888;
+      font-size: 0.97rem;
+      color: #757d9e;
+      padding: 1.3em 0 2em 0;
     }
-
-    @media (max-width: 500px) {
-      header h1 {
-        font-size: 2rem;
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 0.5em;
       }
-
-      form {
-        padding: 1.5rem 1rem;
+      .work-section, .form-section {
+        max-width: 95vw;
       }
     }
   </style>
 </head>
 <body>
+  <div class="header">
+    <h1>Brighter Arizona LED</h1>
+    <div style="margin-top:0.65em; font-size:1.1rem; font-weight:400; letter-spacing:0.4px;">
+      Transform Your Home With Permanent LED Lighting
+    </div>
+  </div>
 
-  <header>
-    <h1>Get Your Custom Quote</h1>
-    <p>Professional LED Lighting Installations in Arizona</p>
-  </header>
-
-  <main>
-    <form id="quote-form">
-      <h2>Request a Free Quote</h2>
-
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required />
-
-      <label for="details">Project Details</label>
-      <textarea id="details" name="details" placeholder="Tell us about your project..." required></textarea>
-
-      <button type="submit">Get My Quote</button>
-
-      <div class="confirmation" id="confirmation">
-        ✅ Thank you! A member of our team will reach out shortly.
+  <div class="main-container">
+    <div class="work-section">
+      <h2>Our Work</h2>
+      <div class="gallery">
+        <div>
+          <img src="our-work1.jpg" alt="Finished home LED lighting" />
+          <div class="caption">Home upgrade - warm white perimeter LED</div>
+        </div>
+        <div>
+          <img src="our-work2.jpg" alt="Patio lighting project" />
+          <div class="caption">Patio & backyard color accent install</div>
+        </div>
+        <div>
+          <img src="our-work3.jpg" alt="Seasonal lighting" />
+          <div class="caption">Seasonal color setup for the holidays</div>
+        </div>
+        <!-- Add or swap image blocks for your own photos -->
       </div>
-    </form>
-  </main>
+    </div>
+    <div class="form-section">
+      <h2>Get Your Free Quote</h2>
+      <form id="quote-form" autocomplete="off">
+        <label for="name">Name*</label>
+        <input required type="text" id="name" name="name" placeholder="Your Name" />
 
-  <footer>
-    &copy; 2025 Brighter Arizona LED. All rights reserved.
-  </footer>
+        <label for="email">Email*</label>
+        <input required type="email" id="email" name="email" placeholder="you@email.com" />
 
+        <label for="phone">Phone*</label>
+        <input required type="tel" id="phone" name="phone" placeholder="(XXX) XXX-XXXX" />
+
+        <label for="details">Project Details</label>
+        <textarea id="details" name="details" placeholder="Briefly describe your project..."></textarea>
+
+        <button class="quote-btn" type="submit">Request Quote</button>
+
+        <div class="confirmation" id="confirmation">Thank you! We’ll be in touch soon.</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Brighter Arizona LED
+  </div>
   <script>
-    const form = document.getElementById("quote-form");
-    const confirmation = document.getElementById("confirmation");
-
-    form.addEventListener("submit", (e) => {
+    const form = document.getElementById('quote-form');
+    const confirmation = document.getElementById('confirmation');
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-
-      // You can send form data to an endpoint here using fetch or email service
       form.reset();
-      confirmation.style.display = "block";
+      confirmation.style.display = 'block';
+      setTimeout(() => { confirmation.style.display = 'none'; }, 6000);
     });
   </script>
 </body>
