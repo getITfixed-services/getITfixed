@@ -209,7 +209,7 @@
       border-radius: 9px;
       border: none;
       margin-bottom:0.7em;
-      font-size: 1.045rem;
+      font-size:1.045rem;
       background: #191c28;
       color: #fff;
       resize: vertical;
@@ -240,6 +240,22 @@
       .hero-title {font-size:2.1rem;}
       .services-title, .why-title, .testimonials-title, .gallery-title, .quote-section h2 {font-size:1.25rem;}
     }
+    /* --- ADDED FOR MOBILE QUOTE FORM FIX --- */
+    @media (max-width: 530px) {
+      .quote-form {
+        max-width: 98vw;
+        width: 98vw;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 1.2em 0.5em 1em 0.5em;
+      }
+      .quote-section {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    /* --- END MOBILE QUOTE FORM FIX --- */
+
   </style>
 </head>
 <body>
