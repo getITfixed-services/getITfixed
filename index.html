@@ -1,278 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>getITfixed | Tech Help You Can Trust</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet" />
   <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      margin: 0; background: #ecf0f4;
+      background: #ecf0f4;
       color: #20222b;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .nav {
-      background: #161921f2;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    a {
+      color: #007bff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* Navigation */
+    nav.navbar {
+      background: rgba(22, 25, 33, 0.95);
       height: 68px;
-      box-shadow: 0 1px 8px #0002;
-      position: sticky; top: 0; z-index: 10;
-    }
-    .nav .logo {
-      font-weight: 700; font-size: 1.5rem; letter-spacing: 1px; 
-      margin-right: 2.7vw;
-    }
-    .nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.07rem;
-      margin: 0 1.3vw;
-      transition: color .18s;
-      opacity: 0.9;
-    }
-    .nav a.active, .nav a:hover { color: #00A3FF; opacity: 1; }
-    .call-btn {
-      background: #00A3FF;
-      color: #fff;
-      padding: .58em 1.38em;
-      border-radius: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2vw;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.13);
+      position: sticky;
+      top: 0;
+      z-index: 100;
       font-weight: 600;
-      margin-left: 2vw;
-      text-decoration: none;
-      font-size: 1.07rem;
-      box-shadow: 0 4px 24px #00a3ff36;
-      transition: background .18s;
     }
-    .call-btn:hover { background: #0182cb; }
+    nav.navbar .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+    nav.navbar .nav-links {
+      display: flex;
+      gap: 2vw;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav.navbar .nav-links a {
+      color: #fff;
+      font-size: 1.05rem;
+      transition: color 0.2s ease;
+      padding: 0.3rem 0.4rem;
+    }
+    nav.navbar .nav-links a:hover,
+    nav.navbar .nav-links a.active {
+      color: #00a3ff;
+    }
+    nav.navbar .btn-book {
+      background-color: #00a3ff;
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.55em 1.5em;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(0,163,255,0.32);
+      transition: background-color 0.2s ease;
+      text-decoration: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+    nav.navbar .btn-book:hover {
+      background-color: #0182cb;
+      box-shadow: 0 6px 24px rgba(1,130,203,0.48);
+    }
 
     /* Hero */
-    .hero-bg {
-      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=1200&q=80') center center/cover no-repeat;
-      min-height: 370px;
+    .hero-section {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      min-height: 400px;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: center;
-      padding-top: 54px;
+      padding: 4rem 1.5rem 5rem;
+      margin-bottom: 3rem;
     }
-    .hero {
-      background: rgba(255,255,255,0.76);
+    .hero-glass {
+      background: rgba(255 255 255 / 0.76);
       border-radius: 42px;
-      box-shadow: 0 8px 36px #16192128;
       max-width: 460px;
-      width: 96vw;
-      margin: 0 auto;
-      display: flex; flex-direction: column; align-items: center;
-      padding: 2.7rem 2.1rem 2.5rem 2.1rem;
-      text-align: center;
+      width: 100%;
+      padding: 2.7rem 2.4rem 2.5rem 2.4rem;
+      box-shadow: 0 8px 36px rgba(22, 25, 33, 0.15);
       backdrop-filter: blur(7px);
-      border: 2px solid #fff3;
-      /* Glass effect */
-    }
-    .hero h1 {
-      font-size: 2.25rem; font-weight: 700;
-      color: #1a2c41;
-      margin-bottom: .7rem;
-      letter-spacing: -.7px;
-      text-shadow: 0 2px 14px #fff5;
-    }
-    .hero .subtitle {
-      color: #3c5280cc;
-      font-size: 1.22rem;
-      margin-bottom: 1.6rem;
-      max-width: 320px;
-    }
-    .hero .cta-btn {
-      background: #00A3FF;
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      padding: .78em 2.2em;
-      font-size: 1.17rem;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: .02em;
-      box-shadow: 0 4px 24px #00a3ff41;
-      transition: background .18s;
-      margin-top: .2rem;
-      margin-bottom: .2rem;
-    }
-    .hero .cta-btn:hover { background: #0182cb; }
-
-    /* Service Cards */
-    .section {
-      max-width: 960px;
-      margin: 3rem auto 0 auto;
-      padding: 0 2vw;
-    }
-    .section h2 {
-      font-size: 1.41rem;
-      font-weight: 700;
-      letter-spacing: -.3px;
-      color: #0c2040;
-      margin-bottom: 1.2rem;
+      border: 2px solid rgba(255,255,255,0.24);
       text-align: center;
+      color: #1a2c41;
     }
-    .cards {
+    .hero-glass h1 {
+      font-size: 2.35rem;
+      font-weight: 700;
+      margin: 0 0 0.7rem 0;
+      letter-spacing: -0.7px;
+      text-shadow: 0 2px 14px rgba(255 255 255 / 0.9);
+    }
+    .hero-glass p.subtitle {
+      font-size: 1.22rem;
+      color: #3c5280cc;
+      margin-bottom: 1.6rem;
+      line-height: 1.3;
+    }
+    .hero-glass .cta-btn {
+      background-color: #00a3ff;
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.78em 2.4em;
+      font-size: 1.18rem;
+      font-weight: 600;
+      box-shadow: 0 4px 24px rgba(0, 163, 255, 0.26);
+      transition: background-color 0.18s ease;
+      user-select: none;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .hero-glass .cta-btn:hover {
+      background-color: #0182cb;
+      box-shadow: 0 6px 32px rgba(1,130,203,0.38);
+    }
+
+    /* Section Titles */
+    section h2.section-title {
+      font-size: 1.44rem;
+      font-weight: 700;
+      color: #0c2040;
+      margin-bottom: 1.3rem;
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+
+    /* Feature Cards - "Why Choose getITfixed?" */
+    .features-container {
+      max-width: 1000px;
+      margin: 0 auto 3rem auto;
+      padding: 0 2vw;
       display: flex;
-      gap: 1.2rem;
       flex-wrap: wrap;
+      gap: 1.5rem;
       justify-content: center;
-      margin-bottom: 2.2rem;
     }
-    .card {
-      background: #fff;
-      border-radius: 26px;
-      box-shadow: 0 2px 18px #25315111;
-      padding: 1.44rem 1.2rem;
-      width: 246px;
+    .feature-card {
+      flex: 1 1 280px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 18px rgba(37, 49, 81, 0.07);
+      padding: 2rem 1.8rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-bottom: .8rem;
-      transition: box-shadow .22s;
-      border: 1px solid #e2edf8;
-      min-height: 159px;
+      user-select: none;
+      transition: box-shadow 0.3s ease;
+      border: 1.5px solid #e7ebf1;
+      min-height: 230px;
     }
-    .card:hover { box-shadow: 0 8px 32px #00a3ff11; }
-    .card .icon {
+    .feature-card:hover {
+      box-shadow: 0 10px 34px #00a3ff26;
+      border-color: #00a3ff;
+    }
+    .feature-icon {
       font-size: 2.2rem;
-      color: #00A3FF;
-      margin-bottom: .5rem;
+      color: #00a3ff;
+      margin-bottom: 12px;
     }
-    .card h3 { margin: 0; font-size: 1.14rem; font-weight: 600; color: #182042; margin-bottom: .32rem; }
-    .card p { margin: 0; color: #2f3a4e; font-size: 1.03rem; opacity: 0.93; }
+    .feature-card h3 {
+      margin: 0 0 0.6rem 0;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #182042;
+    }
+    .feature-card p {
+      font-size: 1.06rem;
+      color: #2f3a4e;
+      opacity: 0.9;
+      line-height: 1.35;
+      margin: 0;
+    }
 
-    /* Reviews */
-    .reviews-section .cards { margin-bottom: 1.1rem; }
-    .review-card {
-      background: #f9fbff;
-      border-radius: 24px;
-      box-shadow: 0 2px 14px #1b395120;
-      padding: 1.05rem 1rem;
-      min-width: 200px;
-      max-width: 300px;
-      text-align: left;
-      color: #1a1a1a;
-      text-decoration: none;
-      transition: box-shadow .17s, background .11s;
-      border: 1.5px solid #e3ecef;
-      display: block;
+    /* Plans Section */
+    .plans-section {
+      max-width: 950px;
+      margin: 0 auto 3rem auto;
+      padding: 0 2vw;
     }
-    .review-card:hover {
-      box-shadow: 0 6px 24px #21237a25;
-      background: #e5f4ff;
+    .plans-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      justify-content: center;
     }
-    .reviewer-name { font-weight: 600; }
-    .stars { color: #00A3FF; font-size: 1rem; margin-left: .31em; }
-    .more-reviews-link {
-      color: #00A3FF;
-      text-decoration: underline;
-      font-weight: 500;
+    .plan-card {
+      background: white;
+      border-radius: 23px;
+      box-shadow: 0 2px 24px rgba(37, 49, 81, 0.09);
+      padding: 1rem 2rem 2.3rem 2rem;
+      flex: 1 1 280px;
+      border: 1.5px solid #e7ebf1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .plan-card:hover {
+      border-color: #00a3ff;
+      box-shadow: 0 10px 36px #00a3ff25;
+    }
+    .plan-title {
+      font-weight: 700;
+      font-size: 1.45rem;
+      margin: 1rem 0 0.3rem 0;
+      color: #101c3c;
+    }
+    .plan-price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #00a3ff;
+      margin-bottom: 1.3rem;
+    }
+    .plan-features {
+      list-style: none;
+      padding-left: 1.25rem;
+      margin: 0 0 1.6rem 0;
+      width: 100%;
+      color: #333c5a;
+      font-size: 0.98rem;
+      line-height: 1.35;
+      user-select: text;
+    }
+    .plan-features li::before {
+      content: "✔";
+      color: #00a3ff;
+      font-weight: 700;
+      margin-right: 8px;
+      user-select: none;
+    }
+    .plan-cta {
+      margin-top: auto;
+      background-color: #00a3ff;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.65em 1.75em;
       font-size: 1rem;
-      display: inline-block;
+      box-shadow: 0 6px 22px rgba(0, 163, 255, 0.32);
+      transition: background-color 0.18s ease;
+      cursor: pointer;
+      user-select: none;
+      width: 100%;
+      max-width: 230px;
       text-align: center;
-      margin: .7rem auto 0 auto;
+    }
+    .plan-cta:hover {
+      background-color: #0182cb;
+      box-shadow: 0 8px 30px rgba(1, 130, 203, 0.46);
+    }
+
+    /* Gaming & Premium Services Section */
+    .gaming-section {
+      max-width: 950px;
+      margin: 0 auto 3rem auto;
+      padding: 0 2vw;
+    }
+    .gaming-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      justify-content: center;
+    }
+    .gaming-card {
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 2px 22px rgba(37, 49, 81, 0.07);
+      padding: 1.3rem 1.5rem 1.8rem 1.5rem;
+      width: 290px;
+      display: flex;
+      flex-direction: column;
+      color: #21293c;
+      border: 1.5px solid #e6ebf4;
+      user-select: none;
+      transition: box-shadow 0.25s ease;
+    }
+    .gaming-card:hover {
+      box-shadow: 0 10px 35px #00a3ff22;
+      border-color: #00a3ff;
+    }
+    .gaming-card h3 {
+      font-weight: 600;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.27rem;
+    }
+    .gaming-card p {
+      margin: 0 0 1.1rem 0;
+      font-size: 1rem;
+      opacity: 0.88;
+      line-height: 1.3;
+      flex-grow: 1;
+    }
+    .gaming-card .btn-book {
+      align-self: flex-start;
+      background-color: #00a3ff;
+      color: white;
+      border-radius: 9999px;
+      padding: 0.5em 1.5em;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 22px rgba(0,163,255,0.32);
+      transition: background-color 0.18s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
       cursor: pointer;
     }
-    /* Footer */
-    .footer {
-      background: #161921f2;
-      color: #fff;
+    .gaming-card .btn-book:hover {
+      background-color: #0182cb;
+      box-shadow: 0 6px 28px rgba(1,130,203,0.44);
+    }
+
+    /* Ready To Get Started Section */
+    .cta-section {
+      background: #00a3ff;
+      color: white;
       text-align: center;
-      padding: 1.0rem 0 .8rem;
-      font-size: 1rem;
-      width: 100vw;
-      margin-top: 3rem;
-      opacity: .97;
+      padding: 2.7rem 1.6rem;
+      border-radius: 32px;
+      max-width: 780px;
+      margin: 0 auto 4rem auto;
+      font-weight: 600;
+      font-size: 1.33rem;
+      user-select: none;
+      box-shadow: 0 10px 40px #00a3ffbb;
     }
-    .footer a { color: #00A3FF; text-decoration: underline; }
-    /* Responsiveness */
-    @media (max-width: 900px) {
-      .cards { flex-direction: column; align-items: center; }
-      .card, .review-card { width: 97%; max-width: 340px; }
+    .cta-section a.btn-book {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      padding: 0.7em 2.4em;
+      box-shadow: 0 6px 28px rgba(255 255 255 / 0.33);
     }
-    @media (max-width: 600px) {
-      .hero-bg { min-height: 230px; }
-      .hero {
-        padding: 1.3rem .7rem 1.3rem .7rem;
-        border-radius: 19px;
+
+    /* Footer */
+    footer.footer {
+      background: rgba(22, 25, 33, 0.95);
+      color: #fff;
+      padding: 1.3rem 1.5rem;
+      font-size: 0.92rem;
+      text-align: center;
+      user-select: none;
+    }
+    footer.footer a {
+      color: #00a3ff;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 1030px) {
+      .features-container, .plans-row, .gaming-cards {
+        justify-content: center;
       }
-      .hero h1 { font-size: 1.34rem; }
-      .hero .subtitle { font-size: 1.01rem; }
-      .cta-btn { font-size: 1rem; padding: .65em 2em; }
-      .card h3 { font-size: 1.01rem; }
-      .card p { font-size: .97rem; }
-      .section h2 { font-size: 1.01rem; }
+    }
+    @media (max-width: 760px) {
+      .nav.navbar .nav-links {
+        gap: 1rem;
+      }
+      .features-container,
+      .plans-row,
+      .gaming-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav.navbar {
+        padding: 0 1.2rem;
+      }
+      .feature-card,
+      .plan-card,
+      .gaming-card {
+        width: 94vw;
+        max-width: 420px;
+      }
+      .hero-glass {
+        max-width: 90vw;
+        padding: 2rem 1.6rem 2rem 1.6rem;
+      }
+      .hero-section {
+        min-height: 280px;
+        padding-top: 40px;
+        padding-bottom: 4rem;
+      }
+      nav.navbar .btn-book {
+        padding: 0.5em 1.1em;
+        font-size: 0.9rem;
+      }
+    }
+    @media (max-width: 430px) {
+      .hero-glass h1 {
+        font-size: 1.75rem;
+      }
+      .hero-glass p.subtitle {
+        font-size: 1rem;
+      }
+      .cta-section {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <span class="logo">getITfixed</span>
-    <a href="index.html" class="active">Home</a>
-    <a href="services.html">Services</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="tel:YOUR_NUMBER" class="call-btn">Call Now</a>
+  <nav class="navbar" role="navigation" aria-label="Primary navigation">
+    <div class="logo" aria-label="getITfixed logo">getITfixed</div>
+    <div class="nav-links" role="menubar" aria-label="Main site navigation">
+      <a href="index.html" class="active" role="menuitem" aria-current="page">Home</a>
+      <a href="services.html" role="menuitem">Services</a>
+      <a href="reviews.html" role="menuitem">Testimonials</a>
+      <a href="blog.html" role="menuitem">Blog</a>
+      <a href="contact.html" role="menuitem">Contact</a>
+    </div>
+    <a href="book-consultation.html" class="btn-book" aria-label="Book a free consultation">Book Free Consultation</a>
   </nav>
-  <div class="hero-bg">
-    <div class="hero">
-      <h1>Tech Help You Can Trust</h1>
-      <div class="subtitle">Professional, fast, and friendly IT support for home and business. <br>Specializing in senior tech help.</div>
-      <a href="tel:YOUR_NUMBER" class="cta-btn">Call Now for Help</a>
+
+  <section class="hero-section" aria-labelledby="hero-headline">
+    <div class="hero-glass">
+      <h1 id="hero-headline">Why Choose getITfixed?</h1>
+      <p class="subtitle">
+        We specialize in making technology accessible for seniors while delivering high-performance solutions for gamers.
+      </p>
+      <a href="book-consultation.html" class="cta-btn" aria-label="Book free consultation now">Book Free Consultation</a>
     </div>
-  </div>
-  <div class="section">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">&#128187;</div>
-        <h3>Computer Upgrades</h3>
-        <p>Speed up slow PCs, install new hardware, or transfer data safely.</p>
+  </section>
+
+  <section class="features-container" aria-label="Reasons to choose getITfixed">
+    <article class="feature-card" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">🛡️</div>
+      <h3>Hassle-Free Maintenance for Seniors</h3>
+      <p>Monthly plans starting at $50 with remote support, software updates, and cybersecurity protection.</p>
+      <a href="plans.html" aria-label="View plans">View Plans →</a>
+    </article>
+    <article class="feature-card" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">🎮</div>
+      <h3>High-Performance Gaming Upgrades</h3>
+      <p>Custom PC builds, overclocking, and upgrades to maximize your gaming performance and FPS.</p>
+      <a href="gaming-services.html" aria-label="Boost performance with gaming upgrades">Boost Performance →</a>
+    </article>
+    <article class="feature-card" tabindex="0">
+      <div class="feature-icon" aria-hidden="true">⭐</div>
+      <h3>Trusted Local Service</h3>
+      <p>100% satisfaction guarantee with 5-star Google reviews. All jobs completed in under an hour.</p>
+      <a href="reviews.html" aria-label="Read customer reviews">Read Reviews →</a>
+    </article>
+  </section>
+
+  <section class="plans-section" aria-labelledby="plans-title">
+    <h2 class="section-title" id="plans-title">Senior Maintenance Plans</h2>
+    <div class="plans-row" role="list">
+      <div class="plan-card" role="listitem" tabindex="0" aria-label="Basic Plan $50 per month">
+        <div class="plan-title">Basic Plan</div>
+        <div class="plan-price">$50/month</div>
+        <ul class="plan-features">
+          <li>Quarterly cleanup &amp; optimization</li>
+          <li>Software updates and security patches</li>
+          <li>Monthly remote check-ins</li>
+          <li>Email support</li>
+          <li>Basic virus protection setup</li>
+        </ul>
+        <button class="plan-cta" aria-label="Choose Basic Plan">Choose Plan</button>
       </div>
-      <div class="card">
-        <div class="icon">&#128246;</div>
-        <h3>Wi-Fi & Network Setup</h3>
-        <p>Fast, secure Wi-Fi setup and troubleshooting throughout your home.</p>
+      <div class="plan-card" role="listitem" tabindex="0" aria-label="Premium Plan $100 per month">
+        <div class="plan-title">Premium Plan</div>
+        <div class="plan-price">$100/month</div>
+        <ul class="plan-features">
+          <li>Everything in Basic Plan</li>
+          <li>Annual SSD/RAM upgrade (up to $200 value)</li>
+          <li>Advanced cybersecurity setup</li>
+          <li>Priority phone support</li>
+          <li>Bi-weekly remote check-ins</li>
+          <li>Data backup setup</li>
+        </ul>
+        <button class="plan-cta" aria-label="Choose Premium Plan">Choose Plan</button>
       </div>
-      <div class="card">
-        <div class="icon">&#128272;</div>
-        <h3>Security Camera Installation</h3>
-        <p>Professional, discrete security camera and smart home device setup.</p>
-      </div>
-      <div class="card">
-        <div class="icon">&#128222;</div>
-        <h3>Phone Help & More</h3>
-        <p>iPhone or Android help, printer fixes, and general troubleshooting.</p>
+      <div class="plan-card" role="listitem" tabindex="0" aria-label="Deluxe Plan $150 per month">
+        <div class="plan-title">Deluxe Plan</div>
+        <div class="plan-price">$150/month</div>
+        <ul class="plan-features">
+          <li>Everything in Premium Plan</li>
+          <li>Monthly in-person support visit</li>
+          <li>One-on-one tech training sessions</li>
+          <li>24/7 phone support</li>
+          <li>Emergency same-day service</li>
+          <li>Family member training included</li>
+        </ul>
+        <button class="plan-cta" aria-label="Choose Deluxe Plan">Choose Plan</button>
       </div>
     </div>
-  </div>
-  <div class="section reviews-section">
-    <h2>Client Reviews</h2>
-    <div class="cards">
-      <a href="https://g.co/kgs/XCHEhM4" class="review-card" target="_blank" rel="noopener">
-        <span class="reviewer-name">Antonio Gonzalez</span> 
-        <span class="stars">★★★★★</span>
-        <p>Fixed my office printer quickly! Great service.</p>
-      </a>
-      <a href="https://g.co/kgs/Fy9Vupa" class="review-card" target="_blank" rel="noopener">
-        <span class="reviewer-name">Analeigha Q.-Zavala</span> 
-        <span class="stars">★★★★★</span>
-        <p>My laptop was so slow—explained everything and fixed it fast.</p>
-      </a>
-      <a href="https://g.co/kgs/Vut4gsG" class="review-card" target="_blank" rel="noopener">
-        <span class="reviewer-name">Annie M</span> 
-        <span class="stars">★★★★★</span>
-        <p>PC repair and helped with my husky rescue—super patient and friendly!</p>
-      </a>
+  </section>
+
+  <section class="gaming-section" aria-labelledby="gaming-title">
+    <h2 class="section-title" id="gaming-title">Gaming &amp; Premium Services</h2>
+    <div class="gaming-cards" role="list">
+      <article class="gaming-card" role="listitem" tabindex="0" aria-label="Custom PC Builds service">
+        <h3>Custom PC Builds</h3>
+        <p>Tailored gaming rigs and workstations built to your specifications, professional assembly, and testing.</p>
+        <a href="book-service.html" class="btn-book" aria-label="Book Custom PC Builds service">Book a Service</a>
+      </article>
+      <article class="gaming-card" role="listitem" tabindex="0" aria-label="Overclocking & Upgrades service">
+        <h3>Overclocking &amp; Upgrades</h3>
+        <p>CPU and GPU overclocking, memory timing optimization, cooling upgrades, and performance benchmarking.</p>
+        <a href="book-service.html" class="btn-book" aria-label="Book Overclocking and Upgrades service">Book a Service</a>
+      </article>
+      <article class="gaming-card" role="listitem" tabindex="0" aria-label="Data Recovery & Backups service">
+        <h3>Data Recovery &amp; Backups</h3>
+        <p>Recover lost files and set up automated backup solutions, including cloud and local backups.</p>
+        <a href="book-service.html" class="btn-book" aria-label="Book Data Recovery and Backup service">Book a Service</a>
+      </article>
+      <article class="gaming-card" role="listitem" tabindex="0" aria-label="Tech Training service">
+        <h3>Tech Training</h3>
+        <p>Personalized training for seniors on technology use, video calling setup, email, smartphones, and online safety.</p>
+        <a href="book-service.html" class="btn-book" aria-label="Book Tech Training service">Book a Service</a>
+      </article>
     </div>
-    <a href="reviews.html" class="more-reviews-link">See all reviews</a>
-  </div>
-  <footer class="footer">
-    &copy; 2025 getITfixed • Local, Trusted IT Help | <a href="tel:YOUR_NUMBER">Call (YOUR_NUMBER)</a>
+  </section>
+
+  <section class="cta-section">
+    Ready to Experience the Difference?<br />
+    Whether you're a senior looking for reliable maintenance or a gamer seeking peak performance, we're here to help.<br />
+    <a href="book-consultation.html" class="btn-book" aria-label="Book your free consultation today">Book Your Free Consultation</a>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <p>
+      © 2025 getITfixed • Your trusted local expert for computer repairs, upgrades, and support.<br />
+      Contact us: <a href="tel:5551234567" aria-label="Call us at (555) 123-4567">(555) 123-4567</a> | <a href="mailto:info@getitfixed.com" aria-label="Email info@getitfixed.com">info@getitfixed.com</a>
+    </p>
   </footer>
+
+  <script>
+    // Basic event for plan buttons redirect to booking page or show alert (placeholder)
+    document.querySelectorAll('.plan-cta').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.location.href = "book-consultation.html";
+      });
+    });
+  </script>
 </body>
 </html>
+
