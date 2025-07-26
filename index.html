@@ -1,81 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>getITfixed | Tech Support for Your Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>getITfixed | Tech Help You Can Trust</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background: #f5f7fa; color: #222; line-height: 1.6; }
-    header { background: #111827; color: white; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { font-size: 1.5rem; }
-    nav a { color: white; text-decoration: none; margin-left: 1.5rem; font-weight: 600; }
-    .hero { background: #e0f2fe; padding: 4rem 2rem; text-align: center; }
-    .hero h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
-    .hero p { font-size: 1.25rem; margin-bottom: 2rem; }
-    .cta-btn { background: #2563eb; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-size: 1rem; text-decoration: none; }
-    .section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
-    .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
-    .review-card { background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.2s ease; }
-    .review-card:hover { transform: translateY(-4px); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-    .review-card h3 { margin-bottom: 0.25rem; }
-    .stars { color: #fbbf24; margin-bottom: 0.75rem; }
-    a.review-link { text-decoration: none; color: inherit; display: block; }
-    footer { background: #111827; color: white; text-align: center; padding: 1rem 0; margin-top: 3rem; }
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #f6f8fa;
+  color: #1a1a1a;
+}
+/* Header/Nav */
+.header {
+  background: #222831;
+  color: #fff;
+  box-shadow: 0 2px 8px #0002;
+  padding: 0;
+  position: sticky; top: 0; z-index: 10;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2vw; max-width: 1160px; margin: 0 auto;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 .8rem;
+  font-weight: 500;
+  opacity: 0.87;
+  transition: color 0.2s;
+}
+.nav-links a.active, .nav-links a:hover {
+  color: #21a1ff;
+}
+.call-btn {
+  background: #21a1ff;
+  color: #fff;
+  padding: .6em 1.4em;
+  border-radius: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 1em;
+  transition: background 0.2s;
+}
+.call-btn:hover { background: #1d8ddd; }
+/* Hero */
+.hero {
+  background: #fff;
+  text-align: center;
+  padding: 3.5rem 2vw 2rem 2vw;
+  box-shadow: 0 2px 10px #0001;
+}
+.hero h1 {
+  font-size: 2.3rem;
+  margin-bottom: .5rem;
+  font-weight: 700;
+}
+.subtitle {
+  color: #222831aa;
+  font-size: 1.17rem;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  margin-left: auto; margin-right: auto;
+}
+.cta-btn {
+  background: #21a1ff;
+  color: #fff;
+  padding: .7em 2.5em;
+  border-radius: 30px;
+  font-size: 1.13rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.cta-btn:hover { background: #1d8ddd; }
+/* Features */
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 900px;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 2px 14px #00000013;
+  padding: 2rem 1.5rem;
+  width: 260px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.25s;
+}
+.feature-card .icon {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+}
+.feature-card:hover { box-shadow: 0 4px 25px #21a1ff22; }
+.feature-card h3 { margin: 0 0 .5rem 0; font-weight: 600; }
+/* Reviews Preview */
+.reviews-preview {
+  background: #f4f8ff;
+  padding: 2rem 2vw 1.3rem 2vw;
+  text-align: center;
+}
+.reviews-preview h2 {
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 0.9rem;
+}
+.reviews-row {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.review-card {
+  background: #fff;
+  border-radius: 11px;
+  box-shadow: 0 2px 10px #22283118;
+  min-width: 230px;
+  max-width: 300px;
+  display: block;
+  padding: 1.2rem 1rem;
+  text-align: left;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: box-shadow 0.23s, background 0.13s;
+  margin-bottom: 1rem;
+}
+.review-card:hover {
+  box-shadow: 0 6px 20px #21a1ff2a;
+  background: #e8f3ff;
+}
+.reviewer-name { font-weight: 600; margin-right: .4em; }
+.stars { color: #faad3d; font-size: 1rem; }
+.more-reviews-link {
+  color: #21a1ff;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 1rem;
+}
+/* Footer */
+.footer {
+  background: #222831;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0 .9rem;
+  font-size: 1rem;
+  position: fixed; left: 0; right: 0; bottom: 0;
+  opacity: .95;
+  z-index: 8;
+}
+.footer a { color: #21a1ff; text-decoration: underline; }
+/* Responsiveness */
+@media (max-width: 840px) {
+  .feature-cards, .reviews-row { flex-direction: column; gap: 1.2rem; }
+  .feature-card, .review-card { min-width: unset; width: 95%; margin-left: auto; margin-right: auto;}
+}
+@media (max-width: 600px) {
+  .nav, .hero, .feature-cards, .reviews-preview {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .logo { font-size: 1.1rem; }
+  .hero h1 { font-size: 1.37rem; }
+  .cta-btn { font-size: 1rem; padding: .65em 2em; }
+  .footer { font-size: 0.83rem; }
+}
   </style>
 </head>
 <body>
-  <header>
-    <h1>getITfixed</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="reviews.html">Reviews</a>
+  <!-- Header + Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <span class="logo">getITfixed</span>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="reviews.html">Reviews</a>
+      </div>
+      <a href="tel:YOUR_NUMBER" class="call-btn">Call Now</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Tech Help You Can Trust</h2>
-    <p>From home networks to security cameras, getITfixed is your one-stop tech solution for seniors, families, and small businesses.</p>
-    <a class="cta-btn" href="tel:480-555-1234">Call Now: (480) 555-1234</a>
-  </section>
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <h1>Tech Help You Can Trust</h1>
+      <p class="subtitle">Easy, friendly, and dependable IT support for your home or small business—specializing in seniors.</p>
+      <a href="tel:YOUR_NUMBER" class="cta-btn">Call Now for Help</a>
+    </section>
 
-  <section class="section">
-    <h2 class="section-title">Real Customer Reviews</h2>
-
-    <a class="review-link" href="https://g.co/kgs/XCHEhM4" target="_blank">
-      <div class="review-card">
-        <h3>Antonio Gonzalez <span style="font-size: 0.85rem; color: #888;">(Google)</span></h3>
-        <p class="stars">★★★★★</p>
-        <p>"We were facing a major printer issue in our office. Dominic arrived same-day and had it fixed quickly — and affordably! Highly recommend getITfixed!"</p>
+    <!-- Feature Highlights -->
+    <section class="feature-cards">
+      <div class="feature-card">
+        <span class="icon">&#128241;</span>
+        <h3>In-Home & Remote IT</h3>
+        <p>We come to you or help by phone—no confusing tech talk.</p>
       </div>
-    </a>
-
-    <a class="review-link" href="https://g.co/kgs/Vut4gsG" target="_blank">
-      <div class="review-card">
-        <h3>Annie M <span style="font-size: 0.85rem; color: #888;">(Google)</span></h3>
-        <p class="stars">★★★★★</p>
-        <p>"Dominic fixed our PC fast and professionally. Even helped catch our dog when it ran out! Can't say enough great things about this service."</p>
+      <div class="feature-card">
+        <span class="icon">&#128274;</span>
+        <h3>Security & Wi-Fi Experts</h3>
+        <p>Get your cameras, Wi-Fi, and smart devices running safely and smoothly.</p>
       </div>
-    </a>
-
-    <a class="review-link" href="https://g.co/kgs/Fy9Vupa" target="_blank">
-      <div class="review-card">
-        <h3>Analeigha Q-Z <span style="font-size: 0.85rem; color: #888;">(Google)</span></h3>
-        <p class="stars">★★★★★</p>
-        <p>"My laptop was crawling. Dominic got it running like new again — super fast, fair price, and explained everything. 10/10!"</p>
+      <div class="feature-card">
+        <span class="icon">&#11088;</span>
+        <h3>Trusted by Your Neighbors</h3>
+        <p>5-star service, backed by real testimonials and local experience.</p>
       </div>
-    </a>
+    </section>
 
-    <div style="text-align: center; margin-top: 2rem;">
-      <a class="cta-btn" href="reviews.html">Read More Reviews</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 getITfixed — All rights reserved.</p>
+    <!-- Reviews Preview -->
+    <section class="reviews-preview">
+      <h2>What Our Clients Say</h2>
+      <div class="reviews-row">
+        <a href="https://g.co/kgs/XCHEhM4" class="review-card" target="_blank" rel="noopener">
+          <div>
+            <span class="reviewer-name">Antonio Gonzalez</span>
+            <span class="stars">★★★★★</span>
+            <p>Fixed my office printer quickly! Great service.</p>
+          </div>
+        </a>
+        <a href="https://g.co/kgs/Fy9Vupa" class="review-card" target="_blank" rel="noopener">
+          <div>
+            <span class="reviewer-name">Analeigha Q.-Zavala</span>
+            <span class="stars">★★★★★</span>
+            <p>My laptop was so slow—he explained everything clearly and fixed it fast.</p>
+          </div>
+        </a>
+        <a href="https://g.co/kgs/Vut4gsG" class="review-card" target="_blank" rel="noopener">
+          <div>
+            <span class="reviewer-name">Annie M</span>
+            <span class="stars">★★★★★</span>
+            <p>PC repair and helped with my “husky rescue”—so patient and friendly!</p>
+          </div>
+        </a>
+      </div>
+      <a href="reviews.html" class="more-reviews-link">See all reviews</a>
+    </section>
+  </main>
+  <!-- Fixed Professional Footer -->
+  <footer class="footer">
+    <span>&copy; 2025 getITfixed • Local, Trusted IT Help | <a href="tel:YOUR_NUMBER">Call (YOUR_NUMBER)</a></span>
   </footer>
 </body>
 </html>
+
 
