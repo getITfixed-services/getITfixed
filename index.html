@@ -23,7 +23,7 @@
     }
     a { color: var(--dark); text-decoration: none; }
     a:focus { outline: 2px dashed var(--accent);}
-    /* Navbar */
+
     .navbar {
       background: var(--dark);
       color: #fff;
@@ -87,7 +87,7 @@
       transform: translateY(-1.5px);
       color: #fff;
     }
-    /* Hero: full center column, vertical align */
+
     .hero {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       display: flex;
@@ -113,9 +113,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.4rem;
       font-weight: 700;
       line-height: 1.1;
       margin-bottom: 1.1rem;
@@ -164,7 +165,6 @@
       border: 2px solid var(--accent);
     }
     .btn-secondary:hover { background: var(--accent); color: #fff; }
-    /* Hero cards: under main hero heading, centered in row, stack on mobile */
     .hero-cards {
       display: flex;
       gap: 1.2rem;
@@ -181,7 +181,7 @@
       box-shadow: 0 2px 10px rgba(126,211,33,0.08), 0 3px 24px #00000007;
       padding: 1.5rem 1.2rem 2rem 1.2rem;
       transition: transform 0.19s, box-shadow 0.21s;
-      text-align: left;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -198,185 +198,18 @@
       font-weight: 600;
       margin-bottom: 0.6rem;
       color: var(--dark);
-      text-align: center;
     }
     .hero-card p {
       color: #5a6881;
       font-size: 1rem;
-      text-align: center;
     }
     .hero-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 20px rgba(126,211,33,0.11);
     }
-    /* Section universal (used for below sections w/ center columns) */
-    .section {
-      background: #fff;
-      max-width: var(--max-width);
-      margin: 0 auto 3vw auto;
-      margin-top: 3vw;
-      padding: 3vw 2vw;
-      border-radius: var(--card-radius);
-      box-shadow: 0 1px 8px #d3dee7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 0.7rem;
-      text-align: center;
-    }
-    .section-description {
-      color: #6880a0;
-      font-size: 1.14rem;
-      max-width: 500px;
-      margin-bottom: 2.2rem;
-      text-align: center;
-      font-weight: 400;
-    }
-    /* Features Grid neatly stacked and centered */
-    .features-grid {
-      width: 100%;
-      max-width: 950px;
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      margin-top: 1.5rem;
-      margin-bottom: 1.7rem;
-    }
-    .feature-card {
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 13px rgba(126,211,33,0.11);
-      padding: 2rem 1.2rem 2rem 1.2rem;
-      width: 310px;
-      margin: 0 auto;
-      display: flex; flex-direction: column; align-items: center;
-      text-align: center;
-      border: 1.5px solid #e3e9ef;
-      transition: box-shadow 0.17s, border 0.18s;
-      min-height: 260px;
-    }
-    .feature-card:hover { box-shadow: 0 6px 23px var(--accent)22; border-color: var(--accent);}
-    .feature-icon {
-      width: 68px; height: 68px; font-size: 2.1rem;
-      background: #e8f5e8;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      font-weight: 700;
-      margin-left: auto; margin-right: auto;
-    }
-    .feature-card h3 {
-      font-size: 1.17rem; font-weight: 600; color: var(--dark); margin-bottom: 1rem;
-    }
-    .feature-card p {
-      color: #60717c;
-      font-size: 1.02rem;
-      margin-bottom: 1.2rem;
-    }
-    .btn-outline {
-      background: none;
-      color: var(--accent);
-      padding: 0.7rem 1.7rem;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.04rem;
-      transition: all 0.18s;
-      margin-top: auto;
-    }
-    .btn-outline:hover { background: var(--accent); color: #fff;}
-    /* CTA */
-    .cta {
-      background: var(--dark);
-      color: #fff;
-      text-align: center;
-      padding: 3.5rem 1.6rem 4.2rem 1.6rem;
-      border-radius: var(--card-radius);
-      margin: 3vw auto 3vw auto;
-      max-width: 680px;
-      box-shadow: 0 6px 38px #1a2c4a20;
-      display: flex; flex-direction: column; align-items: center;
-    }
-    .cta h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.2rem;}
-    .cta p { color: #b8c5d1; font-size: 1.13rem; margin-bottom: 2rem;}
-    /* Footer */
-    .footer {
-      background: var(--dark);
-      color: #b8c5d1;
-      padding: 2.7rem 2vw 1.2rem 2vw;
-      margin-top: 3rem;
-    }
-    .footer-content {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.2rem;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: left;
-    }
-    .footer-section {
-      min-width: 185px;
-      max-width: 260px;
-      flex: 1;
-      margin-bottom: 1.4rem;
-    }
-    .footer-section h3 {
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.15rem;
-      margin-bottom: 1rem;
-    }
-    .footer-section ul {
-      list-style: none; padding-left: 0;
-    }
-    .footer-section ul li a {
-      color: #b8c5d1; font-size: 1rem;
-      transition: color 0.16s;
-    }
-    .footer-section ul li a:hover { color: var(--accent);}
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2.5rem;
-      color: #b8c5d1; font-size: 0.98rem;
-    }
-    /* Responsive adjustments */
-    @media (max-width: 1020px) {
-      .hero-cards { flex-direction: column; align-items: center; }
-      .navbar { flex-direction: column; gap: 0.8rem; }
-      .footer-content { flex-direction: column; align-items: center; gap: 1rem;}
-      .hero-container, .section { padding-left: 4vw; padding-right: 4vw;}
-    }
-    @media (max-width: 768px) {
-      .navbar { flex-direction: column; gap: 0.8rem; padding: 1.15rem 0.5rem;}
-      .nav-links { gap: 1.2rem;}
-      .hero { padding: 3vw 1vw 2vw 1vw;}
-      .hero h1 { font-size: 2.2rem;}
-      .hero-subtitle { font-size: 1.17rem;}
-      .hero-card { width: 100%; padding: 1rem 0.6rem;}
-      .section-title { font-size: 1.46rem;}
-      .features-grid { flex-direction: column; align-items: center; gap: 1.15rem;}
-      .feature-card { width: 97%; min-width: unset;}
-      .footer-section { max-width: 100%; name: unset;}
-    }
-    @media (max-width: 500px) {
-      .hero, .section, .cta, .footer { padding-left: 1vw; padding-right: 1vw;}
-      .hero-cards, .features-grid, .footer-content { flex-direction: column; gap: 1rem;}
-      .hero-card, .feature-card { width: 100%; padding: 1rem 0.5rem;}
-      .footer-section { min-width: unset; }
-    }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">getITfixed</div>
     <ul class="nav-links">
@@ -390,7 +223,6 @@
     <a href="#" class="btn-consultation">Book Free Consultation</a>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
@@ -419,90 +251,35 @@
     </div>
   </section>
 
-  <!-- Why Choose Section -->
-  <section class="section">
-    <h2 class="section-title">Why Choose getITfixed?</h2>
-    <p class="section-description">
-      We specialize in making technology accessible for seniors while delivering high-performance solutions for gamers.
-    </p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">✓</div>
-        <h3>Hassle-Free Maintenance for Seniors</h3>
-        <p>
-          Monthly plans starting at $50 with remote support, software updates, and cybersecurity protection designed for simplicity.
-        </p>
-        <a href="#" class="btn-outline">View Plans</a>
+  <section class="why-choose-us" style="padding: 4rem 2rem; background: var(--gray-bg); text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 2rem;">Why Choose getITfixed?</h2>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; max-width: 1000px; margin: 0 auto;">
+      <div style="flex: 1 1 280px; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 1rem;">Patient, Friendly Techs</h3>
+        <p>We specialize in working with seniors, making tech easier and less stressful for everyone.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">PC</div>
-        <h3>High-Performance Gaming Upgrades</h3>
-        <p>
-          Custom PC builds, professional overclocking, and upgrades to maximize your gaming performance and FPS rates.
-        </p>
-        <a href="#" class="btn-outline">Boost Performance</a>
+      <div style="flex: 1 1 280px; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 1rem;">No Geek Speak</h3>
+        <p>We explain everything in plain English and make sure you're confident using your devices.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">★</div>
-        <h3>Trusted Local Service</h3>
-        <p>
-          100% satisfaction guarantee with 5-star Google reviews. All jobs completed professionally and efficiently.
-        </p>
-        <a href="#" class="btn-outline">Read Reviews</a>
+      <div style="flex: 1 1 280px; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <h3 style="color: var(--accent); font-size: 1.3rem; margin-bottom: 1rem;">Fair Monthly Pricing</h3>
+        <p>No surprise bills. Unlimited tech help starting at just $50/month. Cancel anytime.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta">
-    <h2>Ready to Get Started?</h2>
-    <p>
-      Book your free consultation today and discover how we can help you with reliable computer maintenance or high-performance upgrades.
-    </p>
-    <a href="#" class="btn-primary">Book Free Consultation</a>
+  <section class="cta" style="padding: 4rem 2rem; text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Feel Confident with Tech?</h2>
+    <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">Join hundreds of happy customers who’ve upgraded their digital lives. We’re here to help every step of the way.</p>
+    <a href="#" class="btn-primary">Get Started Now</a>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <div class="logo">getITfixed</div>
-        <p style="margin-top: 1rem;">
-          Your trusted local expert for computer repairs, upgrades, and support.
-        </p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="reviews.html">Testimonials</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Services</h3>
-        <ul>
-          <li><a href="#">Senior Maintenance Plans</a></li>
-          <li><a href="#">Gaming PC Builds</a></li>
-          <li><a href="#">Overclocking & Upgrades</a></li>
-          <li><a href="#">Tech Training</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <ul>
-          <li><a href="tel:5551234567">(555) 123-4567</a></li>
-          <li><a href="mailto:info@getitfixed.com">info@getitfixed.com</a></li>
-          <li>Your City, State</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2024 getITfixed. All rights reserved. • 100% Satisfaction Guarantee • Local & Trusted • 5-Star Service</p>
-    </div>
+  <footer style="background: var(--dark); color: #fff; text-align: center; padding: 2rem; font-size: 0.95rem;">
+    <p>&copy; 2025 getITfixed. All rights reserved.</p>
+    <p><a href="#" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a> | <a href="#" style="color: var(--accent); text-decoration: underline;">Terms of Service</a></p>
   </footer>
+
 </body>
 </html>
+
