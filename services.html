@@ -6,12 +6,12 @@
   <title>Services | getITfixed</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-     /* Same styles as index.html — keep consistent */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    
     body {
       font-family: 'Poppins', system-ui, -apple-system, sans-serif;
       background: #ffffff;
@@ -19,6 +19,8 @@
       line-height: 1.7;
       font-size: 16px;
     }
+    
+    /* Navigation */
     .navbar {
       background: #1a2c4a;
       padding: 1rem 2rem;
@@ -30,6 +32,7 @@
       z-index: 100;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+    
     .logo {
       display: flex;
       align-items: center;
@@ -37,6 +40,7 @@
       font-weight: 700;
       color: #ffffff;
     }
+    
     .logo::before {
       content: 'IT';
       background: #7ED321;
@@ -47,11 +51,13 @@
       font-weight: 700;
       font-size: 1rem;
     }
+    
     .nav-links {
       display: flex;
       list-style: none;
       gap: 2.5rem;
     }
+    
     .nav-links a {
       color: #ffffff;
       text-decoration: none;
@@ -59,10 +65,12 @@
       font-size: 1.1rem;
       transition: color 0.3s ease;
     }
+    
     .nav-links a:hover,
     .nav-links a.active {
       color: #7ED321;
     }
+    
     .btn-consultation {
       background: #7ED321;
       color: #1a2c4a;
@@ -74,39 +82,51 @@
       transition: all 0.3s ease;
       cursor: pointer;
     }
+    
     .btn-consultation:hover {
       background: #6BC419;
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);
     }
+    
+    /* Content Section */
     section {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 4rem auto;
-      padding: 0 1rem;
+      padding: 0 2rem;
     }
+    
     h2 {
-      font-size: 2.5rem;
-      color: #1a2c4a;
-      margin-bottom: 1rem;
+      font-size: 3rem;
       font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1a2c4a;
       text-align: center;
     }
-    ul {
+    
+    ul.services-list {
       list-style: disc inside;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      line-height: 1.8;
       color: #495057;
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
     }
-    ul li {
-      margin-bottom: 1rem;
+    
+    ul.services-list li {
+      margin-bottom: 1.25rem;
+      padding-left: 0.25rem;
     }
+    
+    /* Footer */
     .footer {
       background: #1a2c4a;
       padding: 4rem 2rem 2rem;
       border-top: 1px solid rgba(255,255,255,0.1);
       color: #b8c5d1;
+      margin-top: 4rem;
     }
+    
     .footer-content {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -114,27 +134,33 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    
     .footer-section h3 {
       font-size: 1.3rem;
       font-weight: 600;
       margin-bottom: 1.5rem;
       color: #ffffff;
     }
+    
     .footer-section ul {
       list-style: none;
     }
+    
     .footer-section ul li {
       margin-bottom: 0.8rem;
     }
+    
     .footer-section ul li a {
       color: #b8c5d1;
       text-decoration: none;
       font-size: 1.1rem;
       transition: color 0.3s ease;
     }
+    
     .footer-section ul li a:hover {
       color: #7ED321;
     }
+    
     .footer-bottom {
       text-align: center;
       margin-top: 3rem;
@@ -143,20 +169,26 @@
       color: #b8c5d1;
       font-size: 1rem;
     }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
         gap: 1.5rem;
         padding: 1.5rem;
       }
+      
       .nav-links {
         gap: 1.5rem;
+      }
+      
+      section {
+        padding: 0 1rem;
       }
     }
   </style>
 </head>
 <body>
-
   <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">getITfixed</div>
@@ -169,9 +201,10 @@
     <a href="contact.html" class="btn-consultation">Book Free Consultation</a>
   </nav>
 
+  <!-- Services Content -->
   <section>
     <h2>Our Services</h2>
-    <ul>
+    <ul class="services-list">
       <li>Wi-Fi and router setup</li>
       <li>Smartphone and tablet help</li>
       <li>PC & Mac troubleshooting</li>
@@ -181,6 +214,7 @@
     </ul>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
@@ -218,6 +252,5 @@
       <p>© 2024 getITfixed. All rights reserved. • 100% Satisfaction Guarantee • Local & Trusted • 5-Star Service</p>
     </div>
   </footer>
-
 </body>
 </html>
