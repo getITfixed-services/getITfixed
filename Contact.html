@@ -1,1 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | getITfixed | Tech Help You Can Trust</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #2c3e50;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    
+    /* Navigation */
+    .navbar {
+      background: #1a2c4a;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    
+    .logo::before {
+      content: 'IT';
+      background: #7ED321;
+      color: #1a2c4a;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      margin-right: 0.7rem;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #7ED321;
+    }
+    
+    .btn-consultation {
+      background: #7ED321;
+      color: #1a2c4a;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-consultation:hover {
+      background: #6BC419;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, #1a2c4a 0%, #2c4a6b 100%);
+      padding: 4rem 0;
+      text-align: center;
+      color: white;
+    }
+
+    .page-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .page-header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.3rem;
+      color: #b8c5d1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 0;
+      background: #f8f9fa;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1a2c4a;
+    }
+
+    .contact-info p {
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-method:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: #7ED321;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .contact-details h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1a2c4a;
+    }
+
+    .contact-details p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      margin: 0;
+    }
+
+    .contact-details a {
+      color: #7ED321;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1a2c4a;
+    }
+
+    .contact-form p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a2c4a;
+      margin-bottom: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #7ED321;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .btn-submit {
+      background: #7ED321;
+      color: #ffffff;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: #6BC419;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(126, 211, 33, 0.3);
+    }
+
+    /* Emergency Banner */
+    .emergency-banner {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .emergency-banner-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .emergency-banner h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .emergency-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-emergency {
+      background: #ffffff;
+      color: #dc3545;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-emergency:hover {
+      background: #f8f9fa;
+      transform: translateY(-2px);
+    }
+
+    /* Hours Section */
+    .hours-section {
+      padding: 4rem 0;
+      background: #ffffff;
+    }
+
+    .hours-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .hours-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1a2c4a;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .hours-card {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #e9ecef;
+    }
+
+    .hours-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1a2c4a;
+    }
+
+    .hours-list {
+      list-style: none;
+    }
+
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .hours-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a2c4a;
+      padding: 4rem 0 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+    
+    .footer-section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-section ul li a {
+      color: #b8c5d1;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section ul li a:hover {
+      color: #7ED321;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #b8c5d1;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+      
+      .nav-links {
+        gap: 1.5rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 2rem;
+      }
+
+      .contact-info h2,
+      .contact-form h2 {
+        font-size: 2rem;
+      }
+
+      .hours-section h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">getITfixed</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="reviews.html">Testimonials</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn-consultation">Book Free Consultation</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="page-header-container">
+      <h1>Contact Us</h1>
+      <p>Get in touch for your free consultation and discover how we can help with all your computer needs</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Get In Touch</h2>
+          <p>Ready to get your computer running like new? We're here to help with expert support, friendly service, and solutions that actually work.</p>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-icon">📞</div>
+              <div class="contact-details">
+                <h3>Phone</h3>
+                <p><a href="tel:5551234567">(555) 123-4567</a></p>
+                <p>Call for immediate assistance</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <p><a href="mailto:info@getitfixed.com">info@getitfixed.com</a></p>
+                <p>We respond within 4 hours</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">📍</div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Your City, State</p>
+                <p>Serving the local area</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">⏰</div>
+              <div class="contact-details">
+                <h3>Response Time</h3>
+                <p>Same-day service available</p>
+                <p>Emergency repairs within 2 hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h2>Book Free Consultation</h2>
+          <p>Tell us about your computer needs and we'll provide a customized solution.</p>
+
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service...</option>
+                <option value="senior-basic">Senior Basic Care Plan ($50/month)</option>
+                <option value="senior-premium">Senior Premium Care Plan ($89/month)</option>
+                <option value="senior-onetime">Senior One-Time Service</option>
+                <option value="gaming-optimization">Gaming Performance Optimization</option>
+                <option value="gaming-build">Custom Gaming PC Build</option>
+                <option value="gaming-upgrade">Gaming PC Upgrade</option>
+                <option value="emergency">Emergency Repair</option>
+                <option value="consultation">Free Consultation</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About Your Computer Issues</label>
+              <textarea id="message" name="message" placeholder="Describe your computer problems, what you use your computer for, and any specific concerns..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Book Free Consultation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Banner -->
+  <section class="emergency-banner">
+    <div class="emergency-banner-container">
+      <h2>Computer Emergency?</h2>
+      <p>Don't panic! Call us now for same-day emergency computer repair service.</p>
+      <a href="tel:5551234567" class="btn-emergency">Call Now: (555) 123-4567</a>
+    </div>
+  </section>
+
+  <!-- Hours Section -->
+  <section class="hours-section">
+    <div class="hours-container">
+      <h2>Service Hours & Availability</h2>
+      <div class="hours-grid">
+        <div class="hours-card">
+          <h3>Regular Hours</h3>
+          <ul class="hours-list">
+            <li><span>Monday - Friday</span><span>9:00 AM - 6:00 PM</span></li>
+            <li><span>Saturday</span><span>10:00 AM - 4:00 PM</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+
+        <div class="hours-card">
+          <h3>Emergency Service</h3>
+          <ul class="hours-list">
+            <li><span>Available</span><span>7 Days a Week</span></li>
+            <li><span>Response Time</span><span>Within 2 Hours</span></li>
+            <li><span>Emergency Fee</span><span>+$50 After Hours</span></li>
+          </ul>
+        </div>
+
+        <div class="hours-card">
+          <h3>Remote Support</h3>
+          <ul class="hours-list">
+            <li><span>Monday - Friday</span><span>8:00 AM - 8:00 PM</span></li>
+            <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+            <li><span>Sunday</span><span>12:00 PM - 5:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo">getITfixed</div>
+          <p style="color: #b8c5d1; margin-top: 1rem;">
+            Your trusted local expert for computer repairs, upgrades, and support.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Senior Maintenance Plans</a></li>
+            <li><a href="services.html">Gaming PC Builds</a></li>
+            <li><a href="services.html">Overclocking & Upgrades</a></li>
+            <li><a href="services.html">Emergency Repairs</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:5551234567">(555) 123-4567</a></li>
+            <li><a href="mailto:info@getitfixed.com">info@getitfixed.com</a></li>
+            <li>Your City, State</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 getITfixed. All rights reserved. • 100% Satisfaction Guarantee • Local & Trusted • 5-Star Service</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Form submission handler
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! We will contact you within 4 hours to schedule your free consultation.');
+    });
+  </script>
+</body>
+</html>
