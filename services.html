@@ -1,1 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | getITfixed | Tech Help You Can Trust</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #2c3e50;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    
+    /* Navigation */
+    .navbar {
+      background: #1a2c4a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    
+    .logo::before {
+      content: 'IT';
+      background: #7ED321;
+      color: #1a2c4a;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      margin-right: 0.7rem;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #7ED321;
+    }
+    
+    .btn-consultation {
+      background: #7ED321;
+      color: #1a2c4a;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-consultation:hover {
+      background: #6BC419;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);
+    }
 
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, #1a2c4a 0%, #2c4a6b 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .page-header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.3rem;
+      color: #b8c5d1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Services Categories */
+    .services-intro {
+      background: #f8f9fa;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .services-intro h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1a2c4a;
+    }
+
+    .services-intro p {
+      font-size: 1.2rem;
+      color: #6c757d;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Service Categories */
+    .service-category {
+      padding: 5rem 2rem;
+    }
+
+    .service-category:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .category-header h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1a2c4a;
+    }
+
+    .category-header p {
+      font-size: 1.2rem;
+      color: #6c757d;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      border: 1px solid #e9ecef;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: #e8f5e8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #7ED321;
+      font-weight: bold;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1a2c4a;
+    }
+
+    .service-card p {
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .service-features li {
+      padding: 0.5rem 0;
+      color: #495057;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .service-features li::before {
+      content: '✓';
+      color: #7ED321;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .service-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #7ED321;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-service {
+      background: #7ED321;
+      color: #ffffff;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-service:hover {
+      background: #6BC419;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #7ED321;
+      padding: 0.8rem 2rem;
+      border: 2px solid #7ED321;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-outline:hover {
+      background: #7ED321;
+      color: white;
+    }
+
+    /* Emergency Services */
+    .emergency-banner {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .emergency-banner h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .emergency-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-emergency {
+      background: #ffffff;
+      color: #dc3545;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-emergency:hover {
+      background: #f8f9fa;
+      transform: translateY(-2px);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #1a2c4a;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    
+    .cta h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #ffffff;
+    }
+    
+    .cta p {
+      color: #b8c5d1;
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      background: #7ED321;
+      color: #1a2c4a;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary:hover {
+      background: #6BC419;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(126, 211, 33, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a2c4a;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-section ul li a {
+      color: #b8c5d1;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section ul li a:hover {
+      color: #7ED321;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #b8c5d1;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+      
+      .nav-links {
+        gap: 1.5rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .category-header h2 {
+        font-size: 2.5rem;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
+
+      .service-category {
+        padding: 3rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">getITfixed</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#" class="active">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Testimonials</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#" class="btn-consultation">Book Free Consultation</a>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Our Services</h1>
+    <p>Comprehensive computer solutions for seniors and high-performance upgrades for gamers</p>
+  </section>
+
+  <!-- Services Intro -->
+  <section class="services-intro">
+    <h2>Tailored Solutions for Every Need</h2>
+    <p>Whether you need simple, reliable computer maintenance or cutting-edge gaming performance, we have the perfect service plan for you.</p>
+  </section>
+
+  <!-- Senior Services -->
+  <section class="service-category">
+    <div class="category-header">
+      <h2>Senior-Friendly Computer Services</h2>
+      <p>Hassle-free maintenance plans designed for simplicity and peace of mind</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✓</div>
+        <h3>Basic Care Plan</h3>
+        <p>Perfect for seniors who want their computer to just work without any hassle.</p>
+        <ul class="service-features">
+          <li>Monthly remote health check</li>
+          <li>Software updates & security patches</li>
+          <li>Virus protection & removal</li>
+          <li>Email & phone support</li>
+          <li>Simple troubleshooting help</li>
+        </ul>
+        <div class="service-price">$50/month</div>
+        <a href="#" class="btn-service">Choose Basic Plan</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">★</div>
+        <h3>Premium Care Plan</h3>
+        <p>Complete peace of mind with priority support and additional services.</p>
+        <ul class="service-features">
+          <li>Everything in Basic Plan</li>
+          <li>Priority phone support</li>
+          <li>Quarterly tune-up visits</li>
+          <li>Data backup assistance</li>
+          <li>New software setup</li>
+          <li>Hardware upgrade consultation</li>
+        </ul>
+        <div class="service-price">$89/month</div>
+        <a href="#" class="btn-service">Choose Premium Plan</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">PC</div>
+        <h3>One-Time Services</h3>
+        <p>Individual services when you need them most.</p>
+        <ul class="service-features">
+          <li>Computer cleanup & speedup</li>
+          <li>Virus removal</li>
+          <li>Software installation</li>
+          <li>Data recovery</li>
+          <li>Hardware repairs</li>
+          <li>Basic training sessions</li>
+        </ul>
+        <div class="service-price">$75-$150</div>
+        <a href="#" class="btn-outline">Get Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gaming Services -->
+  <section class="service-category">
+    <div class="category-header">
+      <h2>High-Performance Gaming Services</h2>
+      <p>Custom builds, overclocking, and upgrades to maximize your gaming experience</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Performance Optimization</h3>
+        <p>Squeeze every bit of performance from your current gaming setup.</p>
+        <ul class="service-features">
+          <li>Professional overclocking</li>
+          <li>Thermal optimization</li>
+          <li>Driver updates & optimization</li>
+          <li>Game-specific settings tuning</li>
+          <li>Benchmark testing</li>
+        </ul>
+        <div class="service-price">$150-$300</div>
+        <a href="#" class="btn-service">Boost Performance</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">PC</div>
+        <h3>Custom Gaming Builds</h3>
+        <p>Hand-built gaming PCs tailored to your budget and performance needs.</p>
+        <ul class="service-features">
+          <li>Personalized component selection</li>
+          <li>Professional assembly</li>
+          <li>Stress testing & optimization</li>
+          <li>1-year warranty on labor</li>
+          <li>Free performance tweaking</li>
+        </ul>
+        <div class="service-price">$200 + parts</div>
+        <a href="#" class="btn-service">Build My PC</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">↗</div>
+        <h3>Gaming Upgrades</h3>
+        <p>Strategic upgrades to boost your FPS and gaming experience.</p>
+        <ul class="service-features">
+          <li>GPU upgrade consultation</li>
+          <li>RAM & storage upgrades</li>
+          <li>Cooling system improvements</li>
+          <li>Power supply upgrades</li>
+          <li>Performance testing</li>
+        </ul>
+        <div class="service-price">$100 + parts</div>
+        <a href="#" class="btn-outline">Upgrade Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Services Banner -->
+  <section class="emergency-banner">
+    <h2>Emergency Computer Repair</h2>
+    <p>Computer crashed? Virus attack? We offer same-day emergency service to get you back up and running.</p>
+    <a href="#" class="btn-emergency">Get Emergency Help</a>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <h2>Not Sure Which Service You Need?</h2>
+    <p>
+      Book a free consultation and we'll help you choose the perfect service plan for your needs and budget.
+    </p>
+    <a href="#" class="btn-primary">Book Free Consultation</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="logo">getITfixed</div>
+        <p style="color: #b8c5d1; margin-top: 1rem;">
+          Your trusted local expert for computer repairs, upgrades, and support.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Senior Maintenance Plans</a></li>
+          <li><a href="#">Gaming PC Builds</a></li>
+          <li><a href="#">Overclocking & Upgrades</a></li>
+          <li><a href="#">Emergency Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:5551234567">(555) 123-4567</a></li>
+          <li><a href="mailto:info@getitfixed.com">info@getitfixed.com</a></li>
+          <li>Your City, State</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 getITfixed. All rights reserved. • 100% Satisfaction Guarantee • Local & Trusted • 5-Star Service</p>
+    </div>
+  </footer>
+</body>
+</html>
