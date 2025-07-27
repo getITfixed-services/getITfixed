@@ -92,15 +92,22 @@
     .hero {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       padding: 5rem 2rem;
+      min-height: 85vh;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      min-height: 85vh;
+      justify-content: space-between;
       gap: 4rem;
+      height: 100%;
     }
     
     .hero-content {
       flex: 1;
-      max-width: 650px;
+      max-width: 600px;
     }
     
     .hero h1 {
@@ -171,6 +178,7 @@
       display: flex;
       gap: 1.5rem;
       flex-direction: column;
+      flex-shrink: 0;
     }
     
     .hero-card {
@@ -213,6 +221,11 @@
     .about {
       background: #ffffff;
       padding: 5rem 2rem;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       gap: 4rem;
@@ -467,8 +480,6 @@
       }
       
       .about {
-        flex-direction: column;
-        text-align: center;
         padding: 3rem 1rem;
       }
       
@@ -512,45 +523,49 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>getITfixed</h1>
-      <div class="hero-subtitle">Fast, Safe, Easy Computers for Seniors</div>
-      <div class="hero-description">
-        Plans from $50/month • Gamers: Boost Your PC Today!
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>getITfixed</h1>
+        <div class="hero-subtitle">Fast, Safe, Easy Computers for Seniors</div>
+        <div class="hero-description">
+          Plans from $50/month • Gamers: Boost Your PC Today!
+        </div>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Book Free Consultation</a>
+          <a href="#" class="btn-secondary">Get Free PC Safety Checklist</a>
+        </div>
       </div>
-      <div class="hero-buttons">
-        <a href="#" class="btn-primary">Book Free Consultation</a>
-        <a href="#" class="btn-secondary">Get Free PC Safety Checklist</a>
-      </div>
-    </div>
-    <div class="hero-cards">
-      <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=350&h=180&fit=crop&crop=center" alt="Senior using computer with assistance">
-        <h3>Seniors Love Our Service</h3>
-        <p>Hassle-free maintenance and support with patient, friendly experts who understand your needs</p>
-      </div>
-      <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=350&h=180&fit=crop&crop=center" alt="High-performance gaming computer setup">
-        <h3>Gaming Performance</h3>
-        <p>Custom builds and professional overclocking to maximize your gaming experience</p>
+      <div class="hero-cards">
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=350&h=180&fit=crop&crop=center" alt="Senior using computer with assistance">
+          <h3>Seniors Love Our Service</h3>
+          <p>Hassle-free maintenance and support with patient, friendly experts who understand your needs</p>
+        </div>
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=350&h=180&fit=crop&crop=center" alt="High-performance gaming computer setup">
+          <h3>Gaming Performance</h3>
+          <p>Custom builds and professional overclocking to maximize your gaming experience</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section class="about">
-    <div class="about-content">
-      <h2>About getITfixed</h2>
-      <p>
-        Your trusted local expert for computer repairs, upgrades, and support.
-        We specialize in keeping seniors' PCs fast and secure with affordable
-        plans, while offering gamers high-performance builds and
-        overclocking services.
-      </p>
-      <a href="#" class="btn-primary">Contact Us</a>
-    </div>
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=350&fit=crop&crop=center" alt="Friendly tech expert helping with computer repair">
+    <div class="about-container">
+      <div class="about-content">
+        <h2>About getITfixed</h2>
+        <p>
+          Your trusted local expert for computer repairs, upgrades, and support.
+          We specialize in keeping seniors' PCs fast and secure with affordable
+          plans, while offering gamers high-performance builds and
+          overclocking services.
+        </p>
+        <a href="#" class="btn-primary">Contact Us</a>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=350&fit=crop&crop=center" alt="Friendly tech expert helping with computer repair">
+      </div>
     </div>
   </section>
 
