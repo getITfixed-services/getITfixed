@@ -44,14 +44,23 @@
     .review-text { font-size: 1.1rem; line-height: 1.7; color: #4a5568; font-style: italic; position: relative;}
     .review-text::before { content: '"'; font-size: 3rem; color: #7ED321; position: absolute; left: -1rem; top: -1rem; font-family: serif;}
     /* Platform Links section, Stats, CTA, Footer: ... Your existing CSS unchanged ... */
-    .platform-section { padding: 4rem 0; background: #ffffff; }
-    .platform-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; text-align: center;}
+    .platform-section { padding: 4rem 0; background: #ffffff; text-align: center; }
+    .platform-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     .platform-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #1a2c4a;}
     .platform-section p { font-size: 1.2rem; color: #6c757d; margin-bottom: 3rem;}
-    .platform-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;}
-    .platform-link { display: flex; align-items: center; gap: 1rem; background: #1a2c4a; color: white; padding: 1.2rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; min-width: 180px; justify-content: center;}
-    .platform-link:hover { background: #7ED321; color: #1a2c4a; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(126, 211, 33, 0.3);}
-    .platform-icon { font-size: 1.5rem;}
+    .yelp-embed-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .yelp-embed {
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      background: white;
+    }
     .stats-section { padding: 4rem 0; background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%); color: white;}
     .stats-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;}
@@ -78,7 +87,7 @@
       .page-header h1 { font-size: 2.5rem; }
       .reviews-intro h2, .platform-section h2, .cta-section h2 { font-size: 2rem; }
       .reviews-grid { grid-template-columns: 1fr; }
-      .platform-links { flex-direction: column; align-items: center; }
+      .yelp-embed-container { flex-direction: column; }
       .stats-grid { grid-template-columns: repeat(2, 1fr);}
       .review-card { padding: 2rem;}
     }
@@ -107,8 +116,8 @@
     </div>
   </section>
 
-  <!-- Reviews Section with clickable cards -->
-  <section class="reviews-section">
+  <!-- Google Reviews Section -->
+  <section class="reviews-section" aria-label="Google reviews">
     <div class="reviews-container">
       <div class="reviews-intro">
         <h2>Real Stories from Real Customers</h2>
@@ -116,25 +125,6 @@
       </div>
 
       <div class="reviews-grid">
-
-        <!-- Yelp Review: Richard W. with embedded widget -->
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">R</div>
-            <div class="review-info">
-              <h3>Richard W.</h3>
-              <div class="review-location">Yelp Review · Gilbert, AZ</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">
-            Needed some quick troubleshooting done on my computer, Dominic responded quickly and came out promptly. He was helpful in both working around my environment as well as explaining what he was doing and what was going on. Will definitely use again when I have an issue. Very convenient having him able to come to my residence to work and not having to haul my computer around the valley.
-          </div>
-          <span class="yelp-review" data-review-id="4jNumv3-VbC03fiZT6mS8w" data-hostname="www.yelp.com">Read <a href="https://www.yelp.com/user_details?userid=o6nbNeRHdM0bdiNZcqE6nQ" rel="nofollow noopener">Richard W.</a>'s <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=4jNumv3-VbC03fiZT6mS8w" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener">Get IT Fixed</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a></span>
-        </div>
-
         <!-- Google Review: Arlette Itami -->
         <a class="review-card" href="https://g.co/kgs/aTzyNtc" target="_blank" rel="noopener noreferrer">
           <div class="review-header">
@@ -185,42 +175,40 @@
             Dominic is very quick with what he is working on and responds as quickly as he can also very cheap price. I would 100% recommend him to work on ur issues with technology and other more.
           </div>
         </a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Yelp Review: Nelson D. with embedded widget -->
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">N</div>
-            <div class="review-info">
-              <h3>Nelson D.</h3>
-              <div class="review-location">Yelp Review · Whittier, CA</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">
-            I am the author of Farmer Tice children's books, and my computer is my livelihood. Last week I was cursed with the so-called "blue screen of death" and had tried everything in my bag of tricks... Dominic came to my house the very next day and was on time. Windows 11 was completely corrupted & needed to be replaced, but he was able to save that important file, which was a life-saver to me... I am thoroughly impressed by Dominic's knowledge & talents, honesty & trustworthiness, and his geniality.
-          </div>
-          <span class="yelp-review" data-review-id="BJ27VXmDyWXpPj1blweHHQ" data-hostname="www.yelp.com">Read <a href="https://www.yelp.com/user_details?userid=sC0ZtTW7U2q6vAi_TLsopA" rel="nofollow noopener">Nelson D.</a>'s <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=BJ27VXmDyWXpPj1blweHHQ" rel="nofollow noopener">review</a> of <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener">Get IT Fixed</a> on <a href="https://www.yelp.com" rel="nofollow noopener">Yelp</a></span>
+  <!-- Yelp Reviews Section -->
+  <section class="platform-section" aria-label="Yelp reviews">
+    <div class="platform-container">
+      <h2>Yelp Reviews</h2>
+      <p>Check out our Yelp reviews below and see why customers trust getITfixed for their tech needs.</p>
+      <div class="yelp-embed-container">
+        <div class="yelp-embed">
+          <span class="yelp-review" data-review-id="4jNumv3-VbC03fiZT6mS8w" data-hostname="www.yelp.com">
+            Read <a href="https://www.yelp.com/user_details?userid=o6nbNeRHdM0bdiNZcqE6nQ" rel="nofollow noopener" target="_blank">Richard W.</a>'s 
+            <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=4jNumv3-VbC03fiZT6mS8w" rel="nofollow noopener" target="_blank">review</a> of 
+            <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener" target="_blank">Get IT Fixed</a> on 
+            <a href="https://www.yelp.com" rel="nofollow noopener" target="_blank">Yelp</a>
+          </span>
         </div>
-        
-        <!-- Yelp Review: D. W. (6th Review, Scottsdale, AZ) -->
-        <a class="review-card" href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=YUNiZ5yjaUPyqeRNYap0nA" target="_blank" rel="noopener noreferrer">
-          <div class="review-header">
-            <div class="review-avatar">D</div>
-            <div class="review-info">
-              <h3>D. W.</h3>
-              <div class="review-location">Yelp Review · Scottsdale, AZ</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">
-            I called them and Dominic came out the next day. I had the blue screen on my laptop and he figured out that I needed a new hard drive. He left to get me a new hard drive and came back and installed it. Outstanding service! I highly recommend them! They are also very reasonable with their rates.
-          </div>
-        </a>
-
+        <div class="yelp-embed">
+          <span class="yelp-review" data-review-id="BJ27VXmDyWXpPj1blweHHQ" data-hostname="www.yelp.com">
+            Read <a href="https://www.yelp.com/user_details?userid=sC0ZtTW7U2q6vAi_TLsopA" rel="nofollow noopener" target="_blank">Nelson D.</a>'s 
+            <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=BJ27VXmDyWXpPj1blweHHQ" rel="nofollow noopener" target="_blank">review</a> of 
+            <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener" target="_blank">Get IT Fixed</a> on 
+            <a href="https://www.yelp.com" rel="nofollow noopener" target="_blank">Yelp</a>
+          </span>
+        </div>
+        <div class="yelp-embed">
+          <span class="yelp-review" data-review-id="YUNiZ5yjaUPyqeRNYap0nA" data-hostname="www.yelp.com">
+            Read <a href="https://www.yelp.com/user_details?userid=LqI4NpD5LbZ0yVI64BI0GA" rel="nofollow noopener" target="_blank">D. W.</a>'s 
+            <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=YUNiZ5yjaUPyqeRNYap0nA" rel="nofollow noopener" target="_blank">review</a> of 
+            <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener" target="_blank">Get IT Fixed</a> on 
+            <a href="https://www.yelp.com" rel="nofollow noopener" target="_blank">Yelp</a>
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -245,24 +233,6 @@
           <h3>100%</h3>
           <p>Satisfaction Guarantee</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Platform Links Section -->
-  <section class="platform-section">
-    <div class="platform-container">
-      <h2>Read More Verified Reviews</h2>
-      <p>Check out our reviews across all major platforms and see why customers trust getITfixed for their tech needs.</p>
-      <div class="platform-links">
-        <a href="https://www.google.com/search?q=getITfixed+reviews" target="_blank" rel="noopener noreferrer" class="platform-link">
-          <span class="platform-icon">🔍</span>
-          Google Reviews
-        </a>
-        <a href="https://www.yelp.com/search?find_desc=getITfixed" target="_blank" rel="noopener noreferrer" class="platform-link">
-          <span class="platform-icon">⭐</span>
-          Yelp Reviews
-        </a>
       </div>
     </div>
   </section>
