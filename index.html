@@ -415,12 +415,6 @@
       transition: all 0.3s ease;
       cursor: pointer;
       border-left: 4px solid #7ED321;
-      text-decoration: none;
-      color: #2c3e50;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
     }
 
     .review-preview-card:hover {
@@ -619,56 +613,119 @@
           Gaming PC Builds
         </div>
       </div>
-
-      <!-- ================== REVIEWS PART BELOW ================== -->
-
-      <section class="reviews-preview-section">
-        <div class="reviews-preview-container">
-          <h2 class="section-title">What Our Customers Say</h2>
-          <div class="reviews-preview-grid">
-            <!-- Google Review 1 -->
-            <a href="https://g.co/kgs/aTzyNtc" target="_blank" rel="noopener noreferrer" class="review-preview-card">
-              <div class="review-stars">
-                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-              </div>
-              <div class="review-text">
-                Fantastic IT company. Great price!! Quick response and arrived on time and delivered 5 star customer service. Came completely prepared and worked magic getting our computer backed up and restored.
-              </div>
-              <div class="review-author">- Arlette Itami (Google)</div>
-            </a>
-            <!-- Google Review 2 -->
-            <a href="https://g.co/kgs/Vut4gsG" target="_blank" rel="noopener noreferrer" class="review-preview-card">
-              <div class="review-stars">
-                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-              </div>
-              <div class="review-text">
-                Dominic came to the house the same day my husband called. He diagnosed the issue on our PC, took it with him for the actual repair and had it back to us the next day. I can’t express enough how polite, professional and knowledgable he is. His price is beyond fair. And to top it off he helped go after our husky when he escaped!
-              </div>
-              <div class="review-author">- Annie M. (Google)</div>
-            </a>
-            <!-- Google Review 3 -->
-            <a href="https://g.co/kgs/qJFQKox" target="_blank" rel="noopener noreferrer" class="review-preview-card">
-              <div class="review-stars">
-                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-              </div>
-              <div class="review-text">
-                Dominic is very quick with what he is working on and responds as quickly as he can also very cheap price. I would 100% recommend him to work on ur issues with technology and other more.
-              </div>
-              <div class="review-author">- Anthony Solis (Google)</div>
-            </a>
-          </div>
-          <div class="view-all-reviews">
-            <button class="view-reviews-btn" onclick="goToReviews()">
-              View All Reviews →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================== END REVIEWS PART ================== -->
-
     </div>
   </main>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-section">
+    <div class="why-choose-container">
+      <h2 class="section-title">Why Choose getITfixed?</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-content">
+            <h3>Fast Response</h3>
+            <p>Same-day service available with emergency repairs completed within 2 hours.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🏠</div>
+          <div class="feature-content">
+            <h3>In-Home Service</h3>
+            <p>We come to you! No need to disconnect and haul your computer anywhere.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">💰</div>
+          <div class="feature-content">
+            <h3>Fair Pricing</h3>
+            <p>Transparent, upfront pricing with no hidden fees. Free consultations always.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🎓</div>
+          <div class="feature-content">
+            <h3>Patient Teaching</h3>
+            <p>We don't just fix problems - we teach you how to avoid them in the future.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-content">
+            <h3>Data Protection</h3>
+            <p>Your files and privacy are safe with us. We use industry-standard security practices.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">⭐</div>
+          <div class="feature-content">
+            <h3>5-Star Service</h3>
+            <p>Hundreds of satisfied customers with consistently excellent reviews.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Preview Section -->
+  <section class="reviews-preview-section">
+    <div class="reviews-preview-container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="reviews-preview-grid">
+        <div class="review-preview-card" onclick="goToReviews()">
+          <div class="review-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="review-text">
+            "I'm not very tech-savvy, but they made everything simple and easy to understand. They set up my Wi-Fi and showed me how to use my new phone. Highly recommend!"
+          </div>
+          <div class="review-author">- Jane S., Sun City</div>
+        </div>
+
+        <div class="review-preview-card" onclick="goToReviews()">
+          <div class="review-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="review-text">
+            "Quick, professional, and kind. They fixed my security camera system and made it so I can see everything from my iPad. Super helpful!"
+          </div>
+          <div class="review-author">- Mark R., Glendale</div>
+        </div>
+
+        <div class="review-preview-card" onclick="goToReviews()">
+          <div class="review-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </div>
+          <div class="review-text">
+            "Their in-home service is exactly what I needed. Everything was explained clearly and they even labeled my remotes and cords for me. 10/10!"
+          </div>
+          <div class="review-author">- Linda K., Peoria</div>
+        </div>
+      </div>
+      <div class="view-all-reviews">
+        <button class="view-reviews-btn" onclick="goToReviews()">
+          View All Reviews →
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- Email Modal -->
   <div id="emailModal" class="modal">
@@ -728,49 +785,3 @@
         </div>
         <div class="footer-section">
           <h3>Contact</h3>
-          <ul>
-            <li><a href="tel:5551234567">(555) 123-4567</a></li>
-            <li><a href="mailto:info@getitfixed.com">info@getitfixed.com</a></li>
-            <li>Your City, State</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2024 getITfixed. All rights reserved. • 100% Satisfaction Guarantee • Local & Trusted • 5-Star Service</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    function openModal() {
-      document.getElementById('emailModal').style.display = 'block';
-    }
-    function closeModal() {
-      document.getElementById('emailModal').style.display = 'none';
-    }
-    function goToReviews() {
-      window.location.href = 'reviews.html';
-    }
-    function submitEmail(e) {
-      e.preventDefault();
-      const emailInput = document.getElementById('emailInput');
-      const successMessage = document.getElementById('successMessage');
-      const errorMessage = document.getElementById('errorMessage');
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.disabled = true;
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-      // Simulate sending by timeout
-      setTimeout(() => {
-        if (emailInput.value.includes('@')) {
-          successMessage.style.display = 'block';
-          emailInput.value = '';
-        } else {
-          errorMessage.style.display = 'block';
-        }
-        submitBtn.disabled = false;
-      }, 1500);
-    }
-  </script>
-</body>
-</html>
