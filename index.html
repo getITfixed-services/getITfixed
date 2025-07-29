@@ -218,7 +218,7 @@
       left: 0;
     }
 
-    /* Modal Styles */
+    /* Modal Styles - FIXED */
     .modal {
       display: none;
       position: fixed;
@@ -237,7 +237,7 @@
       padding: 0;
       border-radius: 20px;
       width: 90%;
-      max-width: 600px;
+      max-width: 500px;  /* Reduced from 600px */
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       position: relative;
       animation: modalSlideIn 0.3s ease;
@@ -280,7 +280,7 @@
       color: #dc3545;
     }
 
-    /* MailerLite Form Styling */
+    /* MailerLite Form Styling - FIXED */
     #mlb2-28991155.ml-form-embedContainer {
       box-sizing: border-box;
       display: table;
@@ -300,15 +300,17 @@
       margin: 0;
       padding: 0;
       position: relative;
+      width: 100% !important;  /* Added this */
     }
 
     #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper.embedForm { 
-      max-width: 400px; 
-      width: 100%; 
+      max-width: 100% !important;  /* Changed from 400px */
+      width: 100% !important; 
     }
 
     #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
       padding: 30px 30px 20px 30px;
+      box-sizing: border-box;  /* Added this */
     }
 
     #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent {
@@ -338,6 +340,7 @@
     #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
       margin: 0 0 20px 0;
       width: 100%;
+      box-sizing: border-box;  /* Added this */
     }
 
     #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
@@ -369,6 +372,7 @@
       margin: 0 0 25px 0;
       width: 100%;
       text-align: center;
+      box-sizing: border-box;  /* Added this */
     }
 
     #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label {
@@ -406,6 +410,7 @@
       margin: 0 0 20px 0;
       width: 100%;
       text-align: center;
+      box-sizing: border-box;  /* Added this */
     }
 
     #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
@@ -458,6 +463,7 @@
     .ml-form-successBody {
       text-align: center;
       padding: 30px;
+      box-sizing: border-box;  /* Added this */
     }
 
     .ml-form-successContent h4 {
@@ -724,6 +730,11 @@
       .modal-content {
         margin: 10% auto;
         width: 95%;
+        max-width: 400px;  /* Even smaller on mobile */
+      }
+
+      #mlb2-28991155.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
+        padding: 20px 20px 15px 20px;  /* Reduced padding on mobile */
       }
 
       .features-grid,
