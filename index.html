@@ -233,15 +233,15 @@
 
     .modal-content {
       background: white;
-      margin: 10% auto;
-      padding: 3rem;
+      margin: 5% auto;
+      padding: 0;
       border-radius: 20px;
       width: 90%;
-      max-width: 700px;
+      max-width: 600px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      text-align: center;
       position: relative;
       animation: modalSlideIn 0.3s ease;
+      overflow: hidden;
     }
 
     @keyframes modalSlideIn {
@@ -256,7 +256,7 @@
     }
 
     .close {
-      color: #aaa;
+      color: #666;
       float: right;
       font-size: 2rem;
       font-weight: bold;
@@ -265,10 +265,59 @@
       top: 1rem;
       cursor: pointer;
       transition: color 0.3s ease;
+      z-index: 10;
+      background: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .close:hover {
       color: #dc3545;
+    }
+
+    /* ConvertKit Form Styling */
+    .formkit-form {
+      border-radius: 20px !important;
+      overflow: hidden;
+    }
+
+    .formkit-header h2 {
+      color: #1a2c4a !important;
+      margin-bottom: 1rem;
+    }
+
+    .formkit-subheader p {
+      color: #666 !important;
+      margin-bottom: 2rem;
+    }
+
+    .formkit-input {
+      padding: 1rem !important;
+      font-size: 1.1rem !important;
+      border: 2px solid #e3e3e3 !important;
+      border-radius: 8px !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .formkit-submit {
+      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%) !important;
+      padding: 1rem 2rem !important;
+      font-size: 1.1rem !important;
+      font-weight: 600 !important;
+      border-radius: 8px !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .formkit-submit:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(126, 211, 33, 0.3) !important;
     }
 
     /* Why Choose Us Section */
@@ -516,8 +565,8 @@
       }
 
       .modal-content {
-        margin: 20% auto;
-        padding: 2rem;
+        margin: 10% auto;
+        width: 95%;
       }
 
       .features-grid,
@@ -713,32 +762,52 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       
+      <!-- ConvertKit Form -->
       <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-      <form action="https://app.kit.com/forms/8371831/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="8371831" data-uid="5d0a17001c" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800" style="background-color: rgb(249, 250, 251); border-radius: 4px;">
-        <div class="formkit-background" style="opacity: 0.2;"></div>
+      <form 
+        action="https://app.kit.com/forms/8371831/subscriptions" 
+        class="seva-form formkit-form" 
+        method="post" 
+        data-sv-form="8371831" 
+        data-uid="5d0a17001c" 
+        data-format="inline" 
+        data-version="5"
+        min-width="400"
+        style="background-color: rgb(249, 250, 251); border-radius: 20px; padding: 3rem;">
+        
         <div data-style="minimal">
-          <div class="formkit-header" data-element="header" style="color: rgb(60, 67, 60); font-size: 27px; font-weight: 700;">
+          <div class="formkit-header" data-element="header">
             <h2>Get Your FREE PC Safety Checklist!</h2>
           </div>
-          <div class="formkit-subheader" data-element="subheader" style="color: rgb(104, 104, 104); font-size: 18px;">
-            <p>Subscribe to get our latest content by email.</p>
+          
+          <div class="formkit-subheader" data-element="subheader">
+            <p>Get instant access to our comprehensive PC safety guide and join our newsletter for tech tips and exclusive offers.</p>
           </div>
+          
           <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+          
           <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
             <div class="formkit-field">
-              <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+              <input 
+                class="formkit-input" 
+                name="email_address" 
+                aria-label="Email Address" 
+                placeholder="Enter your email address" 
+                required 
+                type="email">
             </div>
-            <button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;">
+            <button data-element="submit" class="formkit-submit">
               <div class="formkit-spinner">
                 <div></div>
                 <div></div>
                 <div></div>
               </div>
-              <span class="">Get My Free Checklist</span>
+              <span>Get My Free Checklist</span>
             </button>
           </div>
-          <div class="formkit-guarantee" data-element="guarantee" style="color: rgb(77, 77, 77); font-size: 13px; font-weight: 400;">
-            <p>We won't send you spam. Unsubscribe at any time.</p>
+          
+          <div class="formkit-guarantee" data-element="guarantee">
+            <p>We respect your privacy. Unsubscribe at any time.</p>
           </div>
         </div>
       </form>
@@ -787,10 +856,12 @@
     // Modal functionality
     function openModal() {
       document.getElementById('emailModal').style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent body scroll when modal is open
     }
 
     function closeModal() {
       document.getElementById('emailModal').style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore body scroll
     }
 
     function goToReviews() {
@@ -801,3 +872,22 @@
     window.onclick = function(event) {
       const modal = document.getElementById('emailModal');
       if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Wait for ConvertKit script to load before initializing
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add any additional ConvertKit initialization here if needed
+      console.log('ConvertKit form loaded');
+    });
+  </script>
+</body>
+</html>
