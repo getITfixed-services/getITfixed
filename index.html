@@ -237,7 +237,7 @@
       padding: 3rem;
       border-radius: 20px;
       width: 90%;
-      max-width: 500px;
+      max-width: 700px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       text-align: center;
       position: relative;
@@ -269,77 +269,6 @@
 
     .close:hover {
       color: #dc3545;
-    }
-
-    .modal h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #1a2c4a;
-      margin-bottom: 1rem;
-    }
-
-    .modal p {
-      font-size: 1.1rem;
-      color: #6c757d;
-      margin-bottom: 2rem;
-    }
-
-    .email-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .email-input {
-      padding: 1rem 1.5rem;
-      border: 2px solid #e9ecef;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      font-family: inherit;
-      transition: border-color 0.3s ease;
-    }
-
-    .email-input:focus {
-      outline: none;
-      border-color: #7ED321;
-      box-shadow: 0 0 0 3px rgba(126, 211, 33, 0.1);
-    }
-
-    .submit-btn {
-      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(126, 211, 33, 0.3);
-    }
-
-    .submit-btn:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .success-message {
-      display: none;
-      color: #28a745;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
-
-    .error-message {
-      display: none;
-      color: #dc3545;
-      font-weight: 600;
-      margin-top: 1rem;
     }
 
     /* Why Choose Us Section */
@@ -779,29 +708,38 @@
     </div>
   </section>
 
-  <!-- Email Modal -->
+  <!-- Email Modal with ConvertKit Form -->
   <div id="emailModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Get Your FREE PC Safety Checklist</h2>
-      <p>Enter your email to receive our comprehensive PC safety checklist that will help protect your computer from viruses, malware, and other threats.</p>
       
-      <form class="email-form" onsubmit="submitEmail(event)">
-        <input 
-          type="email" 
-          class="email-input" 
-          placeholder="Enter your email address" 
-          required
-          id="emailInput"
-        >
-        <button type="submit" class="submit-btn" id="submitBtn">
-          Send Me The Checklist
-        </button>
-        <div class="success-message" id="successMessage">
-          ✅ Thank you! Your PC Safety Checklist has been sent to your email.
-        </div>
-        <div class="error-message" id="errorMessage">
-          ❌ Sorry, there was an error. Please try again.
+      <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/8371831/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="8371831" data-uid="5d0a17001c" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800" style="background-color: rgb(249, 250, 251); border-radius: 4px;">
+        <div class="formkit-background" style="opacity: 0.2;"></div>
+        <div data-style="minimal">
+          <div class="formkit-header" data-element="header" style="color: rgb(60, 67, 60); font-size: 27px; font-weight: 700;">
+            <h2>Get Your FREE PC Safety Checklist!</h2>
+          </div>
+          <div class="formkit-subheader" data-element="subheader" style="color: rgb(104, 104, 104); font-size: 18px;">
+            <p>Subscribe to get our latest content by email.</p>
+          </div>
+          <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+          <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+            <div class="formkit-field">
+              <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+            </div>
+            <button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;">
+              <div class="formkit-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <span class="">Get My Free Checklist</span>
+            </button>
+          </div>
+          <div class="formkit-guarantee" data-element="guarantee" style="color: rgb(77, 77, 77); font-size: 13px; font-weight: 400;">
+            <p>We won't send you spam. Unsubscribe at any time.</p>
+          </div>
         </div>
       </form>
     </div>
@@ -855,36 +793,6 @@
       document.getElementById('emailModal').style.display = 'none';
     }
 
-    function submitEmail(event) {
-      event.preventDefault();
-      
-      const submitBtn = document.getElementById('submitBtn');
-      const successMessage = document.getElementById('successMessage');
-      const errorMessage = document.getElementById('errorMessage');
-      
-      // Disable button and show loading state
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      
-      // Simulate form submission (replace with actual form handling)
-      setTimeout(() => {
-        // Show success message
-        successMessage.style.display = 'block';
-        errorMessage.style.display = 'none';
-        
-        // Reset form
-        document.getElementById('emailInput').value = '';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Me The Checklist';
-        
-        // Close modal after 2 seconds
-        setTimeout(() => {
-          closeModal();
-          successMessage.style.display = 'none';
-        }, 2000);
-      }, 1000);
-    }
-
     function goToReviews() {
       window.location.href = 'reviews.html';
     }
@@ -893,9 +801,3 @@
     window.onclick = function(event) {
       const modal = document.getElementById('emailModal');
       if (event.target === modal) {
-        closeModal();
-      }
-    }
-  </script>
-</body>
-</html>
