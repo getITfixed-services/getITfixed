@@ -146,55 +146,76 @@
       background: linear-gradient(135deg, #6BC419 0%, #5BA017 100%);
     }
 
-    .images-section {
+    .services-section {
       display: flex;
       gap: 3rem;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    .image-placeholder {
-      width: 300px;
-      height: 200px;
+    .service-card {
+      width: 350px;
       background: linear-gradient(135deg, #ffffff 0%, #f8f9fb 100%);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #1a2c4a;
-      font-size: 1.2rem;
-      font-weight: 600;
+      border-radius: 15px;
+      padding: 2.5rem;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
 
-    .image-placeholder:hover {
-      transform: translateY(-5px);
+    .service-card:hover {
+      transform: translateY(-8px);
     }
 
-    .service-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%);
+      color: white;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
-      background: linear-gradient(135deg, #1a2c4a 0%, #2c4a6b 100%);
+      font-size: 2.5rem;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 4px 15px rgba(126, 211, 33, 0.3);
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a2c4a;
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #6c757d;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+      list-style: none;
+      text-align: left;
+    }
+
+    .service-features li {
+      color: #1a2c4a;
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .service-features li::before {
+      content: "✓";
       color: #7ED321;
-      border: 3px solid #7ED321;
-    }
-
-    .computer-repair-image::before {
-      content: "🔧";
-    }
-
-    .gaming-pc-image::before {
-      content: "🎮";
+      font-weight: bold;
+      position: absolute;
+      left: 0;
     }
 
     /* Modal Styles */
@@ -447,6 +468,18 @@
       color: #1a2c4a;
     }
 
+    .review-link {
+      color: #7ED321;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    .review-link:hover {
+      text-decoration: underline;
+    }
+
     .view-all-reviews {
       text-align: center;
     }
@@ -543,14 +576,14 @@
         padding: 1.2rem 2.5rem;
       }
 
-      .images-section {
+      .services-section {
         flex-direction: column;
         align-items: center;
       }
 
-      .image-placeholder {
-        width: 280px;
-        height: 180px;
+      .service-card {
+        width: 100%;
+        max-width: 350px;
       }
 
       .modal-content {
@@ -602,15 +635,31 @@
         </button>
       </div>
       
-      <!-- Image Placeholders with Icons -->
-      <div class="images-section">
-        <div class="image-placeholder">
-          <div class="service-image computer-repair-image"></div>
-          Computer Repair Services
+      <!-- Services Cards -->
+      <div class="services-section">
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Computer Repair & Maintenance</h3>
+          <p>Professional diagnosis and repair of desktop and laptop computers with same-day service available.</p>
+          <ul class="service-features">
+            <li>Virus & malware removal</li>
+            <li>Hardware troubleshooting</li>
+            <li>System optimization</li>
+            <li>Data recovery services</li>
+            <li>In-home service available</li>
+          </ul>
         </div>
-        <div class="image-placeholder">
-          <div class="service-image gaming-pc-image"></div>
-          Gaming PC Builds
+        <div class="service-card">
+          <div class="service-icon">🎮</div>
+          <h3>Gaming PC Builds & Upgrades</h3>
+          <p>Custom gaming PC builds tailored to your budget and performance needs, plus overclocking services.</p>
+          <ul class="service-features">
+            <li>Custom PC builds</li>
+            <li>Component upgrades</li>
+            <li>Performance optimization</li>
+            <li>Overclocking services</li>
+            <li>Gaming setup consultation</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -677,7 +726,7 @@
     <div class="reviews-preview-container">
       <h2 class="section-title">What Our Customers Say</h2>
       <div class="reviews-preview-grid">
-        <div class="review-preview-card" onclick="goToReviews()">
+        <div class="review-preview-card" onclick="window.open('https://g.co/kgs/1ZT35zP', '_blank')">
           <div class="review-stars">
             <span class="star">★</span>
             <span class="star">★</span>
@@ -686,12 +735,13 @@
             <span class="star">★</span>
           </div>
           <div class="review-text">
-            "I'm not very tech-savvy, but they made everything simple and easy to understand. They set up my Wi-Fi and showed me how to use my new phone. Highly recommend!"
+            "I called this business and asked if they did low voltage cabling and the owner came over and measured the exact amount of cabling required and gave me a very reasonable quote and did an excellent job once the job was finished."
           </div>
-          <div class="review-author">- Jane S., Sun City</div>
+          <div class="review-author">- Zachary Wiley</div>
+          <a href="https://g.co/kgs/1ZT35zP" target="_blank" class="review-link">View Review →</a>
         </div>
 
-        <div class="review-preview-card" onclick="goToReviews()">
+        <div class="review-preview-card" onclick="window.open('https://g.co/kgs/aCojfrH', '_blank')">
           <div class="review-stars">
             <span class="star">★</span>
             <span class="star">★</span>
@@ -700,12 +750,13 @@
             <span class="star">★</span>
           </div>
           <div class="review-text">
-            "Quick, professional, and kind. They fixed my security camera system and made it so I can see everything from my iPad. Super helpful!"
+            "On time and very reasonable pricing will use again next time I have a problem"
           </div>
-          <div class="review-author">- Mark R., Glendale</div>
+          <div class="review-author">- Tina Danko</div>
+          <a href="https://g.co/kgs/aCojfrH" target="_blank" class="review-link">View Review →</a>
         </div>
 
-        <div class="review-preview-card" onclick="goToReviews()">
+        <div class="review-preview-card" onclick="window.open('https://g.co/kgs/nvenqwv', '_blank')">
           <div class="review-stars">
             <span class="star">★</span>
             <span class="star">★</span>
@@ -714,9 +765,10 @@
             <span class="star">★</span>
           </div>
           <div class="review-text">
-            "Their in-home service is exactly what I needed. Everything was explained clearly and they even labeled my remotes and cords for me. 10/10!"
+            "The technician came to my house and upgraded my old hard drive and put in a 'SSD' it is definitely faster now and my files are all safe. He is young but very professional!"
           </div>
-          <div class="review-author">- Linda K., Peoria</div>
+          <div class="review-author">- Jamison Briley</div>
+          <a href="https://g.co/kgs/nvenqwv" target="_blank" class="review-link">View Review →</a>
         </div>
       </div>
       <div class="view-all-reviews">
@@ -785,3 +837,65 @@
         </div>
         <div class="footer-section">
           <h3>Contact</h3>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 getITfixed. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Modal functionality
+    function openModal() {
+      document.getElementById('emailModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('emailModal').style.display = 'none';
+    }
+
+    function submitEmail(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      // Simulate form submission (replace with actual form handling)
+      setTimeout(() => {
+        // Show success message
+        successMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+        
+        // Reset form
+        document.getElementById('emailInput').value = '';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Me The Checklist';
+        
+        // Close modal after 2 seconds
+        setTimeout(() => {
+          closeModal();
+          successMessage.style.display = 'none';
+        }, 2000);
+      }, 1000);
+    }
+
+    function goToReviews() {
+      window.location.href = 'reviews.html';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('emailModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
