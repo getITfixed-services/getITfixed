@@ -391,34 +391,32 @@
     /* Reviews Preview Section */
     .reviews-preview-section {
       padding: 5rem 0;
-      background: transparent;
+      background: white;
     }
 
     .reviews-preview-container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
     .reviews-preview-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 2rem;
       margin-bottom: 3rem;
-      justify-items: center;
-      align-items: start;
     }
 
     .review-preview-card {
       background: #f8f9fa;
-      padding: 2rem;
+      padding: 2.5rem;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
       cursor: pointer;
       border-left: 4px solid #7ED321;
-      color: #2c3e50;
       text-decoration: none;
+      color: #2c3e50;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -443,30 +441,37 @@
     }
 
     .review-text {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.7;
+      color: #4a5568;
       font-style: italic;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .review-author {
-      font-weight: 700;
+      font-weight: 600;
       color: #1a2c4a;
-      margin-top: auto;
-      text-align: right;
     }
 
-    /* Yelp embed container */
-    .yelp-embed {
-      width: 100%;
-      max-width: 320px;
-      margin: auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      background: white;
-      padding: 1rem;
-      box-sizing: border-box;
-      align-self: center;
+    .view-all-reviews {
+      text-align: center;
+    }
+
+    .view-reviews-btn {
+      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%);
+      color: white;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .view-reviews-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(126, 211, 33, 0.3);
     }
 
     /* Footer */
@@ -559,10 +564,7 @@
         padding: 2rem;
       }
 
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .features-grid,
       .reviews-preview-grid {
         grid-template-columns: 1fr;
       }
@@ -619,56 +621,50 @@
       </div>
 
       <!-- ================== REVIEWS PART BELOW ================== -->
-      <section class="reviews-preview-section" style="margin-top: 4rem; background: transparent;">
+
+      <section class="reviews-preview-section">
         <div class="reviews-preview-container">
-
-          <h2 class="section-title" style="margin-bottom: 2rem; color: #ffffff;">What Our Customers Say</h2>
-
+          <h2 class="section-title">What Our Customers Say</h2>
           <div class="reviews-preview-grid">
-
             <!-- Google Review 1 -->
             <a href="https://g.co/kgs/aTzyNtc" target="_blank" rel="noopener noreferrer" class="review-preview-card">
               <div class="review-stars">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
               </div>
               <div class="review-text">
                 Fantastic IT company. Great price!! Quick response and arrived on time and delivered 5 star customer service. Came completely prepared and worked magic getting our computer backed up and restored.
               </div>
               <div class="review-author">- Arlette Itami (Google)</div>
             </a>
-
-            <!-- Yelp Review Embedded -->
-            <div class="yelp-embed" aria-label="Yelp review from Richard W.">
-              <span class="yelp-review" data-review-id="4jNumv3-VbC03fiZT6mS8w" data-hostname="www.yelp.com">
-                Read <a href="https://www.yelp.com/user_details?userid=o6nbNeRHdM0bdiNZcqE6nQ" rel="nofollow noopener" target="_blank">Richard W.</a>'s
-                <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=4jNumv3-VbC03fiZT6mS8w" rel="nofollow noopener" target="_blank">review</a> of
-                <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener" target="_blank">Get IT Fixed</a> on
-                <a href="https://www.yelp.com" rel="nofollow noopener" target="_blank">Yelp</a>
-              </span>
-            </div>
-
             <!-- Google Review 2 -->
             <a href="https://g.co/kgs/Vut4gsG" target="_blank" rel="noopener noreferrer" class="review-preview-card">
               <div class="review-stars">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
               </div>
               <div class="review-text">
                 Dominic came to the house the same day my husband called. He diagnosed the issue on our PC, took it with him for the actual repair and had it back to us the next day. I can’t express enough how polite, professional and knowledgable he is. His price is beyond fair. And to top it off he helped go after our husky when he escaped!
               </div>
               <div class="review-author">- Annie M. (Google)</div>
             </a>
-
+            <!-- Google Review 3 -->
+            <a href="https://g.co/kgs/qJFQKox" target="_blank" rel="noopener noreferrer" class="review-preview-card">
+              <div class="review-stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
+              <div class="review-text">
+                Dominic is very quick with what he is working on and responds as quickly as he can also very cheap price. I would 100% recommend him to work on ur issues with technology and other more.
+              </div>
+              <div class="review-author">- Anthony Solis (Google)</div>
+            </a>
+          </div>
+          <div class="view-all-reviews">
+            <button class="view-reviews-btn" onclick="goToReviews()">
+              View All Reviews →
+            </button>
           </div>
         </div>
       </section>
+
       <!-- ================== END REVIEWS PART ================== -->
 
     </div>
@@ -745,15 +741,15 @@
     </div>
   </footer>
 
-  <!-- Load Yelp widget script for embedded review -->
-  <script src="https://www.yelp.com/embed/widgets.js" type="text/javascript" async></script>
-
   <script>
     function openModal() {
       document.getElementById('emailModal').style.display = 'block';
     }
     function closeModal() {
       document.getElementById('emailModal').style.display = 'none';
+    }
+    function goToReviews() {
+      window.location.href = 'reviews.html';
     }
     function submitEmail(e) {
       e.preventDefault();
