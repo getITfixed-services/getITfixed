@@ -86,12 +86,236 @@
       font-weight: 600;
       font-size: 1.1rem;
       transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
     }
     
     .btn-consultation:hover {
       background: #6BC419;
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      animation: fadeInModal 0.3s ease;
+    }
+
+    .modal.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideInModal 0.4s ease;
+      overflow: hidden;
+    }
+
+    @keyframes slideInModal {
+      from { 
+        transform: translateY(-50px) scale(0.9);
+        opacity: 0;
+      }
+      to { 
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-header h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .close {
+      color: white;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .close:hover {
+      opacity: 0.7;
+    }
+
+    .modal-body {
+      padding: 2.5rem;
+    }
+
+    /* MailerLite Form Integration Styles */
+    .ml-form-embedContainer {
+      box-sizing: border-box !important;
+      width: 100% !important;
+      margin: 0 !important;
+    }
+
+    .ml-form-embedWrapper {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+    }
+
+    .ml-form-embedBody {
+      padding: 0 !important;
+    }
+
+    .ml-form-embedContent h4 {
+      color: #1a2c4a !important;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .ml-form-embedContent p {
+      color: #6c757d !important;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+      font-size: 1.1rem !important;
+      margin-bottom: 2rem !important;
+    }
+
+    .ml-block-form .ml-field-group {
+      margin-bottom: 1.5rem !important;
+    }
+
+    .ml-block-form .ml-field-group label {
+      color: #1a2c4a !important;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      margin-bottom: 0.5rem !important;
+      display: block !important;
+    }
+
+    .ml-block-form input {
+      background-color: #ffffff !important;
+      color: #333333 !important;
+      border: 2px solid #e9ecef !important;
+      border-radius: 8px !important;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+      font-size: 1rem !important;
+      padding: 1rem 1.2rem !important;
+      width: 100% !important;
+      transition: border-color 0.3s ease !important;
+    }
+
+    .ml-block-form input:focus {
+      outline: none !important;
+      border-color: #7ED321 !important;
+    }
+
+    .ml-form-embedSubmit button {
+      background: #7ED321 !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 8px !important;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+      font-size: 1.1rem !important;
+      font-weight: 600 !important;
+      padding: 1rem 2rem !important;
+      width: 100% !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .ml-form-embedSubmit button:hover {
+      background: #6BC419 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(126, 211, 33, 0.3) !important;
+    }
+
+    .ml-form-successBody {
+      background: #d4edda !important;
+      color: #155724 !important;
+      border: 1px solid #c3e6cb !important;
+      border-radius: 8px !important;
+      padding: 2rem !important;
+      text-align: center !important;
+    }
+
+    .ml-form-successContent h4 {
+      color: #155724 !important;
+      font-size: 1.8rem !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .ml-form-successContent p {
+      color: #155724 !important;
+      font-size: 1.1rem !important;
+    }
+
+    .benefits-list {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .benefits-list h3 {
+      color: #1a2c4a;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefits-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .benefits-list li {
+      padding: 0.3rem 0;
+      color: #6c757d;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .benefits-list li:before {
+      content: '✓';
+      color: #7ED321;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
     }
 
     /* Page Header */
@@ -224,107 +448,6 @@
       padding: 3rem;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-form h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: #1a2c4a;
-    }
-
-    .contact-form p {
-      font-size: 1.1rem;
-      color: #6c757d;
-      margin-bottom: 2.5rem;
-    }
-
-    .form-group {
-      margin-bottom: 2rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #1a2c4a;
-      margin-bottom: 0.8rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 1rem 1.2rem;
-      border: 2px solid #e9ecef;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #7ED321;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .btn-submit {
-      background: #7ED321;
-      color: #ffffff;
-      padding: 1rem 2.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-    }
-
-    .btn-submit:hover {
-      background: #6BC419;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(126, 211, 33, 0.3);
-    }
-
-    .btn-submit:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    /* Form Status Messages */
-    .form-status {
-      margin-top: 1rem;
-      padding: 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      display: none;
-    }
-
-    .form-status.success {
-      background: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-    }
-
-    .form-status.error {
-      background: #f8d7da;
-      color: #721c24;
-      border: 1px solid #f5c6cb;
     }
 
     /* Emergency Banner */
@@ -499,22 +622,34 @@
         gap: 2rem;
       }
 
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
       .contact-info,
       .contact-form {
         padding: 2rem;
       }
 
-      .contact-info h2,
-      .contact-form h2 {
+      .contact-info h2 {
         font-size: 2rem;
       }
 
       .hours-section h2 {
         font-size: 2rem;
+      }
+
+      .modal-content {
+        width: 95%;
+        margin: 2% auto;
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+      }
+
+      .modal-header {
+        padding: 1.5rem;
+      }
+
+      .modal-header h2 {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -530,9 +665,73 @@
         <li><a href="reviews.html">Testimonials</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-      <a href="contact.html" class="btn-consultation">Book Free Consultation</a>
+      <button class="btn-consultation" onclick="openModal()">Book Free Consultation</button>
     </div>
   </nav>
+
+  <!-- Modal with MailerLite Form -->
+  <div id="consultationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>🚀 Get Your Free Consultation</h2>
+        <p>Let's get your computer running perfectly!</p>
+      </div>
+      <div class="modal-body">
+        <div class="benefits-list">
+          <h3>What You Get:</h3>
+          <ul>
+            <li>Complete computer health assessment</li>
+            <li>Personalized recommendations</li>
+            <li>Same-day service available</li>
+            <li>100% satisfaction guarantee</li>
+          </ul>
+        </div>
+
+        <!-- MailerLite Form in Modal -->
+        <div id="mlb2-29031367" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-29031367">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent">
+                  <h4>Quick Contact Form</h4>
+                  <p>Fill out the details below and we'll get back to you within 2 hours!</p>
+                </div>
+
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1700838/forms/161378854482478381/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <label for="modal-email">Email Address *</label>
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" id="modal-email" placeholder="Enter your email address" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">Get My Free Consultation</button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+
+              <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                  <h4>Thank you!</h4>
+                  <p>You have successfully joined our subscriber list. We'll contact you within 2 hours to schedule your free consultation!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Page Header -->
   <section class="page-header">
@@ -590,58 +789,48 @@
           </div>
         </div>
 
-        <!-- Contact Form -->
+        <!-- Main Contact Form with MailerLite -->
         <div class="contact-form">
-          <h2>Book Free Consultation</h2>
-          <p>Tell us about your computer needs and we'll provide a customized solution.</p>
+          <div id="mlb2-29031367-main" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-29031367">
+            <div class="ml-form-align-center">
+              <div class="ml-form-embedWrapper embedForm">
+                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                  <div class="ml-form-embedContent">
+                    <h4>Book Your Free Consultation</h4>
+                    <p>Tell us about your computer needs and we'll provide a customized solution within 2 hours.</p>
+                  </div>
 
-          <form id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required>
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required>
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1700838/forms/161378854482478381/subscribe" data-code="" method="post" target="_blank">
+                    <div class="ml-form-formContent">
+                      <div class="ml-form-fieldRow">
+                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                          <label for="main-email">Email Address *</label>
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" id="main-email" placeholder="Enter your email address" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+
+                    <input type="hidden" name="ml-submit" value="1">
+                    <div class="ml-form-embedSubmit">
+                      <button type="submit" class="primary">Book Free Consultation Now</button>
+                      <button disabled="disabled" style="display: none;" type="button" class="loading">
+                        <div class="ml-form-embedSubmitLoad"></div>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                    </div>
+                    <input type="hidden" name="anticsrf" value="true">
+                  </form>
+                </div>
+
+                <div class="ml-form-successBody row-success" style="display: none">
+                  <div class="ml-form-successContent">
+                    <h4>Thank You!</h4>
+                    <p>You have successfully joined our subscriber list. We'll contact you within 2 hours to schedule your free consultation and discuss your computer needs!</p>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="service">Service Needed</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service...</option>
-                <option value="senior-basic">Senior Basic Care Plan ($50/month)</option>
-                <option value="senior-premium">Senior Premium Care Plan ($89/month)</option>
-                <option value="senior-onetime">Senior One-Time Service</option>
-                <option value="gaming-optimization">Gaming Performance Optimization</option>
-                <option value="gaming-build">Custom Gaming PC Build</option>
-                <option value="gaming-upgrade">Gaming PC Upgrade</option>
-                <option value="emergency">Emergency Repair ($199 service charge)</option>
-                <option value="consultation">Free Consultation</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Tell Us About Your Computer Issues</label>
-              <textarea id="message" name="message" placeholder="Describe your computer problems, what you use your computer for, and any specific concerns..."></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit" id="submitBtn">Book Free Consultation</button>
-            
-            <div class="form-status" id="formStatus"></div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -734,116 +923,86 @@
     </div>
   </footer>
 
+  <!-- MailerLite Scripts -->
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
   <script>
-    // Discord webhook URL
-    const DISCORD_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1399540989655388170/cBY9O4vb9p-3yKZwWq37Nwo22gkANYMi1-qg0XJ-9AGnc49R0wA1yuOfH23NdNSrKIXa';
+    fetch("https://assets.mailerlite.com/jsonp/1700838/forms/161378854482478381/takel")
+  </script>
 
-    // Form submission handler
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const submitBtn = document.getElementById('submitBtn');
-      const formStatus = document.getElementById('formStatus');
-      
-      // Get form data
-      const formData = new FormData(this);
-      const firstName = formData.get('firstName');
-      const lastName = formData.get('lastName');
-      const email = formData.get('email');
-      const phone = formData.get('phone');
-      const service = formData.get('service');
-      const message = formData.get('message');
-      
-      // Disable button and show loading
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      formStatus.style.display = 'none';
-      
-      try {
-        // Prepare Discord message
-        const discordData = {
-          embeds: [{
-            title: "📞 New Contact Form Submission",
-            color: 8310048, // Green color
-            fields: [
-              {
-                name: "👤 Name",
-                value: `${firstName} ${lastName}`,
-                inline: true
-              },
-              {
-                name: "📧 Email",
-                value: email,
-                inline: true
-              },
-              {
-                name: "📱 Phone",
-                value: phone,
-                inline: true
-              },
-              {
-                name: "🛠️ Service Needed",
-                value: service || 'Not specified',
-                inline: false
-              },
-              {
-                name: "💬 Message",
-                value: message || 'No message provided',
-                inline: false
-              },
-              {
-                name: "📅 Submitted",
-                value: new Date().toLocaleString(),
-                inline: true
-              },
-              {
-                name: "🌐 Source",
-                value: "Contact Page Form",
-                inline: true
-              }
-            ],
-            footer: {
-              text: "getITfixed Lead Generation System"
-            },
-            timestamp: new Date().toISOString()
-          }]
-        };
+  <script>
+    // Modal Functions
+    function openModal() {
+      document.getElementById('consultationModal').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
 
-        // Send to Discord
-        const response = await fetch(DISCORD_WEBHOOK_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(discordData)
-        });
+    function closeModal() {
+      document.getElementById('consultationModal').classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
 
-        if (response.ok) {
-          // Success
-          formStatus.className = 'form-status success';
-          formStatus.textContent = '✅ Thank you! Your message has been sent successfully. We will contact you within 4 hours to schedule your free consultation.';
-          formStatus.style.display = 'block';
-          
-          // Reset form
-          this.reset();
-          
-        } else {
-          throw new Error('Network response was not ok');
-        }
-        
-      } catch (error) {
-        console.error('Error:', error);
-        
-        // Error
-        formStatus.className = 'form-status error';
-        formStatus.textContent = '❌ Sorry, there was an error sending your message. Please try again or call us directly at +1(623)-738-5630.';
-        formStatus.style.display = 'block';
-        
-      } finally {
-        // Re-enable button
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Book Free Consultation';
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('consultationModal');
+      if (event.target == modal) {
+        closeModal();
       }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // MailerLite Success Handler
+    function ml_webform_success_29031367() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-29031367 .row-success').show();
+      $('.ml-subscribe-form-29031367 .row-form').hide();
+    }
+
+    // Auto-close modal after successful submission and show confirmation
+    document.addEventListener('DOMContentLoaded', function() {
+      // Listen for MailerLite form submissions
+      const forms = document.querySelectorAll('.ml-block-form');
+      forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+          // Add a delay to show success message, then close modal if it's the modal form
+          setTimeout(() => {
+            if (this.closest('#consultationModal')) {
+              setTimeout(() => {
+                closeModal();
+                // Show a nice confirmation
+                alert('🎉 Thank you! Your consultation request has been submitted. Check your email for confirmation and we\'ll contact you within 2 hours!');
+              }, 2000);
+            }
+          }, 1000);
+        });
+      });
+    });
+
+    // Enhanced user experience - scroll to form on page load if there's an error or success parameter
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') || urlParams.get('error')) {
+        document.querySelector('.contact-form').scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    });
+
+    // Add loading states to form buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const submitButtons = document.querySelectorAll('.ml-form-embedSubmit button[type="submit"]');
+      submitButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.style.opacity = '0.7';
+          this.innerHTML = 'Sending...';
+        });
+      });
     });
   </script>
 </body>
