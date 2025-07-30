@@ -96,7 +96,7 @@
       box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);
     }
 
-    /* Modal Styles */
+    /* Modal Styles - UPDATED FOR MOBILE */
     .modal {
       display: none;
       position: fixed;
@@ -108,6 +108,7 @@
       background-color: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(4px);
       animation: fadeInModal 0.3s ease;
+      padding: 1rem;
     }
 
     .modal.show {
@@ -123,19 +124,21 @@
 
     .modal-content {
       background-color: #ffffff;
-      margin: 5% auto;
+      margin: 0 auto;
       padding: 0;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 600px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 450px;
+      max-height: 90vh;
+      overflow-y: auto;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       animation: slideInModal 0.4s ease;
-      overflow: hidden;
+      position: relative;
     }
 
     @keyframes slideInModal {
       from { 
-        transform: translateY(-50px) scale(0.9);
+        transform: translateY(-30px) scale(0.95);
         opacity: 0;
       }
       to { 
@@ -147,31 +150,36 @@
     .modal-header {
       background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%);
       color: white;
-      padding: 2rem;
+      padding: 1.5rem;
       text-align: center;
       position: relative;
     }
 
     .modal-header h2 {
-      font-size: 2.2rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     .modal-header p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       opacity: 0.9;
     }
 
     .close {
       color: white;
       position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      font-size: 2rem;
+      top: 0.8rem;
+      right: 1rem;
+      font-size: 1.5rem;
       font-weight: bold;
       cursor: pointer;
       transition: opacity 0.3s ease;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .close:hover {
@@ -179,7 +187,7 @@
     }
 
     .modal-body {
-      padding: 2.5rem;
+      padding: 1.5rem;
     }
 
     /* MailerLite Form Integration Styles */
@@ -203,28 +211,28 @@
     .ml-form-embedContent h4 {
       color: #1a2c4a !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 1.8rem !important;
+      font-size: 1.4rem !important;
       font-weight: 700 !important;
-      margin-bottom: 1rem !important;
+      margin-bottom: 0.8rem !important;
     }
 
     .ml-form-embedContent p {
       color: #6c757d !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 1.1rem !important;
-      margin-bottom: 2rem !important;
+      font-size: 1rem !important;
+      margin-bottom: 1.5rem !important;
     }
 
     .ml-block-form .ml-field-group {
-      margin-bottom: 1.5rem !important;
+      margin-bottom: 1.2rem !important;
     }
 
     .ml-block-form .ml-field-group label {
       color: #1a2c4a !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 1rem !important;
+      font-size: 0.9rem !important;
       font-weight: 600 !important;
-      margin-bottom: 0.5rem !important;
+      margin-bottom: 0.4rem !important;
       display: block !important;
     }
 
@@ -235,7 +243,7 @@
       border-radius: 8px !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
       font-size: 1rem !important;
-      padding: 1rem 1.2rem !important;
+      padding: 0.9rem 1rem !important;
       width: 100% !important;
       transition: border-color 0.3s ease !important;
     }
@@ -251,9 +259,9 @@
       border: none !important;
       border-radius: 8px !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 1.1rem !important;
+      font-size: 1rem !important;
       font-weight: 600 !important;
-      padding: 1rem 2rem !important;
+      padding: 1rem 1.5rem !important;
       width: 100% !important;
       cursor: pointer !important;
       transition: all 0.3s ease !important;
@@ -270,32 +278,32 @@
       color: #155724 !important;
       border: 1px solid #c3e6cb !important;
       border-radius: 8px !important;
-      padding: 2rem !important;
+      padding: 1.5rem !important;
       text-align: center !important;
     }
 
     .ml-form-successContent h4 {
       color: #155724 !important;
-      font-size: 1.8rem !important;
-      margin-bottom: 1rem !important;
+      font-size: 1.4rem !important;
+      margin-bottom: 0.8rem !important;
     }
 
     .ml-form-successContent p {
       color: #155724 !important;
-      font-size: 1.1rem !important;
+      font-size: 1rem !important;
     }
 
     .benefits-list {
       background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 10px;
-      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
     }
 
     .benefits-list h3 {
       color: #1a2c4a;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .benefits-list ul {
@@ -304,10 +312,11 @@
     }
 
     .benefits-list li {
-      padding: 0.3rem 0;
+      padding: 0.2rem 0;
       color: #6c757d;
       position: relative;
-      padding-left: 1.5rem;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
     }
 
     .benefits-list li:before {
@@ -635,21 +644,84 @@
         font-size: 2rem;
       }
 
-      .modal-content {
-        width: 95%;
-        margin: 2% auto;
+      /* Mobile Modal Adjustments */
+      .modal {
+        padding: 0.5rem;
+        align-items: flex-start;
+        padding-top: 2rem;
       }
 
-      .modal-body {
-        padding: 1.5rem;
+      .modal-content {
+        max-width: 100%;
+        max-height: 85vh;
+        width: 100%;
       }
 
       .modal-header {
-        padding: 1.5rem;
+        padding: 1rem;
       }
 
       .modal-header h2 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
+      }
+
+      .modal-header p {
+        font-size: 0.9rem;
+      }
+
+      .modal-body {
+        padding: 1rem;
+      }
+
+      .benefits-list {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .benefits-list h3 {
+        font-size: 0.9rem;
+      }
+
+      .benefits-list li {
+        font-size: 0.85rem;
+      }
+
+      .ml-form-embedContent h4 {
+        font-size: 1.2rem !important;
+      }
+
+      .ml-form-embedContent p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .close {
+        top: 0.5rem;
+        right: 0.8rem;
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .modal {
+        padding: 0.25rem;
+        padding-top: 1rem;
+      }
+
+      .modal-header {
+        padding: 0.8rem;
+      }
+
+      .modal-header h2 {
+        font-size: 1.2rem;
+      }
+
+      .modal-body {
+        padding: 0.8rem;
+      }
+
+      .benefits-list {
+        padding: 0.6rem;
       }
     }
   </style>
@@ -674,15 +746,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2>🚀 Get Your Free Consultation</h2>
-        <p>Let's get your computer running perfectly!</p>
+        <h2>🚀 Free Consultation</h2>
+        <p>Get your computer running perfectly!</p>
       </div>
       <div class="modal-body">
         <div class="benefits-list">
           <h3>What You Get:</h3>
           <ul>
-            <li>Complete computer health assessment</li>
-            <li>Personalized recommendations</li>
+            <li>Complete computer assessment</li>
             <li>Same-day service available</li>
             <li>100% satisfaction guarantee</li>
           </ul>
@@ -695,7 +766,7 @@
               <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
                 <div class="ml-form-embedContent">
                   <h4>Quick Contact Form</h4>
-                  <p>Fill out the details below and we'll get back to you within 2 hours!</p>
+                  <p>We'll get back to you within 2 hours!</p>
                 </div>
 
                 <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1700838/forms/161378854482478381/subscribe" data-code="" method="post" target="_blank">
@@ -1007,3 +1078,4 @@
   </script>
 </body>
 </html>
+            <li>
