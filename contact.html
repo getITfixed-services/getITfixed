@@ -96,7 +96,7 @@
       box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);
     }
 
-    /* Modal Styles - Using exact same styles from working home page */
+    /* Modal Styles - UPDATED FOR MOBILE */
     .modal {
       display: none;
       position: fixed;
@@ -105,260 +105,226 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      animation: fadeInModal 0.3s ease;
+      padding: 1rem;
     }
 
-    .modal-content {
-      background: white;
-      margin: 5% auto;
-      padding: 0;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      position: relative;
-      animation: modalSlideIn 0.3s ease;
-      overflow: hidden;
-    }
-
-    @keyframes modalSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .close {
-      color: #666;
-      float: right;
-      font-size: 2rem;
-      font-weight: bold;
-      position: absolute;
-      right: 1.5rem;
-      top: 1rem;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      z-index: 10;
-      background: white;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
+    .modal.show {
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      margin: 0 auto;
+      padding: 0;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 450px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideInModal 0.4s ease;
+      position: relative;
+    }
+
+    @keyframes slideInModal {
+      from { 
+        transform: translateY(-30px) scale(0.95);
+        opacity: 0;
+      }
+      to { 
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .modal-header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .close {
+      color: white;
+      position: absolute;
+      top: 0.8rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .close:hover {
-      color: #dc3545;
+      opacity: 0.7;
     }
 
-    /* MailerLite Form Styling - Using exact same styles from working home page */
-    #mlb2-161302589608035771.ml-form-embedContainer {
-      box-sizing: border-box;
-      display: table;
-      margin: 0 auto;
-      position: static;
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    /* MailerLite Form Integration Styles */
+    .ml-form-embedContainer {
+      box-sizing: border-box !important;
       width: 100% !important;
+      margin: 0 !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper {
-      background-color: transparent;
-      border-width: 0px;
-      border-color: transparent;
-      border-radius: 4px;
-      border-style: solid;
-      box-sizing: border-box;
-      display: inline-block !important;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      width: 100% !important;
+    .ml-form-embedWrapper {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper.embedForm { 
-      max-width: 100% !important;
-      width: 100% !important; 
+    .ml-form-embedBody {
+      padding: 0 !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
-      padding: 30px 30px 20px 30px;
-      box-sizing: border-box;
-    }
-
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent {
-      text-align: center;
-      margin: 0 0 25px 0;
-    }
-
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4 {
+    .ml-form-embedContent h4 {
       color: #1a2c4a !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 28px !important;
+      font-size: 1.4rem !important;
       font-weight: 700 !important;
-      margin: 0 0 15px 0 !important;
-      text-align: center !important;
+      margin-bottom: 0.8rem !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p {
-      color: #666 !important;
+    .ml-form-embedContent p {
+      color: #6c757d !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 16px !important;
-      font-weight: 400 !important;
-      line-height: 1.6 !important;
-      margin: 0 0 25px 0 !important;
-      text-align: center !important;
+      font-size: 1rem !important;
+      margin-bottom: 1.5rem !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
-      margin: 0 0 20px 0;
-      width: 100%;
-      box-sizing: border-box;
+    .ml-block-form .ml-field-group {
+      margin-bottom: 1.2rem !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+    .ml-block-form .ml-field-group label {
+      color: #1a2c4a !important;
+      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
+      font-size: 0.9rem !important;
+      font-weight: 600 !important;
+      margin-bottom: 0.4rem !important;
+      display: block !important;
+    }
+
+    .ml-block-form input {
       background-color: #ffffff !important;
       color: #333333 !important;
-      border-color: #e3e3e3 !important;
+      border: 2px solid #e9ecef !important;
       border-radius: 8px !important;
-      border-style: solid !important;
-      border-width: 2px !important;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 16px !important;
-      height: auto;
-      line-height: 21px !important;
-      margin-bottom: 0;
-      margin-top: 0;
-      padding: 15px !important;
+      font-size: 1rem !important;
+      padding: 0.9rem 1rem !important;
       width: 100% !important;
-      box-sizing: border-box !important;
-      max-width: 100% !important;
       transition: border-color 0.3s ease !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
-      border-color: #7ED321 !important;
+    .ml-block-form input:focus {
       outline: none !important;
+      border-color: #7ED321 !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
-      margin: 0 0 25px 0;
-      width: 100%;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label {
-      font-weight: normal;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      display: inline-block;
-      min-height: 24px;
-      padding-left: 30px;
-      cursor: pointer;
-    }
-
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"] {
-      position: absolute;
-      left: 0;
-      top: 2px;
-      width: 18px;
-      height: 18px;
-      margin: 0;
-      cursor: pointer;
-    }
-
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description p {
-      color: #666 !important;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 14px !important;
-      font-weight: normal !important;
-      line-height: 1.4 !important;
-      margin: 0 !important;
-      display: inline;
-    }
-
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
-      margin: 0 0 20px 0;
-      width: 100%;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%) !important;
+    .ml-form-embedSubmit button {
+      background: #7ED321 !important;
+      color: #ffffff !important;
       border: none !important;
       border-radius: 8px !important;
-      box-shadow: none !important;
-      color: #ffffff !important;
-      cursor: pointer;
       font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 18px !important;
+      font-size: 1rem !important;
       font-weight: 600 !important;
-      line-height: 21px !important;
-      height: auto;
-      padding: 15px 30px !important;
+      padding: 1rem 1.5rem !important;
       width: 100% !important;
-      box-sizing: border-box !important;
+      cursor: pointer !important;
       transition: all 0.3s ease !important;
     }
 
-    #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-      background: linear-gradient(135deg, #6BC419 0%, #5BA017 100%) !important;
+    .ml-form-embedSubmit button:hover {
+      background: #6BC419 !important;
       transform: translateY(-2px) !important;
       box-shadow: 0 6px 20px rgba(126, 211, 33, 0.3) !important;
     }
 
-    .ml-form-embedSubmitLoad {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-    }
-
-    .ml-form-embedSubmitLoad:after {
-      content: " ";
-      display: block;
-      width: 11px;
-      height: 11px;
-      margin: 1px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      border-color: #ffffff #ffffff #ffffff transparent;
-      animation: ml-form-embedSubmitLoad 1.2s linear infinite;
-    }
-
-    @keyframes ml-form-embedSubmitLoad {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
     .ml-form-successBody {
-      text-align: center;
-      padding: 30px;
-      box-sizing: border-box;
+      background: #d4edda !important;
+      color: #155724 !important;
+      border: 1px solid #c3e6cb !important;
+      border-radius: 8px !important;
+      padding: 1.5rem !important;
+      text-align: center !important;
     }
 
     .ml-form-successContent h4 {
-      color: #1a2c4a !important;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 28px !important;
-      font-weight: 700 !important;
-      margin: 0 0 15px 0 !important;
+      color: #155724 !important;
+      font-size: 1.4rem !important;
+      margin-bottom: 0.8rem !important;
     }
 
     .ml-form-successContent p {
-      color: #666 !important;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif !important;
-      font-size: 16px !important;
-      font-weight: 400 !important;
-      line-height: 1.6 !important;
-      margin: 0 0 10px 0 !important;
+      color: #155724 !important;
+      font-size: 1rem !important;
+    }
+
+    .benefits-list {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+    }
+
+    .benefits-list h3 {
+      color: #1a2c4a;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .benefits-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .benefits-list li {
+      padding: 0.2rem 0;
+      color: #6c757d;
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .benefits-list li:before {
+      content: '✓';
+      color: #7ED321;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
     }
 
     /* Page Header */
@@ -678,14 +644,84 @@
         font-size: 2rem;
       }
 
-      .modal-content {
-        margin: 10% auto;
-        width: 95%;
-        max-width: 400px;
+      /* Mobile Modal Adjustments */
+      .modal {
+        padding: 0.5rem;
+        align-items: flex-start;
+        padding-top: 2rem;
       }
 
-      #mlb2-161302589608035771.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
-        padding: 20px 20px 15px 20px;
+      .modal-content {
+        max-width: 100%;
+        max-height: 85vh;
+        width: 100%;
+      }
+
+      .modal-header {
+        padding: 1rem;
+      }
+
+      .modal-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .modal-header p {
+        font-size: 0.9rem;
+      }
+
+      .modal-body {
+        padding: 1rem;
+      }
+
+      .benefits-list {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .benefits-list h3 {
+        font-size: 0.9rem;
+      }
+
+      .benefits-list li {
+        font-size: 0.85rem;
+      }
+
+      .ml-form-embedContent h4 {
+        font-size: 1.2rem !important;
+      }
+
+      .ml-form-embedContent p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .close {
+        top: 0.5rem;
+        right: 0.8rem;
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .modal {
+        padding: 0.25rem;
+        padding-top: 1rem;
+      }
+
+      .modal-header {
+        padding: 0.8rem;
+      }
+
+      .modal-header h2 {
+        font-size: 1.2rem;
+      }
+
+      .modal-body {
+        padding: 0.8rem;
+      }
+
+      .benefits-list {
+        padding: 0.6rem;
       }
     }
   </style>
@@ -705,57 +741,61 @@
     </div>
   </nav>
 
-  <!-- Modal with MailerLite Form - Using exact same working form from home page -->
+  <!-- Modal with MailerLite Form -->
   <div id="consultationModal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      
-      <!-- MailerLite Form - Using the WORKING form ID from your home page -->
-      <div id="mlb2-161302589608035771" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-161302589608035771">
-        <div class="ml-form-align-center">
-          <div class="ml-form-embedWrapper embedForm">
-            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-              <div class="ml-form-embedContent">
-                <h4>🚀 Free Consultation</h4>
-                <p>Get your computer running perfectly! We'll get back to you within 2 hours.</p>
-              </div>
+      <div class="modal-header">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>🚀 Free Consultation</h2>
+        <p>Get your computer running perfectly!</p>
+      </div>
+      <div class="modal-body">
+        <div class="benefits-list">
+          <h3>What You Get:</h3>
+          <ul>
+            <li>Complete computer assessment</li>
+            <li>Same-day service available</li>
+            <li>100% satisfaction guarantee</li>
+          </ul>
+        </div>
 
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1700838/forms/161302589608035771/subscribe" data-code="" method="post" target="_blank">
-                <div class="ml-form-formContent">
-                  <div class="ml-form-fieldRow ml-last-item">
-                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your email address" autocomplete="email">
+        <!-- MailerLite Form in Modal -->
+        <div id="mlb2-29031367" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-29031367">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent">
+                  <h4>Quick Contact Form</h4>
+                  <p>We'll get back to you within 2 hours!</p>
+                </div>
+
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1700838/forms/161378854482478381/subscribe" data-code="" method="post">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <label for="modal-email">Email Address *</label>
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" id="modal-email" placeholder="Enter your email address" autocomplete="email">
+                      </div>
                     </div>
                   </div>
+
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">Get My Free Consultation</button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+
+              <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                  <h4>Thank you!</h4>
+                  <p>You have successfully joined our subscriber list. We'll contact you within 2 hours to schedule your free consultation!</p>
                 </div>
-
-                <div class="ml-form-checkboxRow ml-validate-required">
-                  <label class="checkbox">
-                    <input type="checkbox">
-                    <div class="label-description">
-                      <p>Opt in to receive news and updates.</p>
-                    </div>
-                  </label>
-                </div>
-
-                <input type="hidden" name="ml-submit" value="1">
-                <input type="hidden" name="anticsrf" value="true">
-
-                <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Get My Free Consultation</button>
-                  <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <div class="ml-form-embedSubmitLoad"></div>
-                    <span class="sr-only">Loading...</span>
-                  </button>
-                </div>
-              </form>
-            </div>
-
-            <div class="ml-form-successBody row-success" style="display: none">
-              <div class="ml-form-successContent">
-                <h4>Thank you!</h4>
-                <p>You have successfully joined our subscriber list.</p>
-                <p>We'll contact you within 2 hours to schedule your free consultation!</p>
               </div>
             </div>
           </div>
@@ -820,9 +860,9 @@
           </div>
         </div>
 
-        <!-- Main Contact Form with MailerLite - Using the WORKING form from home page -->
+        <!-- Main Contact Form with MailerLite -->
         <div class="contact-form">
-          <div id="mlb2-161302589608035771-main" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-161302589608035771">
+          <div id="mlb2-29031367-main" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-29031367">
             <div class="ml-form-align-center">
               <div class="ml-form-embedWrapper embedForm">
                 <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
@@ -831,27 +871,17 @@
                     <p>Tell us about your computer needs and we'll provide a customized solution within 2 hours.</p>
                   </div>
 
-                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1700838/forms/161302589608035771/subscribe" data-code="" method="post" target="_blank">
+                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1700838/forms/161378854482478381/subscribe" data-code="" method="post">
                     <div class="ml-form-formContent">
-                      <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-form-fieldRow">
                         <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your email address" autocomplete="email">
+                          <label for="main-email">Email Address *</label>
+                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" id="main-email" placeholder="Enter your email address" autocomplete="email">
                         </div>
                       </div>
                     </div>
 
-                    <div class="ml-form-checkboxRow ml-validate-required">
-                      <label class="checkbox">
-                        <input type="checkbox">
-                        <div class="label-description">
-                          <p>Opt in to receive news and updates.</p>
-                        </div>
-                      </label>
-                    </div>
-
                     <input type="hidden" name="ml-submit" value="1">
-                    <input type="hidden" name="anticsrf" value="true">
-
                     <div class="ml-form-embedSubmit">
                       <button type="submit" class="primary">Book Free Consultation Now</button>
                       <button disabled="disabled" style="display: none;" type="button" class="loading">
@@ -859,14 +889,14 @@
                         <span class="sr-only">Loading...</span>
                       </button>
                     </div>
+                    <input type="hidden" name="anticsrf" value="true">
                   </form>
                 </div>
 
                 <div class="ml-form-successBody row-success" style="display: none">
                   <div class="ml-form-successContent">
                     <h4>Thank You!</h4>
-                    <p>You have successfully joined our subscriber list.</p>
-                    <p>We'll contact you within 2 hours to schedule your free consultation and discuss your computer needs!</p>
+                    <p>You have successfully joined our subscriber list. We'll contact you within 2 hours to schedule your free consultation and discuss your computer needs!</p>
                   </div>
                 </div>
               </div>
@@ -964,15 +994,21 @@
     </div>
   </footer>
 
+  <!-- MailerLite Scripts -->
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+  <script>
+    fetch("https://assets.mailerlite.com/jsonp/1700838/forms/161378854482478381/takel")
+  </script>
+
   <script>
     // Modal Functions
     function openModal() {
-      document.getElementById('consultationModal').style.display = 'block';
+      document.getElementById('consultationModal').classList.add('show');
       document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-      document.getElementById('consultationModal').style.display = 'none';
+      document.getElementById('consultationModal').classList.remove('show');
       document.body.style.overflow = 'auto';
     }
 
@@ -991,23 +1027,54 @@
       }
     });
 
-    // MailerLite success handler - Using exact same function from working home page
-    function ml_webform_success_161302589608035771() {
+    // MailerLite Success Handler
+    function ml_webform_success_29031367() {
       var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-161302589608035771 .row-success').show();
-      $('.ml-subscribe-form-161302589608035771 .row-form').hide();
-      
-      // Close modal after 3 seconds
-      setTimeout(function() {
-        closeModal();
-      }, 3000);
+      $('.ml-subscribe-form-29031367 .row-success').show();
+      $('.ml-subscribe-form-29031367 .row-form').hide();
     }
-  </script>
 
-  <!-- MailerLite Scripts - Using exact same scripts from working home page -->
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-  <script>
-    fetch("https://assets.mailerlite.com/jsonp/1700838/forms/161302589608035771/takel")
+    // Auto-close modal after successful submission and show confirmation
+    document.addEventListener('DOMContentLoaded', function() {
+      // Listen for MailerLite form submissions
+      const forms = document.querySelectorAll('.ml-block-form');
+      forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+          // Add a delay to show success message, then close modal if it's the modal form
+          setTimeout(() => {
+            if (this.closest('#consultationModal')) {
+              setTimeout(() => {
+                closeModal();
+                // Show a nice confirmation
+                alert('🎉 Thank you! Your consultation request has been submitted. Check your email for confirmation and we\'ll contact you within 2 hours!');
+              }, 2000);
+            }
+          }, 1000);
+        });
+      });
+    });
+
+    // Enhanced user experience - scroll to form on page load if there's an error or success parameter
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') || urlParams.get('error')) {
+        document.querySelector('.contact-form').scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }
+    });
+
+    // Add loading states to form buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const submitButtons = document.querySelectorAll('.ml-form-embedSubmit button[type="submit"]');
+      submitButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.style.opacity = '0.7';
+          this.innerHTML = 'Sending...';
+        });
+      });
+    });
   </script>
 </body>
 </html>
