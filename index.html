@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>getITfixed | Tech Help You Can Trust | Computer Repair & Support</title>
+  
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -47,15 +54,10 @@
       color: #ffffff;
     }
     
-    .logo::before {
-      content: 'IT';
-      background: #7ED321;
-      color: #1a2c4a;
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      margin-right: 0.7rem;
-      font-weight: 700;
-      font-size: 1rem;
+    .logo-image {
+      width: 35px;
+      height: 35px;
+      margin-right: 0.8rem;
     }
     
     .nav-links {
@@ -773,7 +775,10 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">getITfixed</div>
+      <div class="logo">
+        <img src="images/getitfixed-logo.png" alt="getITfixed Logo" class="logo-image">
+        getITfixed
+      </div>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="services.html">Services</a></li>
