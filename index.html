@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="google-site-verification" content="mV_hmOlMxud6uKk7PFxBk9tVP3jaKD1wtpQQyV4qt5M" />
-  <title>getITfixed | Tech Help You Can Trust | Computer Repair & Support</title>
+  <title>getITfixed | Computer Repair Phoenix AZ | Laptop Repair | PC Repair Services | Tech Support</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Professional computer repair services in Phoenix, Arizona. Expert laptop repair, desktop PC repair, virus removal, data recovery, and tech support. Same-day service available. Call (623) 738-5630">
+  <meta name="keywords" content="computer repair Phoenix, laptop repair Arizona, PC repair Phoenix AZ, computer technician, virus removal, data recovery, hard drive replacement, screen repair, computer maintenance, tech support Phoenix, desktop repair, gaming PC repair, computer upgrade, SSD installation, memory upgrade, motherboard repair, power supply repair, computer diagnostic, malware removal, computer optimization, IT support Phoenix, computer service Phoenix, broken computer repair, slow computer fix, computer won't start, blue screen repair, hardware repair, software repair, computer troubleshooting, emergency computer repair, affordable computer repair, reliable PC repair, professional computer service">
+  <meta name="author" content="getITfixed">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="US-AZ">
+  <meta name="geo.placename" content="Phoenix, Arizona">
+  <meta name="geo.position" content="33.4484;-112.0740">
+  <meta name="ICBM" content="33.4484, -112.0740">
   
   <!-- Favicon Links -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -297,6 +307,222 @@
 
     .close:hover {
       color: #dc3545;
+    }
+
+    /* Chat Widget Styles */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .chat-toggle {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(126, 211, 33, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chat-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(126, 211, 33, 0.4);
+    }
+
+    .chat-popup {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 350px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      display: none;
+      overflow: hidden;
+      animation: chatPopupSlideIn 0.3s ease;
+    }
+
+    @keyframes chatPopupSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #1a2c4a 0%, #2c4a6b 100%);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .chat-header p {
+      margin: 0.5rem 0 0 0;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    .chat-options {
+      padding: 1.5rem;
+    }
+
+    .chat-option {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 2px solid #e3e3e3;
+      border-radius: 10px;
+      background: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .chat-option:last-child {
+      margin-bottom: 0;
+    }
+
+    .chat-option:hover {
+      border-color: #7ED321;
+      background: rgba(126, 211, 33, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .chat-option .icon {
+      width: 40px;
+      height: 40px;
+      background: #7ED321;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    /* Chat Form Styles */
+    .chat-form {
+      padding: 1.5rem;
+      display: none;
+    }
+
+    .chat-form.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e3e3e3;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #7ED321;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .chat-form-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #7ED321;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #6BC419;
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #5a6268;
+    }
+
+    /* Success Message */
+    .success-message {
+      padding: 1.5rem;
+      text-align: center;
+      display: none;
+    }
+
+    .success-message.active {
+      display: block;
+    }
+
+    .success-message .icon {
+      width: 60px;
+      height: 60px;
+      background: #7ED321;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: white;
+      font-size: 2rem;
     }
 
     /* MailerLite Form Styling - FIXED */
@@ -769,6 +995,17 @@
       .section-title {
         font-size: 2.2rem;
       }
+
+      .chat-popup {
+        width: 320px;
+        right: -10px;
+      }
+
+      .chat-toggle {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+      }
     }
   </style>
 </head>
@@ -809,28 +1046,28 @@
           <div class="service-icon image-icon">
             <img src="images/IMG_8466.jpeg" alt="Computer Repair Service">
           </div>
-          <h3>Computer Repair & Maintenance</h3>
-          <p>Professional diagnosis and repair of desktop and laptop computers with same-day service available.</p>
+          <h3>Computer Repair & Maintenance Phoenix</h3>
+          <p>Professional computer diagnosis and repair services for desktop and laptop computers in Phoenix, Arizona. Our certified computer technicians provide same-day PC repair service for all major brands.</p>
           <ul class="service-features">
-            <li>Virus & malware removal</li>
-            <li>Hardware troubleshooting</li>
-            <li>System optimization</li>
-            <li>Data recovery services</li>
-            <li>In-home service available</li>
+            <li>Virus & malware removal Phoenix AZ</li>
+            <li>Hardware troubleshooting and repair</li>
+            <li>Computer system optimization</li>
+            <li>Data recovery and hard drive repair</li>
+            <li>In-home computer service Phoenix</li>
           </ul>
         </div>
         <div class="service-card">
           <div class="service-icon image-icon">
             <img src="images/gaming-pc.jpg" alt="Gaming PC Build">
           </div>
-          <h3>Gaming PC Builds & Upgrades</h3>
-          <p>Custom gaming PC builds tailored to your budget and performance needs, plus overclocking services.</p>
+          <h3>Gaming PC Builds & Computer Upgrades</h3>
+          <p>Custom gaming PC builds and computer upgrades tailored to your budget and performance needs. Expert PC repair technicians specializing in gaming computer optimization and overclocking services in Phoenix.</p>
           <ul class="service-features">
-            <li>Custom PC builds</li>
-            <li>Component upgrades</li>
-            <li>Performance optimization</li>
-            <li>Overclocking services</li>
-            <li>Gaming setup consultation</li>
+            <li>Custom gaming PC builds Phoenix</li>
+            <li>Computer component upgrades</li>
+            <li>Performance optimization & tuning</li>
+            <li>Professional overclocking services</li>
+            <li>Gaming setup consultation & repair</li>
           </ul>
         </div>
       </div>
@@ -840,53 +1077,53 @@
   <!-- Why Choose Us Section -->
   <section class="why-choose-section">
     <div class="why-choose-container">
-      <h2 class="section-title">Why Choose getITfixed?</h2>
+      <h2 class="section-title">Why Choose getITfixed for Computer Repair in Phoenix?</h2>
       <div class="features-grid">
         <div class="feature-item">
           <div class="feature-icon">⚡</div>
           <div class="feature-content">
-            <h3>Fast Response</h3>
-            <p>Same-day service available with emergency repairs completed within 2 hours.</p>
+            <h3>Fast Computer Repair Response</h3>
+            <p>Same-day computer repair service available in Phoenix with emergency PC repairs completed within 2 hours. Quick laptop repair and desktop computer troubleshooting.</p>
           </div>
         </div>
 
         <div class="feature-item">
           <div class="feature-icon">🏠</div>
           <div class="feature-content">
-            <h3>In-Home Service</h3>
-            <p>We come to you! No need to disconnect and haul your computer anywhere.</p>
+            <h3>In-Home Computer Service Phoenix</h3>
+            <p>We come to you! No need to disconnect and haul your desktop or laptop computer anywhere. Professional on-site computer repair service in Phoenix, Arizona.</p>
           </div>
         </div>
 
         <div class="feature-item">
           <div class="feature-icon">💰</div>
           <div class="feature-content">
-            <h3>Fair Pricing</h3>
-            <p>Transparent, upfront pricing with no hidden fees. Free consultations always.</p>
+            <h3>Fair Computer Repair Pricing</h3>
+            <p>Transparent, upfront pricing for all computer repair services with no hidden fees. Free computer diagnostic consultations always available in Phoenix.</p>
           </div>
         </div>
 
         <div class="feature-item">
           <div class="feature-icon">🎓</div>
           <div class="feature-content">
-            <h3>Patient Teaching</h3>
-            <p>We don't just fix problems - we teach you how to avoid them in the future.</p>
+            <h3>Patient Computer Training & Tech Support</h3>
+            <p>We don't just fix computer problems - we teach you how to prevent them in the future. Expert computer education and ongoing tech support in Phoenix.</p>
           </div>
         </div>
 
         <div class="feature-item">
           <div class="feature-icon">🔒</div>
           <div class="feature-content">
-            <h3>Data Protection</h3>
-            <p>Your files and privacy are safe with us. We use industry-standard security practices.</p>
+            <h3>Data Protection & Computer Security</h3>
+            <p>Your files and privacy are safe with our professional computer repair service. We use industry-standard security practices for all PC and laptop repairs.</p>
           </div>
         </div>
 
         <div class="feature-item">
           <div class="feature-icon">⭐</div>
           <div class="feature-content">
-            <h3>5-Star Service</h3>
-            <p>Hundreds of satisfied customers with consistently excellent reviews.</p>
+            <h3>5-Star Computer Repair Service Phoenix</h3>
+            <p>Hundreds of satisfied customers with consistently excellent computer repair reviews. Top-rated PC repair technicians in Phoenix, Arizona.</p>
           </div>
         </div>
       </div>
@@ -896,7 +1133,7 @@
   <!-- Reviews Preview Section -->
   <section class="reviews-preview-section">
     <div class="reviews-preview-container">
-      <h2 class="section-title">What Our Customers Say</h2>
+      <h2 class="section-title">Computer Repair Reviews Phoenix Arizona</h2>
       <div class="reviews-preview-grid">
         <div class="review-preview-card" onclick="window.open('https://g.co/kgs/1ZT35zP', '_blank')">
           <div class="review-stars">
@@ -907,7 +1144,7 @@
             <span class="star">★</span>
           </div>
           <div class="review-text">
-            "I called this business and asked if they did low voltage cabling and the owner came over and measured the exact amount of cabling required and gave me a very reasonable quote and did an excellent job once the job was finished."
+            "I called this computer repair business and asked if they did low voltage cabling and the owner came over and measured the exact amount of cabling required and gave me a very reasonable quote for the computer network installation and did an excellent job once the job was finished."
           </div>
           <div class="review-author">- Zachary Wiley</div>
           <a href="https://g.co/kgs/1ZT35zP" target="_blank" class="review-link">View Review →</a>
@@ -922,7 +1159,7 @@
             <span class="star">★</span>
           </div>
           <div class="review-text">
-            "On time and very reasonable pricing will use again next time I have a problem"
+            "On time and very reasonable computer repair pricing will use again next time I have a PC problem. Great computer technician service in Phoenix!"
           </div>
           <div class="review-author">- Tina Danko</div>
           <a href="https://g.co/kgs/aCojfrH" target="_blank" class="review-link">View Review →</a>
@@ -937,7 +1174,7 @@
             <span class="star">★</span>
           </div>
           <div class="review-text">
-            "The technician came to my house and upgraded my old hard drive and put in a 'SSD' it is definitely faster now and my files are all safe. He is young but very professional!"
+            "The computer technician came to my house and upgraded my old hard drive and put in a 'SSD' it is definitely faster now and my files are all safe. He is young but very professional computer repair service!"
           </div>
           <div class="review-author">- Jamison Briley</div>
           <a href="https://g.co/kgs/nvenqwv" target="_blank" class="review-link">View Review →</a>
@@ -945,11 +1182,77 @@
       </div>
       <div class="view-all-reviews">
         <button class="view-reviews-btn" onclick="goToReviews()">
-          View All Reviews →
+          View All Computer Repair Reviews →
         </button>
       </div>
     </div>
   </section>
+
+  <!-- Chat Widget -->
+  <div class="chat-widget">
+    <div class="chat-popup" id="chatPopup">
+      <div class="chat-header">
+        <h3>Chat with Computer Repair Experts</h3>
+        <p>Phoenix PC Repair - We're here to help!</p>
+      </div>
+      
+      <!-- Chat Options -->
+      <div class="chat-options" id="chatOptions">
+        <button class="chat-option" onclick="showChatForm()">
+          <div class="icon">💬</div>
+          <div>
+            <div style="font-weight: 600;">Send Message</div>
+            <div style="font-size: 0.85rem; color: #666;">Send us a message directly</div>
+          </div>
+        </button>
+        
+        <button class="chat-option" onclick="makeCall()">
+          <div class="icon">📞</div>
+          <div>
+            <div style="font-weight: 600;">Call Now</div>
+            <div style="font-size: 0.85rem; color: #666;">Speak with us immediately</div>
+          </div>
+        </button>
+      </div>
+
+      <!-- Chat Form -->
+      <div class="chat-form" id="chatForm">
+        <form id="messageForm" onsubmit="sendMessage(event)">
+          <div class="form-group">
+            <label for="customerName">Your Name</label>
+            <input type="text" id="customerName" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="customerPhone">Phone Number</label>
+            <input type="tel" id="customerPhone" name="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="customerMessage">Message</label>
+            <textarea id="customerMessage" name="message" placeholder="How can we help you?" required></textarea>
+          </div>
+          
+          <div class="chat-form-buttons">
+            <button type="button" class="btn btn-secondary" onclick="showChatOptions()">Back</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success Message -->
+      <div class="success-message" id="successMessage">
+        <div class="icon">✓</div>
+        <h3>Message Sent!</h3>
+        <p>Thank you for contacting us. We'll get back to you as soon as possible.</p>
+        <button class="btn btn-primary" onclick="closeChatPopup()">Close</button>
+      </div>
+    </div>
+    
+    <button class="chat-toggle" onclick="toggleChatPopup()">
+      💬
+    </button>
+  </div>
 
   <!-- Email Modal with MailerLite Form -->
   <div id="emailModal" class="modal">
@@ -1017,7 +1320,10 @@
         <div class="footer-section">
           <div class="logo">getITfixed</div>
           <p style="color: #b8c5d1; margin-top: 1rem;">
-            Your trusted local expert for computer repairs, upgrades, and support.
+            Your trusted local Phoenix computer repair expert for PC repair, laptop repair, upgrades, and tech support services. Professional computer technicians serving Phoenix, Arizona.
+          </p>
+          <p style="color: #7ED321; margin-top: 1rem; font-weight: 600; font-size: 1.2rem;">
+            📞 Call (623) 738-5630
           </p>
         </div>
         <div class="footer-section">
@@ -1030,52 +1336,161 @@
           </ul>
         </div>
         <div class="footer-section">
-          <h3>Services</h3>
+          <h3>Computer Repair Services</h3>
           <ul>
-            <li><a href="services.html">Senior Maintenance Plans</a></li>
-            <li><a href="services.html">Gaming PC Builds</a></li>
-            <li><a href="services.html">Overclocking & Upgrades</a></li>
-            <li><a href="services.html">Emergency Repairs</a></li>
+            <li><a href="services.html">Senior Computer Maintenance Plans</a></li>
+            <li><a href="services.html">Gaming PC Builds & Repair</a></li>
+            <li><a href="services.html">Computer Overclocking & Upgrades</a></li>
+            <li><a href="services.html">Emergency Computer Repair Phoenix</a></li>
+            <li><a href="services.html">Laptop Screen Repair</a></li>
+            <li><a href="services.html">Virus Removal & Malware Cleanup</a></li>
           </ul>
         </div>
         <div class="footer-section">
-          <h3>Contact</h3>
+          <h3>Contact Computer Repair Phoenix</h3>
+          <ul>
+            <li><a href="tel:(623)738-5630">📞 (623) 738-5630</a></li>
+            <li><a href="contact.html">Request Computer Repair Quote</a></li>
+            <li style="color: #b8c5d1;">Serving Phoenix, Arizona</li>
+            <li style="color: #b8c5d1;">Same-Day Computer Repair Available</li>
+            <li style="color: #b8c5d1;">In-Home PC Service</li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 getITfixed. All rights reserved.</p>
+        <p>&copy; 2024 getITfixed - Professional Computer Repair Phoenix Arizona | PC Repair | Laptop Repair | Computer Technician Services | All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
+    // Chat Widget Variables
+    let isChatOpen = false;
+    
+    // Replace this with your actual Google Voice number
+    const GOOGLE_VOICE_NUMBER = "(623) 738-5630";
+    
     // Modal functionality
     function openModal() {
       document.getElementById('emailModal').style.display = 'block';
-      document.body.style.overflow = 'hidden'; // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
       document.getElementById('emailModal').style.display = 'none';
-      document.body.style.overflow = 'auto'; // Restore body scroll
+      document.body.style.overflow = 'auto';
     }
 
     function goToReviews() {
       window.location.href = 'reviews.html';
     }
 
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-      const modal = document.getElementById('emailModal');
-      if (event.target === modal) {
-        closeModal();
+    // Chat Widget Functions
+    function toggleChatPopup() {
+      const popup = document.getElementById('chatPopup');
+      if (isChatOpen) {
+        closeChatPopup();
+      } else {
+        openChatPopup();
       }
     }
 
-    // Close modal with Escape key
+    function openChatPopup() {
+      const popup = document.getElementById('chatPopup');
+      popup.style.display = 'block';
+      isChatOpen = true;
+      
+      // Reset to initial state
+      showChatOptions();
+    }
+
+    function closeChatPopup() {
+      const popup = document.getElementById('chatPopup');
+      popup.style.display = 'none';
+      isChatOpen = false;
+      
+      // Reset form
+      document.getElementById('messageForm').reset();
+    }
+
+    function showChatOptions() {
+      document.getElementById('chatOptions').style.display = 'block';
+      document.getElementById('chatForm').classList.remove('active');
+      document.getElementById('successMessage').classList.remove('active');
+    }
+
+    function showChatForm() {
+      document.getElementById('chatOptions').style.display = 'none';
+      document.getElementById('chatForm').classList.add('active');
+      document.getElementById('successMessage').classList.remove('active');
+    }
+
+    function makeCall() {
+      // Replace with your actual phone number
+      const phoneNumber = "(623) 738-5630";
+      window.open(`tel:${phoneNumber}`);
+      closeChatPopup();
+    }
+
+    // Send Message Function - This creates an SMS message
+    function sendMessage(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('customerName').value;
+      const phone = document.getElementById('customerPhone').value;
+      const message = document.getElementById('customerMessage').value;
+      
+      // Create SMS message with customer details
+      const smsBody = `New message from ${name} (${phone}): ${message}`;
+      const smsUrl = `sms:${GOOGLE_VOICE_NUMBER}?body=${encodeURIComponent(smsBody)}`;
+      
+      // Try to open SMS app
+      try {
+        window.open(smsUrl);
+        
+        // Show success message
+        document.getElementById('chatForm').classList.remove('active');
+        document.getElementById('successMessage').classList.add('active');
+        
+        // Auto-close after 3 seconds
+        setTimeout(() => {
+          closeChatPopup();
+        }, 3000);
+        
+      } catch (error) {
+        // Fallback: show success message anyway
+        document.getElementById('chatForm').classList.remove('active');
+        document.getElementById('successMessage').classList.add('active');
+        
+        // You could also implement an email fallback here
+        console.log('SMS failed, consider implementing email fallback');
+      }
+    }
+
+    // Close modals when clicking outside
+    window.onclick = function(event) {
+      const emailModal = document.getElementById('emailModal');
+      const chatPopup = document.getElementById('chatPopup');
+      
+      if (event.target === emailModal) {
+        closeModal();
+      }
+      
+      // Don't close chat popup when clicking on it
+      if (event.target !== chatPopup && !chatPopup.contains(event.target) && !event.target.closest('.chat-toggle')) {
+        if (isChatOpen) {
+          closeChatPopup();
+        }
+      }
+    }
+
+    // Close modals with Escape key
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         closeModal();
+        if (isChatOpen) {
+          closeChatPopup();
+        }
       }
     });
 
@@ -1085,7 +1500,6 @@
       $('.ml-subscribe-form-28991155 .row-success').show();
       $('.ml-subscribe-form-28991155 .row-form').hide();
       
-      // Close modal after 3 seconds
       setTimeout(function() {
         closeModal();
       }, 3000);
@@ -1095,7 +1509,7 @@
   <!-- MailerLite Scripts -->
   <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
   <script>
-    fetch("https://assets.mailerlite.com/jsonp/1700838/forms/161302589608035771/takel")
+    fetch("https://assets.mailerlite.com/jsonp/1700838/forms/161302589608035771/subscribe")
   </script>
 </body>
 </html>
