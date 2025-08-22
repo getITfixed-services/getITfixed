@@ -311,7 +311,7 @@
       font-size: 16px;
     }
     
-    /* Navigation */
+    /* Navigation - FIXED SPACING */
     .navbar {
       background: #1a2c4a;
       padding: 1rem 0;
@@ -328,6 +328,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2rem; /* Added proper spacing */
     }
     
     .logo {
@@ -337,6 +338,7 @@
       font-size: 1.4rem;
       font-weight: 700;
       color: #ffffff;
+      flex-shrink: 0; /* Prevents logo from shrinking */
     }
 
     .logo-main {
@@ -363,18 +365,20 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 1.8rem; /* Reduced from 2.5rem */
+      gap: 2rem; /* Increased spacing between nav links */
       align-items: center;
-      white-space: nowrap; /* Prevents text wrapping */
+      white-space: nowrap;
+      flex-grow: 1; /* Takes available space */
+      justify-content: center; /* Centers the nav links */
     }
     
     .nav-links a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem; /* Reduced from 1.1rem */
+      font-size: 1rem;
       transition: color 0.3s ease;
-      white-space: nowrap; /* Prevents text wrapping */
+      white-space: nowrap;
     }
     
     .nav-links a:hover,
@@ -385,12 +389,14 @@
     .btn-consultation {
       background: #7ED321;
       color: #1a2c4a;
-      padding: 0.8rem 1.8rem;
+      padding: 1rem 2rem; /* Increased padding for better spacing */
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem; /* Slightly reduced font size */
       transition: all 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0; /* Prevents button from shrinking */
     }
     
     .btn-consultation:hover {
@@ -666,12 +672,12 @@
       color: #dc3545;
     }
 
-    /* Chat Widget Styles */
+    /* Chat Widget Styles - FIXED Z-INDEX AND POSITIONING */
     .chat-widget {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 1000;
+      z-index: 9999; /* Higher z-index to ensure visibility */
     }
 
     .chat-toggle {
@@ -706,6 +712,7 @@
       display: none;
       overflow: hidden;
       animation: chatPopupSlideIn 0.3s ease;
+      z-index: 10000; /* Ensures popup appears above everything */
     }
 
     @keyframes chatPopupSlideIn {
@@ -781,6 +788,48 @@
     }
 
     /* Chat Form Styles */
+    .chat-form {
+      padding: 1.5rem;
+      display: none;
+    }
+
+    .chat-form.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #1a2c4a;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e3e3e3;
+      border-radius: 8px;
+      font-family: 'Poppins', Arial, sans-serif;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #7ED321;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
     .chat-form-buttons {
       display: flex;
       gap: 1rem;
@@ -1257,7 +1306,7 @@
     }
 
     /* Mobile responsive fix */
-    @media (max-width: 768px) {
+    @media (max-width: 968px) {
       .nav-container {
         flex-direction: column;
         gap: 1rem;
@@ -1276,15 +1325,22 @@
       }
       
       .nav-links {
-        gap: 1rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
         justify-content: center;
       }
 
       .nav-links a {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
 
+      .btn-consultation {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 768px) {
       .main-title {
         font-size: 3rem;
       }
@@ -1410,6 +1466,23 @@
             <li>In-home computer service</li>
           </ul>
         </div>
+        
+        <!-- NEW CABLE MANAGEMENT CARD -->
+        <div class="service-card">
+          <div class="service-icon image-icon">
+            <img src="images/IMG_6181.jpeg" alt="Professional Cable Management and Server Room Organization">
+          </div>
+          <h3>Cable Management & Network Organization</h3>
+          <p>Professional cable management and server room organization services. We organize tangled network cables, improve airflow, and create clean, maintainable IT infrastructure for Phoenix area businesses.</p>
+          <ul class="service-features">
+            <li>Server room cable organization</li>
+            <li>Network cabinet cleanup</li>
+            <li>Professional cable routing</li>
+            <li>Rack & stack services</li>
+            <li>Same-day cable management</li>
+          </ul>
+        </div>
+        
         <div class="service-card">
           <div class="service-icon image-icon">
             <img src="images/gaming-pc.jpg" alt="Gaming PC Build and Computer Upgrade Service">
@@ -1596,6 +1669,7 @@
       <!-- Chat Form -->
       <div class="chat-form" id="chatForm">
         <form id="messageForm" onsubmit="sendMessage(event)">
+          <div class="form-group">
             <label for="customerName">Your Name</label>
             <input type="text" id="customerName" name="name" required>
           </div>
@@ -1697,7 +1771,7 @@
         <div class="footer-section">
           <div class="logo">getITfixed</div>
           <p style="color: #b8c5d1; margin-top: 1rem;">
-            Your trusted computer repair expert for PC repair, laptop repair, upgrades, and tech support services. Professional computer technicians serving Arizona and surrounding areas.
+            Your trusted computer repair expert for PC repair, laptop repair, upgrades, cable management, and tech support services. Professional computer technicians serving Arizona and surrounding areas.
           </p>
           <p style="color: #7ED321; margin-top: 1rem; font-weight: 600; font-size: 1.2rem;">
             📞 Call (623) 738-5630 for Computer Repair
@@ -1711,6 +1785,7 @@
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="services.html">Computer Repair Services</a></li>
+            <li><a href="cable-management.html">Cable Management</a></li>
             <li><a href="reviews.html">Customer Reviews</a></li>
             <li><a href="contact.html">Contact for Computer Repair</a></li>
           </ul>
@@ -1721,8 +1796,8 @@
             <li><a href="services.html">Same-Day Computer Repair</a></li>
             <li><a href="services.html">Laptop Repair</a></li>
             <li><a href="services.html">Gaming PC Builds & Repair</a></li>
+            <li><a href="cable-management.html">Cable Management & Organization</a></li>
             <li><a href="services.html">Emergency Computer Repair</a></li>
-            <li><a href="services.html">Laptop Screen Repair</a></li>
             <li><a href="services.html">Virus Removal & Malware Cleanup</a></li>
           </ul>
         </div>
@@ -1739,7 +1814,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 getITfixed - #1 Computer Repair in Avondale & Sun City | Same-Day PC Repair | Laptop Repair | Computer Technician Services | All rights reserved.</p>
+        <p>&copy; 2024 getITfixed - #1 Computer Repair in Avondale & Sun City | Same-Day PC Repair | Laptop Repair | Cable Management | Computer Technician Services | All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -1895,4 +1970,4 @@
     fetch("https://assets.mailerlite.com/jsonp/1700838/forms/161302589608035771/subscribe")
   </script>
 </body>
-</html> {
+</html>
