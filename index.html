@@ -363,15 +363,18 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 2.5rem;
+      gap: 1.8rem; /* Reduced from 2.5rem */
+      align-items: center;
+      white-space: nowrap; /* Prevents text wrapping */
     }
     
     .nav-links a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem; /* Reduced from 1.1rem */
       transition: color 0.3s ease;
+      white-space: nowrap; /* Prevents text wrapping */
     }
     
     .nav-links a:hover,
@@ -778,48 +781,6 @@
     }
 
     /* Chat Form Styles */
-    .chat-form {
-      padding: 1.5rem;
-      display: none;
-    }
-
-    .chat-form.active {
-      display: block;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #333;
-      font-weight: 500;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 2px solid #e3e3e3;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #7ED321;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
     .chat-form-buttons {
       display: flex;
       gap: 1rem;
@@ -1295,7 +1256,7 @@
       font-size: 1rem;
     }
 
-    /* Responsive Design */
+    /* Mobile responsive fix */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -1315,7 +1276,13 @@
       }
       
       .nav-links {
-        gap: 1.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
       }
 
       .main-title {
@@ -1629,7 +1596,6 @@
       <!-- Chat Form -->
       <div class="chat-form" id="chatForm">
         <form id="messageForm" onsubmit="sendMessage(event)">
-          <div class="form-group">
             <label for="customerName">Your Name</label>
             <input type="text" id="customerName" name="name" required>
           </div>
@@ -1929,4 +1895,46 @@
     fetch("https://assets.mailerlite.com/jsonp/1700838/forms/161302589608035771/subscribe")
   </script>
 </body>
-</html>
+</html> {
+      padding: 1.5rem;
+      display: none;
+    }
+
+    .chat-form.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e3e3e3;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #7ED321;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .chat-form
