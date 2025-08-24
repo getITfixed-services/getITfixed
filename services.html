@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Customer Testimonials | getITfixed - #1 Computer Repair in Goodyear & Sun City</title>
+  <title>Services | getITfixed | Tech Help You Can Trust</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', system-ui, -apple-system, sans-serif;
       background: #ffffff;
@@ -14,96 +19,460 @@
       line-height: 1.7;
       font-size: 16px;
     }
-    .navbar { background: #1a2c4a; padding: 1rem 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.1);}
-    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-    .logo { display: flex; flex-direction: column; align-items: flex-start; font-size: 1.4rem; font-weight: 700; color: #ffffff; flex-shrink: 0; }
-    .logo-main { display: flex; align-items: center; margin-bottom: 0.2rem; }
-    .logo-tagline { font-size: 0.75rem; font-weight: 400; color: #7ED321; text-transform: uppercase; letter-spacing: 0.5px; margin-left: 0.5rem; }
-    .logo-image { width: 35px; height: 35px; margin-right: 0.8rem; }
-    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; white-space: nowrap; flex-grow: 1; justify-content: center; }
-    .nav-links a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s ease; white-space: nowrap; }
-    .nav-links a:hover, .nav-links a.active { color: #7ED321;}
-    .btn-consultation { background: #7ED321; color: #1a2c4a; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; }
-    .btn-consultation:hover { background: #6BC419; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);}
-    .page-header { background: linear-gradient(135deg, #1a2c4a 0%, #2c4a6b 100%); padding: 4rem 0; text-align: center; color: white; }
-    .page-header-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
-    .page-header h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem;}
-    .page-header p { font-size: 1.3rem; color: #b8c5d1; max-width: 600px; margin: 0 auto;}
-    .reviews-section { padding: 5rem 0; background: #f8f9fa; }
-    .reviews-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
-    .reviews-intro { text-align: center; margin-bottom: 4rem;}
-    .reviews-intro h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #1a2c4a;}
-    .reviews-intro p { font-size: 1.2rem; color: #6c757d; max-width: 600px; margin: 0 auto;}
-    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 4rem;}
-    .review-card { background: #ffffff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 4px solid #7ED321; display: block; text-decoration: none;}
-    .review-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);}
-    .review-header { display: flex; align-items: center; margin-bottom: 1.5rem;}
-    .review-avatar { width: 60px; height: 60px; background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin-right: 1rem;}
-    .review-info h3 { font-size: 1.3rem; font-weight: 600; color: #1a2c4a; margin-bottom: 0.3rem;}
-    .review-location { font-size: 1rem; color: #7ED321; font-weight: 500;}
-    .review-stars { display: flex; margin-bottom: 1rem;}
-    .star { color: #ffc107; font-size: 1.2rem; margin-right: 0.2rem;}
-    .review-text { font-size: 1.1rem; line-height: 1.7; color: #4a5568; font-style: italic; position: relative;}
-    .review-text::before { content: '"'; font-size: 3rem; color: #7ED321; position: absolute; left: -1rem; top: -1rem; font-family: serif;}
-    .platform-section { padding: 4rem 0; background: #ffffff; text-align: center; }
-    .platform-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .platform-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #1a2c4a;}
-    .platform-section p { font-size: 1.2rem; color: #6c757d; margin-bottom: 3rem;}
-    .yelp-embed-container {
+
+    /* Navigation - FIXED FOR MOBILE */
+    .navbar {
+      background: #1a2c4a;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       gap: 2rem;
     }
-    .yelp-embed {
-      width: 350px;
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .logo::before {
+      content: 'IT';
+      background: #7ED321;
+      color: #1a2c4a;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      margin-right: 0.7rem;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .logo-main {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-tagline {
+      font-size: 0.7rem;
+      color: #7ED321;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+      white-space: nowrap;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #7ED321;
+    }
+
+    .btn-consultation {
+      background: #7ED321;
+      color: #1a2c4a;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-consultation:hover {
+      background: #6BC419;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, #1a2c4a 0%, #2c4a6b 100%);
+      padding: 4rem 0;
+      text-align: center;
+      color: white;
+    }
+
+    .page-header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .page-header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.3rem;
+      color: #b8c5d1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Services Categories */
+    .services-intro {
+      background: #f8f9fa;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .services-intro-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .services-intro h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1a2c4a;
+    }
+
+    .services-intro p {
+      font-size: 1.2rem;
+      color: #6c757d;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Service Categories */
+    .service-category {
+      padding: 5rem 0;
+    }
+
+    .service-category:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .service-category-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .category-header h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1a2c4a;
+    }
+
+    .category-header p {
+      font-size: 1.2rem;
+      color: #6c757d;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      background: #ffffff;
+      padding: 2.5rem;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      background: white;
+      transition: transform 0.3s ease;
+      border: 1px solid #e9ecef;
     }
-    .stats-section { padding: 4rem 0; background: linear-gradient(135deg, #7ED321 0%, #6BC419 100%); color: white;}
-    .stats-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;}
-    .stat-item h3 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;}
-    .stat-item p { font-size: 1.2rem; font-weight: 500;}
-    .cta-section { padding: 4rem 0; background: #1a2c4a; color: white; text-align: center;}
-    .cta-container { max-width: 800px; margin: 0 auto; padding: 0 2rem;}
-    .cta-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;}
-    .cta-section p { font-size: 1.2rem; margin-bottom: 2.5rem; color: #b8c5d1;}
-    .btn-cta { background: #7ED321; color: #1a2c4a; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; display: inline-block;}
-    .btn-cta:hover { background: #6BC419; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(126, 211, 33, 0.3);}
-    .footer { background: #1a2c4a; padding: 4rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.1);}
-    .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
-    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;}
-    .footer-section h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: #ffffff;}
-    .footer-section ul { list-style: none; }
-    .footer-section ul li { margin-bottom: 0.8rem; }
-    .footer-section ul li a { color: #b8c5d1; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;}
-    .footer-section ul li a:hover { color: #7ED321;}
-    .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #b8c5d1; font-size: 1rem;}
-    @media (max-width: 968px) {
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: #e8f5e8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #7ED321;
+      font-weight: bold;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1a2c4a;
+    }
+
+    .service-card p {
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .service-features li {
+      padding: 0.5rem 0;
+      color: #495057;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .service-features li::before {
+      content: '✓';
+      color: #7ED321;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .service-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #7ED321;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-service {
+      background: #7ED321;
+      color: #ffffff;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-service:hover {
+      background: #6BC419;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #7ED321;
+      padding: 0.8rem 2rem;
+      border: 2px solid #7ED321;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-outline:hover {
+      background: #7ED321;
+      color: white;
+    }
+
+    /* Emergency Services */
+    .emergency-banner {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .emergency-banner-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .emergency-banner h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .emergency-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-emergency {
+      background: #ffffff;
+      color: #dc3545;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-emergency:hover {
+      background: #f8f9fa;
+      transform: translateY(-2px);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #7ED321;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .cta-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1a2c4a;
+    }
+
+    .cta p {
+      color: #1a2c4a;
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      background: #1a2c4a;
+      color: #ffffff;
+      padding: 1rem 2.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: #2c4a6b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 44, 74, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a2c4a;
+      padding: 4rem 0 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-section ul li a {
+      color: #b8c5d1;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #7ED321;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #b8c5d1;
+      font-size: 1rem;
+    }
+
+    /* FIXED Responsive Design - maintains consistent font sizes */
+    @media (max-width: 1024px) {
       .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1.5rem;
+        gap: 1.5rem;
+        padding: 0 1.5rem;
       }
 
-      .logo-tagline {
-        font-size: 0.7rem;
-        text-align: center;
-        margin-left: 0;
-      }
-
-      .logo {
-        align-items: center;
-        text-align: center;
-      }
-      
       .nav-links {
         gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
       }
 
       .nav-links a {
@@ -111,19 +480,124 @@
       }
 
       .btn-consultation {
-        padding: 0.8rem 1.5rem;
+        padding: 0.9rem 1.5rem;
         font-size: 0.95rem;
       }
     }
+
     @media (max-width: 768px) {
-      .nav-container { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
-      .nav-links { gap: 1.5rem; }
-      .page-header h1 { font-size: 2.5rem; }
-      .reviews-intro h2, .platform-section h2, .cta-section h2 { font-size: 2rem; }
-      .reviews-grid { grid-template-columns: 1fr; }
-      .yelp-embed-container { flex-direction: column; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr);}
-      .review-card { padding: 2rem;}
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      /* Logo maintains size */
+      .logo {
+        font-size: 1.4rem;
+      }
+
+      .logo-main::before {
+        font-size: 1rem;
+        padding: 0.4rem 0.6rem;
+      }
+
+      .logo-tagline {
+        font-size: 0.65rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.95rem;
+        padding: 0.2rem 0.4rem;
+      }
+
+      .btn-consultation {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.95rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.8rem;
+      }
+
+      .page-header p {
+        font-size: 1.1rem;
+      }
+
+      .category-header h2 {
+        font-size: 2.2rem;
+      }
+
+      .cta h2 {
+        font-size: 2.2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-category {
+        padding: 3rem 0;
+      }
+
+      .services-intro h2 {
+        font-size: 2rem;
+      }
+
+      .emergency-banner h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      .nav-container {
+        padding: 0.8rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+      }
+
+      .btn-consultation {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .category-header h2 {
+        font-size: 2rem;
+      }
+
+      .cta h2 {
+        font-size: 2rem;
+      }
+
+      .services-intro h2 {
+        font-size: 1.8rem;
+      }
+
+      .emergency-banner h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -132,17 +606,14 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <div class="logo-main">
-          <img src="images/getitfixed-logo.png" alt="getITfixed Computer Repair Logo" class="logo-image">
-          getITfixed
-        </div>
-        <div class="logo-tagline">#1 Computer Repair • Goodyear & Sun City</div>
+        <div class="logo-main">getITfixed</div>
+        <div class="logo-tagline">#1 COMPUTER REPAIR • GOODYEAR & SUN CITY</div>
       </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
         <li><a href="cable-management.html">Cable Management</a></li>
-        <li><a href="reviews.html" class="active">Testimonials</a></li>
+        <li><a href="reviews.html">Testimonials</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="btn-consultation">Book Free Consultation</a>
@@ -152,138 +623,155 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="page-header-container">
-      <h1>Customer Testimonials</h1>
-      <p>See what our satisfied customers are saying about our reliable tech support and exceptional service</p>
+      <h1>Our Services</h1>
+      <p>Comprehensive computer solutions for seniors and high-performance upgrades for gamers</p>
     </div>
   </section>
 
-  <!-- Google Reviews Section -->
-  <section class="reviews-section" aria-label="Google reviews">
-    <div class="reviews-container">
-      <div class="reviews-intro">
-        <h2>Real Stories from Real Customers</h2>
-        <p>Don't just take our word for it. Here's what our customers have to say about their experience with getITfixed.</p>
-      </div>
-
-      <div class="reviews-grid">
-        <!-- Google Review: Arlette Itami -->
-        <a class="review-card" href="https://g.co/kgs/aTzyNtc" target="_blank" rel="noopener noreferrer">
-          <div class="review-header">
-            <div class="review-avatar">A</div>
-            <div class="review-info">
-              <h3>Arlette Itami</h3>
-              <div class="review-location">Google Review</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">
-            Fantastic IT company. Great price!! Quick response and arrived on time and delivered 5 star customer service. Came completely prepared and worked magic getting our computer backed up and restored.
-          </div>
-        </a>
-
-        <!-- Google Review: Annie M -->
-        <a class="review-card" href="https://g.co/kgs/Vut4gsG" target="_blank" rel="noopener noreferrer">
-          <div class="review-header">
-            <div class="review-avatar">A</div>
-            <div class="review-info">
-              <h3>Annie M</h3>
-              <div class="review-location">Google Review</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">
-            Dominic came to the house the same day my husband called. He diagnosed the issue on our PC, took it with him for the actual repair and had it back to us the next day. I can't express enough how polite, professional and knowledgable he is. His price is beyond fair. And to top it off he helped go after our husky when he escaped!
-          </div>
-        </a>
-
-        <!-- Google Review: Anthony Solis -->
-        <a class="review-card" href="https://g.co/kgs/qJFQKox" target="_blank" rel="noopener noreferrer">
-          <div class="review-header">
-            <div class="review-avatar">A</div>
-            <div class="review-info">
-              <h3>Anthony Solis</h3>
-              <div class="review-location">Google Review</div>
-            </div>
-          </div>
-          <div class="review-stars">
-            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-          </div>
-          <div class="review-text">
-            Dominic is very quick with what he is working on and responds as quickly as he can also very cheap price. I would 100% recommend him to work on ur issues with technology and other more.
-          </div>
-        </a>
-      </div>
+  <!-- Services Intro -->
+  <section class="services-intro">
+    <div class="services-intro-container">
+      <h2>Tailored Solutions for Every Need</h2>
+      <p>Whether you need simple, reliable computer maintenance or cutting-edge gaming performance, we have the perfect service plan for you.</p>
     </div>
   </section>
 
-  <!-- Yelp Reviews Section -->
-  <section class="platform-section" aria-label="Yelp reviews">
-    <div class="platform-container">
-      <h2>Yelp Reviews</h2>
-      <p>Check out our Yelp reviews below and see why customers trust getITfixed for their tech needs.</p>
-      <div class="yelp-embed-container">
-        <div class="yelp-embed">
-          <span class="yelp-review" data-review-id="4jNumv3-VbC03fiZT6mS8w" data-hostname="www.yelp.com">
-            Read <a href="https://www.yelp.com/user_details?userid=o6nbNeRHdM0bdiNZcqE6nQ" rel="nofollow noopener" target="_blank">Richard W.</a>'s 
-            <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=4jNumv3-VbC03fiZT6mS8w" rel="nofollow noopener" target="_blank">review</a> of 
-            <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener" target="_blank">Get IT Fixed</a> on 
-            <a href="https://www.yelp.com" rel="nofollow noopener" target="_blank">Yelp</a>
-          </span>
+  <!-- Senior Services -->
+  <section class="service-category">
+    <div class="service-category-container">
+      <div class="category-header">
+        <h2>Senior-Friendly Computer Services</h2>
+        <p>Hassle-free maintenance plans designed for simplicity and peace of mind</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✓</div>
+          <h3>Essential Care Plan</h3>
+          <p>Perfect for seniors who want their computer to just work without any hassle.</p>
+          <ul class="service-features">
+            <li>Monthly remote health check</li>
+            <li>Software updates & security patches</li>
+            <li>Virus protection & removal</li>
+            <li>Email & phone support</li>
+            <li>Simple troubleshooting help</li>
+            <li>Basic performance optimization</li>
+          </ul>
+          <div class="service-price">$99/month</div>
+          <a href="contact.html" class="btn-service">Choose Essential Plan</a>
         </div>
-        <div class="yelp-embed">
-          <span class="yelp-review" data-review-id="BJ27VXmDyWXpPj1blweHHQ" data-hostname="www.yelp.com">
-            Read <a href="https://www.yelp.com/user_details?userid=sC0ZtTW7U2q6vAi_TLsopA" rel="nofollow noopener" target="_blank">Nelson D.</a>'s 
-            <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=BJ27VXmDyWXpPj1blweHHQ" rel="nofollow noopener" target="_blank">review</a> of 
-            <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener" target="_blank">Get IT Fixed</a> on 
-            <a href="https://www.yelp.com" rel="nofollow noopener" target="_blank">Yelp</a>
-          </span>
+
+        <div class="service-card">
+          <div class="service-icon">★</div>
+          <h3>Premium Care Plan</h3>
+          <p>Complete peace of mind with priority support and comprehensive services.</p>
+          <ul class="service-features">
+            <li>Everything in Essential Plan</li>
+            <li>Priority phone support (same-day response)</li>
+            <li>Monthly tune-up visits</li>
+            <li>Automated data backup setup</li>
+            <li>Software installation & training</li>
+            <li>Hardware upgrade consultation</li>
+            <li>Device setup assistance</li>
+          </ul>
+          <div class="service-price">$149/month</div>
+          <a href="contact.html" class="btn-service">Choose Premium Plan</a>
         </div>
-        <div class="yelp-embed">
-          <span class="yelp-review" data-review-id="YUNiZ5yjaUPyqeRNYap0nA" data-hostname="www.yelp.com">
-            Read <a href="https://www.yelp.com/user_details?userid=LqI4NpD5LbZ0yVI64BI0GA" rel="nofollow noopener" target="_blank">D. W.</a>'s 
-            <a href="https://www.yelp.com/biz/get-it-fixed-avondale?hrid=YUNiZ5yjaUPyqeRNYap0nA" rel="nofollow noopener" target="_blank">review</a> of 
-            <a href="https://www.yelp.com/biz/7uFwjWVLR7qCRFIvA9NFog" rel="nofollow noopener" target="_blank">Get IT Fixed</a> on 
-            <a href="https://www.yelp.com" rel="nofollow noopener" target="_blank">Yelp</a>
-          </span>
+
+        <div class="service-card">
+          <div class="service-icon">PC</div>
+          <h3>One-Time Services</h3>
+          <p>Individual services when you need them most, with expert care.</p>
+          <ul class="service-features">
+            <li>Complete computer cleanup & speedup</li>
+            <li>Virus removal & security hardening</li>
+            <li>Software installation & setup</li>
+            <li>Data recovery & transfer</li>
+            <li>Hardware repairs & upgrades</li>
+            <li>Personal training sessions</li>
+          </ul>
+          <div class="service-price">$125-$225</div>
+          <a href="contact.html" class="btn-outline">Get Quote</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="stats-section">
-    <div class="stats-container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3>500+</h3>
-          <p>Happy Customers</p>
+  <!-- Gaming Services -->
+  <section class="service-category">
+    <div class="service-category-container">
+      <div class="category-header">
+        <h2>High-Performance Gaming Services</h2>
+        <p>Custom builds, overclocking, and upgrades to maximize your gaming experience</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">⚙</div>
+          <h3>Performance Optimization</h3>
+          <p>Squeeze every bit of performance from your current gaming setup with professional tuning.</p>
+          <ul class="service-features">
+            <li>Professional overclocking (CPU & GPU)</li>
+            <li>Advanced thermal optimization</li>
+            <li>Driver updates & game optimization</li>
+            <li>Custom game-specific settings</li>
+            <li>Comprehensive benchmark testing</li>
+            <li>Performance monitoring setup</li>
+          </ul>
+          <div class="service-price">$225-$375</div>
+          <a href="contact.html" class="btn-service">Boost Performance</a>
         </div>
-        <div class="stat-item">
-          <h3>5⭐</h3>
-          <p>Average Rating</p>
+
+        <div class="service-card">
+          <div class="service-icon">PC</div>
+          <h3>Custom Gaming Builds</h3>
+          <p>Hand-built gaming PCs tailored to your budget and performance requirements.</p>
+          <ul class="service-features">
+            <li>Personalized component consultation</li>
+            <li>Professional assembly & cable management</li>
+            <li>48-hour stress testing & optimization</li>
+            <li>2-year warranty on assembly labor</li>
+            <li>Free performance tweaking sessions</li>
+            <li>Game library optimization</li>
+          </ul>
+          <div class="service-price">$299 + parts</div>
+          <a href="contact.html" class="btn-service">Build My PC</a>
         </div>
-        <div class="stat-item">
-          <h3>2hrs</h3>
-          <p>Response Time</p>
-        </div>
-        <div class="stat-item">
-          <h3>100%</h3>
-          <p>Satisfaction Guarantee</p>
+
+        <div class="service-card">
+          <div class="service-icon">↗</div>
+          <h3>Gaming Upgrades</h3>
+          <p>Strategic upgrades to dramatically boost your FPS and gaming experience.</p>
+          <ul class="service-features">
+            <li>GPU upgrade consultation & installation</li>
+            <li>RAM & NVMe storage upgrades</li>
+            <li>Custom cooling system improvements</li>
+            <li>Power supply upgrades & testing</li>
+            <li>Comprehensive performance testing</li>
+            <li>Game settings optimization</li>
+          </ul>
+          <div class="service-price">$175 + parts</div>
+          <a href="contact.html" class="btn-outline">Upgrade Now</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Emergency Services Banner -->
+  <section class="emergency-banner">
+    <div class="emergency-banner-container">
+      <h2>Emergency Computer Repair</h2>
+      <p>Computer crashed? Virus attack? We offer same-day emergency service to get you back up and running fast.</p>
+      <a href="contact.html" class="btn-emergency">Get Emergency Help - $199</a>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
+  <section class="cta">
     <div class="cta-container">
-      <h2>Ready to Experience 5-Star Service?</h2>
-      <p>Join hundreds of satisfied customers who trust getITfixed for all their computer needs. Book your free consultation today!</p>
-      <a href="contact.html" class="btn-cta">Book Free Consultation</a>
+      <h2>Not Sure Which Service You Need?</h2>
+      <p>
+        Book a free consultation and we'll help you choose the perfect service plan for your needs and budget.
+      </p>
+      <a href="contact.html" class="btn-primary">Book Free Consultation</a>
     </div>
   </section>
 
@@ -292,7 +780,10 @@
     <div class="footer-container">
       <div class="footer-content">
         <div class="footer-section">
-          <div class="logo">getITfixed</div>
+          <div class="logo">
+            <div class="logo-main">getITfixed</div>
+            <div class="logo-tagline">#1 COMPUTER REPAIR • GOODYEAR & SUN CITY</div>
+          </div>
           <p style="color: #b8c5d1; margin-top: 1rem;">
             Your trusted local expert for computer repairs, upgrades, and support.
           </p>
@@ -329,8 +820,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- Load Yelp widget script ONCE at the bottom -->
-  <script src="https://www.yelp.com/embed/widgets.js" type="text/javascript" async></script>
 </body>
 </html>
