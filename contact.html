@@ -20,7 +20,7 @@
       font-size: 16px;
     }
     
-    /* Navigation */
+    /* Navigation - UPDATED TO MATCH HOME PAGE */
     .navbar {
       background: #1a2c4a;
       padding: 1rem 0;
@@ -37,39 +37,57 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 2rem;
     }
     
     .logo {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       font-size: 1.4rem;
       font-weight: 700;
       color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .logo-main {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .logo-tagline {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: #7ED321;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-left: 0.5rem;
     }
     
-    .logo::before {
-      content: 'IT';
-      background: #7ED321;
-      color: #1a2c4a;
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      margin-right: 0.7rem;
-      font-weight: 700;
-      font-size: 1rem;
+    .logo-image {
+      width: 35px;
+      height: 35px;
+      margin-right: 0.8rem;
     }
     
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 2.5rem;
+      gap: 2rem;
+      align-items: center;
+      white-space: nowrap;
+      flex-grow: 1;
+      justify-content: center;
     }
     
     .nav-links a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem;
       transition: color 0.3s ease;
+      white-space: nowrap;
     }
     
     .nav-links a:hover,
@@ -80,12 +98,14 @@
     .btn-consultation {
       background: #7ED321;
       color: #1a2c4a;
-      padding: 0.8rem 1.8rem;
+      padding: 1rem 2rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1rem;
       transition: all 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
       cursor: pointer;
       border: none;
     }
@@ -610,18 +630,42 @@
       font-size: 1rem;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
+    /* Responsive Design - UPDATED TO MATCH HOME PAGE */
+    @media (max-width: 968px) {
       .nav-container {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
         padding: 1.5rem;
+      }
+
+      .logo-tagline {
+        font-size: 0.7rem;
+        text-align: center;
+        margin-left: 0;
+      }
+
+      .logo {
+        align-items: center;
+        text-align: center;
       }
       
       .nav-links {
         gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
+      .nav-links a {
+        font-size: 0.95rem;
+      }
+
+      .btn-consultation {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 768px) {
       .page-header h1 {
         font-size: 2.5rem;
       }
@@ -727,10 +771,16 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navigation - UPDATED TO MATCH HOME PAGE -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">getITfixed</div>
+      <div class="logo">
+        <div class="logo-main">
+          <img src="images/getitfixed-logo.png" alt="getITfixed Computer Repair Logo" class="logo-image">
+          getITfixed
+        </div>
+        <div class="logo-tagline">#1 Computer Repair • Goodyear & Sun City</div>
+      </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
