@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Customer Testimonials | getITfixed | Tech Help You Can Trust</title>
+  <title>Customer Testimonials | getITfixed - #1 Computer Repair in Goodyear & Sun City</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,13 +15,15 @@
       font-size: 16px;
     }
     .navbar { background: #1a2c4a; padding: 1rem 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.1);}
-    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { display: flex; align-items: center; font-size: 1.4rem; font-weight: 700; color: #ffffff; }
-    .logo::before { content: 'IT'; background: #7ED321; color: #1a2c4a; padding: 0.4rem 0.6rem; border-radius: 6px; margin-right: 0.7rem; font-weight: 700; font-size: 1rem;}
-    .nav-links { display: flex; list-style: none; gap: 2.5rem; }
-    .nav-links a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease;}
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+    .logo { display: flex; flex-direction: column; align-items: flex-start; font-size: 1.4rem; font-weight: 700; color: #ffffff; flex-shrink: 0; }
+    .logo-main { display: flex; align-items: center; margin-bottom: 0.2rem; }
+    .logo-tagline { font-size: 0.75rem; font-weight: 400; color: #7ED321; text-transform: uppercase; letter-spacing: 0.5px; margin-left: 0.5rem; }
+    .logo-image { width: 35px; height: 35px; margin-right: 0.8rem; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; white-space: nowrap; flex-grow: 1; justify-content: center; }
+    .nav-links a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s ease; white-space: nowrap; }
     .nav-links a:hover, .nav-links a.active { color: #7ED321;}
-    .btn-consultation { background: #7ED321; color: #1a2c4a; padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease;}
+    .btn-consultation { background: #7ED321; color: #1a2c4a; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; }
     .btn-consultation:hover { background: #6BC419; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(126, 211, 33, 0.3);}
     .page-header { background: linear-gradient(135deg, #1a2c4a 0%, #2c4a6b 100%); padding: 4rem 0; text-align: center; color: white; }
     .page-header-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem;}
@@ -43,7 +45,6 @@
     .star { color: #ffc107; font-size: 1.2rem; margin-right: 0.2rem;}
     .review-text { font-size: 1.1rem; line-height: 1.7; color: #4a5568; font-style: italic; position: relative;}
     .review-text::before { content: '"'; font-size: 3rem; color: #7ED321; position: absolute; left: -1rem; top: -1rem; font-family: serif;}
-    /* Platform Links section, Stats, CTA, Footer: ... Your existing CSS unchanged ... */
     .platform-section { padding: 4rem 0; background: #ffffff; text-align: center; }
     .platform-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     .platform-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #1a2c4a;}
@@ -81,6 +82,39 @@
     .footer-section ul li a { color: #b8c5d1; text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease;}
     .footer-section ul li a:hover { color: #7ED321;}
     .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #b8c5d1; font-size: 1rem;}
+    @media (max-width: 968px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+
+      .logo-tagline {
+        font-size: 0.7rem;
+        text-align: center;
+        margin-left: 0;
+      }
+
+      .logo {
+        align-items: center;
+        text-align: center;
+      }
+      
+      .nav-links {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.95rem;
+      }
+
+      .btn-consultation {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+      }
+    }
     @media (max-width: 768px) {
       .nav-container { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
       .nav-links { gap: 1.5rem; }
@@ -97,7 +131,13 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">getITfixed</div>
+      <div class="logo">
+        <div class="logo-main">
+          <img src="images/getitfixed-logo.png" alt="getITfixed Computer Repair Logo" class="logo-image">
+          getITfixed
+        </div>
+        <div class="logo-tagline">#1 Computer Repair • Goodyear & Sun City</div>
+      </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -156,7 +196,7 @@
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
           </div>
           <div class="review-text">
-            Dominic came to the house the same day my husband called. He diagnosed the issue on our PC, took it with him for the actual repair and had it back to us the next day. I can’t express enough how polite, professional and knowledgable he is. His price is beyond fair. And to top it off he helped go after our husky when he escaped!
+            Dominic came to the house the same day my husband called. He diagnosed the issue on our PC, took it with him for the actual repair and had it back to us the next day. I can't express enough how polite, professional and knowledgable he is. His price is beyond fair. And to top it off he helped go after our husky when he escaped!
           </div>
         </a>
 
