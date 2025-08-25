@@ -347,6 +347,10 @@
       margin-bottom: 0.2rem;
     }
 
+    .logo-it {
+      color: #7ED321;
+    }
+
     .logo-tagline {
       font-size: 0.75rem;
       font-weight: 400;
@@ -418,7 +422,7 @@
     }
 
     .content-container {
-      max-width: 800px;
+      max-width: 1200px; /* Increased width to accommodate three cards */
       text-align: center;
     }
 
@@ -478,13 +482,16 @@
 
     .services-section {
       display: flex;
-      gap: 3rem;
-      justify-content: center;
+      gap: 2rem;
+      justify-content: space-between;
       flex-wrap: wrap;
+      width: 100%;
     }
 
     .service-card {
-      width: 350px;
+      flex: 1;
+      min-width: 300px;
+      max-width: 350px;
       background: linear-gradient(135deg, #ffffff 0%, #f8f9fb 100%);
       border-radius: 15px;
       padding: 2.5rem;
@@ -1338,6 +1345,16 @@
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
       }
+
+      .services-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service-card {
+        width: 100%;
+        max-width: 350px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1364,16 +1381,6 @@
       .checklist-button {
         font-size: 1.2rem;
         padding: 1.2rem 2.5rem;
-      }
-
-      .services-section {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .service-card {
-        width: 100%;
-        max-width: 350px;
       }
 
       .modal-content {
@@ -1420,7 +1427,7 @@
       <div class="logo">
         <div class="logo-main">
           <img src="images/getitfixed-logo.png" alt="getITfixed Computer Repair Logo" class="logo-image">
-          getITfixed
+          get<span class="logo-it">IT</span>fixed
         </div>
         <div class="logo-tagline">#1 Computer Repair • Goodyear & Sun City</div>
       </div>
@@ -1439,7 +1446,7 @@
   <main class="main-content">
     <div class="content-container">
       <!-- Main Title with Professional Branding -->
-      <h1 class="main-title">getITfixed</h1>
+      <h1 class="main-title">get<span class="highlight">IT</span>fixed</h1>
       <div class="professional-subtitle">#1 Computer Repair in Goodyear & Sun City</div>
       <div class="local-tagline">Professional Computer Repair Services • Arizona</div>
       
@@ -1528,7 +1535,7 @@
   <!-- Why Choose Us Section -->
   <section class="why-choose-section">
     <div class="why-choose-container">
-      <h2 class="section-title">Why Choose getITfixed for Computer Repair?</h2>
+      <h2 class="section-title">Why Choose get<span style="color: #7ED321;">IT</span>fixed for Computer Repair?</h2>
       <div class="features-grid">
         <div class="feature-item">
           <div class="feature-icon">⚡</div>
@@ -1769,7 +1776,7 @@
     <div class="footer-container">
       <div class="footer-content">
         <div class="footer-section">
-          <div class="logo">getITfixed</div>
+          <div class="logo">get<span style="color: #7ED321;">IT</span>fixed</div>
           <p style="color: #b8c5d1; margin-top: 1rem;">
             Your trusted computer repair expert for PC repair, laptop repair, upgrades, cable management, and tech support services. Professional computer technicians serving Arizona and surrounding areas.
           </p>
@@ -1814,7 +1821,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 getITfixed - #1 Computer Repair in Goodyear & Sun City | Same-Day PC Repair | Laptop Repair | Cable Management | Computer Technician Services | All rights reserved.</p>
+        <p>&copy; 2024 get<span style="color: #7ED321;">IT</span>fixed - #1 Computer Repair in Goodyear & Sun City | Same-Day PC Repair | Laptop Repair | Cable Management | Computer Technician Services | All rights reserved.</p>
       </div>
     </div>
   </footer>
